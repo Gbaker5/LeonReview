@@ -71,3 +71,15 @@ let days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "s
     console.log(days[0])
 //}else console.log("not a day of the week")
 
+const num1q = prompt("First Number");
+const num2q = prompt("Second Number");
+let num1 = Number(num1q);
+let num2 = Number(num2q);
+console.log(num1);
+console.log(num2);
+
+if(num1 > num2 ){
+    console.log(`${num1} is greater than ${num2}`)
+}else if(num1 == num2){
+    console.log(`${num1} is equal to ${num2}`)
+}else console.log(`${num2} is greater than ${num1}`)
