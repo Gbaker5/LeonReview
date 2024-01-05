@@ -49,3 +49,25 @@ number2 = number2 + 2;
 
 console.log(number1); // Should show 3
 console.log(number2); // Should show 5
+
+//chapter 3
+//let whichDay = prompt("Enter a day of the week");
+//let day = whichDay.toLowerCase();
+let days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+//console.log(day)
+//if(day == days[0]){
+    console.log(days[1])
+//}else if(day == days[1]){
+    console.log(days[2])
+//}else if(day == days[2]){
+    console.log(days[3])
+//}else if(day == days[3]){
+    console.log(days[4])
+//}else if(day == days[4]){
+    console.log(days[5])
+//}else if(day == days[5]){
+    console.log(days[6])
+//}else if(day == days[6]){
+    console.log(days[0])
+//}else console.log("not a day of the week")
+
