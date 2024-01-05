@@ -71,15 +71,32 @@ let days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "s
     console.log(days[0])
 //}else console.log("not a day of the week")
 
-const num1q = prompt("First Number");
-const num2q = prompt("Second Number");
-let num1 = Number(num1q);
-let num2 = Number(num2q);
-console.log(num1);
-console.log(num2);
+//const num1q = prompt("First Number");
+//const num2q = prompt("Second Number");
+//let num1 = Number(num1q);
+//let num2 = Number(num2q);
+//console.log(num1);
+//console.log(num2);
 
-if(num1 > num2 ){
-    console.log(`${num1} is greater than ${num2}`)
-}else if(num1 == num2){
-    console.log(`${num1} is equal to ${num2}`)
-}else console.log(`${num2} is greater than ${num1}`)
+//if(num1 > num2 ){
+    //console.log(`${num1} is greater than ${num2}`)
+//}else if(num1 == num2){
+    //console.log(`${num1} is equal to ${num2}`)
+//}else console.log(`${num2} is greater than ${num1}`)
+
+let nb1 = Number(prompt("Enter nb1:"));
+let nb2 = Number(prompt("Enter nb2:"));
+let nb3 = Number(prompt("Enter nb3:"));
+
+if (nb1 > nb2) {
+  nb1 = nb3 * 2;
+} else {
+  nb1++;
+  if (nb2 > nb3) {
+    nb1 += nb3 * 3;
+  } else {
+    nb1 = 0;
+    nb3 = nb3 * 2 + nb2;
+  }
+}
+console.log(nb1, nb2, nb3);
