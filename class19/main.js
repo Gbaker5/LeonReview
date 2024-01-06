@@ -111,3 +111,65 @@ if(month == 4 || month == 6 || month == 9 || month == 11){
 }else if(month == 2){
     console.log(28)
 }else console.log("not a month")
+
+
+// Function to pad single-digit numbers with leading zeros
+function padZero(number) {
+    return (number < 10 ? '0' : '') + number;
+}
+
+// Function to calculate the time one second after
+function calculateNextSecond(hours, minutes, seconds) {
+    // Increment the seconds
+    seconds++;
+
+    // Check if seconds exceed 59, then increment minutes
+    if (seconds === 60) {
+        seconds = 0;
+        minutes++;
+
+        // Check if minutes exceed 59, then increment hours
+        if (minutes === 60) {
+            minutes = 0;
+            hours++;
+
+            // Check if hours exceed 23, set it to 0 (midnight)
+            if (hours === 24) {
+                hours = 0;
+            }
+        }
+    }
+
+    // Format the result and return
+    const formattedResult = `${padZero(hours)}h${padZero(minutes)}m${padZero(seconds)}s`;
+    return formattedResult;
+}
+
+// Prompt user for input
+const hours = prompt("Enter hours:");
+const minutes = prompt("Enter minutes:");
+const seconds = prompt("Enter seconds:");
+
+// Convert input to numbers
+const inputHours = Number(hours);
+const inputMinutes = Number(minutes);
+const inputSeconds = Number(seconds);
+
+// Check for valid input
+if (
+    Number.isInteger(inputHours) &&
+    Number.isInteger(inputMinutes) &&
+    Number.isInteger(inputSeconds) &&
+    inputHours >= 0 &&
+    inputHours <= 23 &&
+    inputMinutes >= 0 &&
+    inputMinutes <= 59 &&
+    inputSeconds >= 0 &&
+    inputSeconds <= 59
+) {
+    // Calculate the time one second after
+    const result = calculateNextSecond(inputHours, inputMinutes, inputSeconds);
+    console.log(`Time one second after: ${result}`);
+} else {
+    console.log("Invalid input. Please enter valid hours, minutes, and seconds.");
+}
