@@ -177,10 +177,21 @@ function padZero(number) {
 
 //chapt 4
 let turns = 1;
-while( turns <= 10 ){
+//while( turns <= 10 ){
+    //console.log(turns++)
+//}
+
+//for(turns=1;turns<=10;turns++){
+    //console.log(turns)
+//}
+
+userNumStr = prompt("how many turns?");
+let userTurnNum = Number(userNumStr);
+
+while( turns <= userTurnNum ){
     console.log(turns++)
 }
 
-for(turns=1;turns<=10;turns++){
+for(turns=1;turns<=userTurnNum;turns++){
     console.log(turns)
 }
