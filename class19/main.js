@@ -84,19 +84,30 @@ let days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "s
     //console.log(`${num1} is equal to ${num2}`)
 //}else console.log(`${num2} is greater than ${num1}`)
 
-let nb1 = Number(prompt("Enter nb1:"));
-let nb2 = Number(prompt("Enter nb2:"));
-let nb3 = Number(prompt("Enter nb3:"));
+//let nb1 = Number(prompt("Enter nb1:"));
+//let nb2 = Number(prompt("Enter nb2:"));
+//let nb3 = Number(prompt("Enter nb3:"));
 
-if (nb1 > nb2) {
-  nb1 = nb3 * 2;
-} else {
-  nb1++;
-  if (nb2 > nb3) {
-    nb1 += nb3 * 3;
-  } else {
-    nb1 = 0;
-    nb3 = nb3 * 2 + nb2;
-  }
-}
-console.log(nb1, nb2, nb3);
+//if (nb1 > nb2) {
+  //nb1 = nb3 * 2;
+//} else {
+  //nb1++;
+  //if (nb2 > nb3) {
+    //nb1 += nb3 * 3;
+  //} else {
+    //nb1 = 0;
+    //nb3 = nb3 * 2 + nb2;
+  //}
+//}
+//console.log(nb1, nb2, nb3);
+
+let month = prompt("Which month?");
+month = Number(month);
+console.log(month)
+if(month == 4 || month == 6 || month == 9 || month == 11){
+    console.log(30)
+}else if(month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12){
+    console.log(31)
+}else if(month == 2){
+    console.log(28)
+}else console.log("not a month")
