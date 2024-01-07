@@ -225,13 +225,21 @@ let turns = 1;
   //let limit2 = Number(hundredlimit2);
   //console.log(limit2)
 
-//while(limit2 < 50 || limit2 > 100){
+//while(limit2 < 50 && limit2 > 100){
    //hundredlimit2 = prompt("Ill keep askin until you give me a number between 50 and 100");
   //limit2 = Number(prompt)
 //}
 
-let multiple = Number(prompt("lets create a multiplication table with this number"))
+//let multiple = Number(prompt("lets create a multiplication table with this number"))
 
-for(table=0;table <= 12;table++){
-    console.log(`${multiple} x ${table}`)
-}
+//for(table=0;table <= 12;table++){
+    //console.log(`${multiple} x ${table}`)
+//}
+
+let multiple2 = Number(prompt("lets create a multiplication table with this number"));
+
+if(multiple2 > 1 && multiple2 < 10){
+    for(table2=0;table2 <= 12;table2++){
+        console.log(`${multiple2} x ${table2}`)
+    }
+}else console.log("invalid")
