@@ -197,17 +197,28 @@ let turns = 1;
 //}
 
 
-for (let i = 1; i <= 10; i++) {
-    if (i % 2 !== 0) {
-      console.log(`${i} is odd`);
-    }
+//for (let i = 1; i <= 10; i++) {
+    //if (i % 2 !== 0) {
+      //console.log(`${i} is odd`);
+    //}
+ // }
+
+  //let userInput = prompt("odd number 1-10")
+  //let inputNum = Number(userInput)
+  
+  //for (let k = inputNum; k <= 10; k++) {
+    //if (k % 2 !== 0) {
+      //console.log(`${k} is odd`);
+    //}
+  //}
+
+  let hundredlimit = prompt("Ill keep askin until you give me a number below 101");
+    let limit = Number(hundredlimit);
+    console.log(limit)
+  
+  while(limit > 100){
+     hundredlimit = prompt("Ill keep askin until you give me a number below 101");
+    limit = Number(prompt)
   }
 
-  let userInput = prompt("odd number 1-10")
-  let inputNum = Number(userInput)
   
-  for (let k = inputNum; k <= 10; k++) {
-    if (k % 2 !== 0) {
-      console.log(`${k} is odd`);
-    }
-  }
