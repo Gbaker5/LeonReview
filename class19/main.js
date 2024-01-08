@@ -236,10 +236,23 @@ let turns = 1;
     //console.log(`${multiple} x ${table}`)
 //}
 
-let multiple2 = Number(prompt("lets create a multiplication table with this number"));
+//let multiple2 = Number(prompt("lets create a multiplication table with this number"));
 
-if(multiple2 > 1 && multiple2 < 10){
-    for(table2=0;table2 <= 12;table2++){
-        console.log(`${multiple2} x ${table2}`)
+//if(multiple2 > 1 && multiple2 < 10){
+    //for(table2=0;table2 <= 12;table2++){
+        //console.log(`${multiple2} x ${table2}`)
+    //}
+//}else console.log("invalid")
+
+let text;
+
+while (true) {
+    text = prompt("Type 'yes' or 'no', or I'll keep asking:");
+    console.log(text);
+
+    if (text === "yes" || text === "no") {
+        console.log("Ok");
+        break; // Exit the loop if 'yes' or 'no' is typed
     }
-}else console.log("invalid")
+}
+
