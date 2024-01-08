@@ -244,15 +244,24 @@ let turns = 1;
     //}
 //}else console.log("invalid")
 
-let text;
+//let text;
 
-while (true) {
-    text = prompt("Type 'yes' or 'no', or I'll keep asking:");
-    console.log(text);
+//while (true) {
+    //text = prompt("Type 'yes' or 'no', or I'll keep asking:");
+    //console.log(text);
 
-    if (text === "yes" || text === "no") {
-        console.log("Ok");
-        break; // Exit the loop if 'yes' or 'no' is typed
-    }
+    //if (text === "yes" || text === "no") {
+        //console.log("Ok");
+        //break; // Exit the loop if 'yes' or 'no' is typed
+    //}
+//}
+
+for(let hundo=0;hundo <= 100; hundo++){
+    if( hundo %3 == 0 && hundo %5 == 0){
+        console.log("Fizz Buzz")
+    }else if(hundo %5 == 0){
+        console.log("Buzz")
+    }else if(hundo %3 == 0){
+        console.log("Fizz ")
+} else console.log(hundo)
 }
-
