@@ -212,13 +212,21 @@ let turns = 1;
     //}
   //}
 
-  let hundredlimit = prompt("Ill keep askin until you give me a number below 101");
-    let limit = Number(hundredlimit);
-    console.log(limit)
+  //let hundredlimit = prompt("Ill keep askin until you give me a number below 101");
+    //let limit = Number(hundredlimit);
+    //console.log(limit)
   
-  while(limit > 100){
-     hundredlimit = prompt("Ill keep askin until you give me a number below 101");
-    limit = Number(prompt)
-  }
+  //while(limit > 100){
+     //hundredlimit = prompt("Ill keep askin until you give me a number below 101");
+    //limit = Number(prompt)
+  //}
 
-  
+  //let hundredlimit2 = prompt("Ill keep askin until you give me a number between 50 and 100");
+  //let limit2 = Number(hundredlimit2);
+  //console.log(limit2)
+
+//while(limit2 < 50 || limit2 > 100){
+   //hundredlimit2 = prompt("Ill keep askin until you give me a number between 50 and 100");
+  //limit2 = Number(prompt)
+//}
+
