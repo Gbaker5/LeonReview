@@ -299,3 +299,11 @@ function square1(x) {
   console.log(square2(0)); // Must show 0
   console.log(square2(2)); // Must show 4
   console.log(square2(5)); // Must show 25
+
+function squareIt(){
+    for(squared=0;squared <= 100;squared++){
+        console.log(Math.pow(squared,2))
+    }
+  }
+  
+  squareIt()
