@@ -282,38 +282,66 @@ for(let hundo=0;hundo <= 100; hundo++){
 
 
   // Square the given number x
-function square1(x) {
-    let sq = Math.pow(x,2)
-    return sq
+//function square1(x) {
+    //let sq = Math.pow(x,2)
+    //return sq
     // TODO: complete the function code
-  }
+  //}
   
   
   // Square the given number x
-  const square2 = x => Math.pow(x,2)// TODO: complete the function code
+  //const square2 = x => Math.pow(x,2)// TODO: complete the function code
   
-  console.log(square1(0)); // Must show 0
-  console.log(square1(2)); // Must show 4
-  console.log(square1(5)); // Must show 25
+  //console.log(square1(0)); // Must show 0
+  //console.log(square1(2)); // Must show 4
+  //console.log(square1(5)); // Must show 25
   
-  console.log(square2(0)); // Must show 0
-  console.log(square2(2)); // Must show 4
-  console.log(square2(5)); // Must show 25
+  //console.log(square2(0)); // Must show 0
+  //console.log(square2(2)); // Must show 4
+  //console.log(square2(5)); // Must show 25
 
-function squareIt(){
-    for(squared=0;squared <= 100;squared++){
-        console.log(Math.pow(squared,2))
+//function squareIt(){
+    //for(squared=0;squared <= 100;squared++){
+        //console.log(Math.pow(squared,2))
+    //}
+  //}
+  
+  //squareIt()
+
+  //function min(x,y){
+    //if(x < y){
+        //return x
+   // }else return y
+  //}
+
+//console.log(min(4.5, 5)); // Must show 4.5
+//console.log(min(19, 9));  // Must show 9
+//console.log(min(1, 1));   // Must show 1
+
+function calculate(x,operand,z){
+    let calc;
+    switch (operand){
+        case "+":
+            calc = x + z;
+            break;
+        case "-":
+            calc = x - z;
+            break;
+        case "*":
+            calc = x * z;
+            break;
+        case "/":
+            calc = x / z;
+            break;
     }
-  }
-  
-  squareIt()
+    
+    
+    
+    return calc
+    
+}
 
-  function min(x,y){
-    if(x < y){
-        return x
-    }else return y
-  }
-
-console.log(min(4.5, 5)); // Must show 4.5
-console.log(min(19, 9));  // Must show 9
-console.log(min(1, 1));   // Must show 1
+console.log(calculate(4, "+", 6));  // Must show 10
+console.log(calculate(4, "-", 6));  // Must show -2
+console.log(calculate(2, "*", 0));  // Must show 0
+console.log(calculate(12, "/", 0)); // Must show Infinity
