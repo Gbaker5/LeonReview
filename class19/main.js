@@ -114,9 +114,9 @@ let days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "s
 
 
 // Function to pad single-digit numbers with leading zeros
-function padZero(number) {
-    return (number < 10 ? '0' : '') + number;
-}
+//function padZero(number) {
+    //return (number < 10 ? '0' : '') + number;
+//}
 
 // Function to calculate the time one second after
 //function calculateNextSecond(hours, minutes, seconds) {
@@ -256,15 +256,15 @@ let turns = 1;
     //}
 //}
 
-for(let hundo=0;hundo <= 100; hundo++){
-    if( hundo %3 == 0 && hundo %5 == 0){
-        console.log("Fizz Buzz")
-    }else if(hundo %5 == 0){
-        console.log("Buzz")
-    }else if(hundo %3 == 0){
-        console.log("Fizz ")
-} else console.log(hundo)
-}
+//for(let hundo=0;hundo <= 100; hundo++){
+    //if( hundo %3 == 0 && hundo %5 == 0){
+        //console.log("Fizz Buzz")
+    //}else if(hundo %5 == 0){
+        //console.log("Buzz")
+    //}else if(hundo %3 == 0){
+       // console.log("Fizz ")
+//} else console.log(hundo)
+//}
 
 //chap 5
 // Say hello to the user
@@ -318,38 +318,59 @@ for(let hundo=0;hundo <= 100; hundo++){
 //console.log(min(19, 9));  // Must show 9
 //console.log(min(1, 1));   // Must show 1
 
-function calculate(x,operand,z){
-    let calc;
-    switch (operand){
-        case "+":
-            calc = x + z;
-            break;
-        case "-":
-            calc = x - z;
-            break;
-        case "*":
-            calc = x * z;
-            break;
-        case "/":
-            calc = x / z;
-            break;
-    }
+//function calculate(x,operand,z){
+    //let calc;
+    //switch (operand){
+        //case "+":
+            //calc = x + z;
+            //break;
+        //case "-":
+            //calc = x - z;
+            //break;
+        //case "*":
+            //calc = x * z;
+            //break;
+        //case "/":
+            //calc = x / z;
+            //break;
+    //}
     
     
     
-    return calc
+    //return calc
     
-}
+//}
 
-console.log(calculate(4, "+", 6));  // Must show 10
-console.log(calculate(4, "-", 6));  // Must show -2
-console.log(calculate(2, "*", 0));  // Must show 0
-console.log(calculate(12, "/", 0)); // Must show Infinity
+//console.log(calculate(4, "+", 6));  // Must show 10
+//console.log(calculate(4, "-", 6));  // Must show -2
+//console.log(calculate(2, "*", 0));  // Must show 0
+//console.log(calculate(12, "/", 0)); // Must show Infinity
 
-function circAndArea (radius){
-    const circum = (2*Math.PI)*(radius)
-    const area = (Math.PI)*(Math.pow(radius,2))
-    console.log(circum, area)
-}
+//function circAndArea (radius){
+    //const circum = (2*Math.PI)*(radius)
+    //const area = (Math.PI)*(Math.pow(radius,2))
+    //console.log(circum, area)
+//}
 
-circAndArea(3)
+//circAndArea(3)
+
+
+//codecamp ch2
+//kelvins
+let kelvin = 293
+
+//convert kelvin to celsius
+let celsius = kelvin - 273
+
+//convert celsius to fahrenheit
+let fahrenheit = celsius * (9/5) + 32
+
+//round F
+
+let rounded = Math.floor(fahrenheit)
+
+console.log(`The temperature is ${rounded} degrees Fahrenheit.
+`)
+
+
+//codecamp ch3
