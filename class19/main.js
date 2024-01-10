@@ -372,5 +372,20 @@ let rounded = Math.floor(fahrenheit)
 console.log(`The temperature is ${rounded} degrees Fahrenheit.
 `)
 
+//kelvins
+let kelvin2 = 293
+
+//convert kelvin to celsius
+let celsius2 = kelvin2 - 273
+
+//convert celsius to newton
+let newton = celsius2 * (33/100)
+
+//round Newtons
+
+let rounded2 = Math.floor(newton)
+
+console.log(`The temperature is ${rounded} degrees Newtons.
+`)
 
 //codecamp ch3
