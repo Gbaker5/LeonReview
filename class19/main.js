@@ -389,3 +389,25 @@ console.log(`The temperature is ${rounded} degrees Newtons.
 `)
 
 //codecamp ch3
+//my human age
+const myAge = 31;
+
+//early years
+let earlyYears = 2;
+earlyYears = 2 * 10.5
+
+//laterYears
+let laterYears = myAge - 2;
+laterYears = laterYears * 4
+console.log(laterYears)
+
+//convert human to dog age
+let dogYears = earlyYears + laterYears
+console.log(dogYears)
+
+//name
+const myName = "gjarred".toLowerCase()
+console.log(myName)
+
+console.log(`My name is ${myName}. I am ${myAge} years old in human years which is ${dogYears} years old in dog years.`
+)
