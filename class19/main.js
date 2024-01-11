@@ -337,6 +337,7 @@ let turns = 1;
     
     
     
+    
     //return calc
     
 //}
@@ -411,3 +412,54 @@ console.log(myName)
 
 console.log(`My name is ${myName}. I am ${myAge} years old in human years which is ${dogYears} years old in dog years.`
 )
+
+
+//user
+let userName = '';
+
+userName == '' ? console.log("Hello!") : console.log(`Hello ${userName}`)
+
+let userQuestion = "Will I be a Millionare?"
+
+console.log(userQuestion)
+
+let randomNumber = Math.floor(Math.random() * 8);
+console.log(randomNumber)
+
+let eighBall = '';
+
+switch(randomNumber){
+  case 0: 
+  eightBall = "It is certain";
+  break;
+
+  case 1:
+   eightBall = "It is Decidedly So";
+  break;
+
+  case 2: 
+  eightBall = "Reply Hazy Try Again";
+  break;
+
+  case 3: 
+  eightBall = 'Cannot Predict Now';
+  break;
+
+  case 4: 
+  eightBall = "Do Not Count On it";
+  break;
+
+  case 5: 
+  eightBall = "My Sources Say No";
+  break;
+
+  case 6: 
+  eightBall = "Outlook Not So Good";
+  break;
+  
+  case 7: 
+  eightBall = "Signs point to yes";
+  break;
+}
+
+console.log(eightBall)
