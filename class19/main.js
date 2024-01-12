@@ -526,3 +526,19 @@ function loopingTriangle(){
 
  console.log(min(0,10))
  console.log(min(0,-10))
+
+ function isEven(n) {
+    if (n === 0) {
+        return true;
+    } else if (n === 1) {
+        return false;
+    } else if (n < 0) {
+        return isEven(-n); // Handle negative numbers by using their absolute value
+    } else {
+        return isEven(n - 2);
+    }
+}
+
+console.log(isEven(50));  // Must show true
+console.log(isEven(75));  // Must show false
+console.log(isEven(-1));  // Must show false
