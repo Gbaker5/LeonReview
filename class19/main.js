@@ -508,3 +508,14 @@ function loopingTriangle(){
 
 }
  loopingTriangle()
+
+ function chessBoard(width,height){
+    
+    for(chess=1;chess<=height;chess++){
+        const chessWidth = ("#".repeat(width))
+        console.log(chessWidth)
+        //console.log([chess])
+    }
+ }
+
+ chessBoard(3,5)
