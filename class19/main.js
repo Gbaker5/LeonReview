@@ -356,7 +356,14 @@ let turns = 1;
 //circAndArea(3)
 
 
-//codecamp ch2
+
+
+
+
+
+
+
+//CODECAMP ch2
 //kelvins
 let kelvin = 293
 
@@ -490,3 +497,14 @@ if(runnerAge > 18 && isRegisteredEarly == true){
 }else if( runnerAge < 18 ){
   console.log(`${raceNumber} You will run at 1230`)
 } else console.log("see registration desk")
+
+
+///////ELOQUENT JS
+
+function loopingTriangle(){
+    for(triangle=0;triangle <=7; triangle++){
+        console.log("#".repeat(triangle))
+    }
+
+}
+ loopingTriangle()
