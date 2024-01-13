@@ -542,3 +542,13 @@ function loopingTriangle(){
 console.log(isEven(50));  // Must show true
 console.log(isEven(75));  // Must show false
 console.log(isEven(-1));  // Must show false
+
+
+function countBs(myString){
+    let arr = myString.split("")
+   let letters = arr.filter(x => x == "B")
+   return letters.length
+}
+
+console.log(countBs("BBC"))
+
