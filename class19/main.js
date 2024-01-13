@@ -552,3 +552,10 @@ function countBs(myString){
 
 console.log(countBs("BBC"))
 
+function countChar(string, letter){
+    let arr = string.split("")
+    let letters = arr.filter(x => x == letter)
+    return letters.length
+}
+
+console.log(countChar("kakkerlak", "k"))
