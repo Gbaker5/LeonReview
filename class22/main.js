@@ -243,3 +243,12 @@ function filterRangeInPlace(arr, a, b) {
   }
 
   console.log(decreasingOrder([5, 2, 1, -10, 8]))
+
+
+
+  function copySorted(arr){
+    let sorted = arr.sort()
+    return sorted
+  }
+
+  console.log(copySorted(["HTML", "JavaScript", "CSS"]))
