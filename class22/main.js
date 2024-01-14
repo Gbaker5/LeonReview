@@ -237,3 +237,9 @@ function filterRangeInPlace(arr, a, b) {
   filterRangeInPlace(arr, 1, 4); // removed the numbers except from 1 to 4
   
   console.log( arr ); // [3, 1]
+
+  function decreasingOrder(arr){
+    return arr.sort((a,b) => b-a)
+  }
+
+  console.log(decreasingOrder([5, 2, 1, -10, 8]))
