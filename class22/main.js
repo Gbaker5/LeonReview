@@ -79,17 +79,38 @@ console.log(`${dog.name} is a ${dog.species} dog measuring ${dog.size}`);
 console.log(`Look, a cat! ${dog.name} barks: ${dog.bark()}`);
 
 
-const r = Number(prompt("Enter the circle radius:"));
+//const r = Number(prompt("Enter the circle radius:"));
 
 // TODO: create the circle object here
-const circle = {
-    circumference(){
-       return (Math.PI)*(2 * r)
+//const circle = {
+    //circumference(){
+       //return (Math.PI)*(2 * r)
+    //},
+    //area(){
+       //return (r*r) * (Math.PI)
+    //}
+//}
+
+//console.log(`Its circumference is ${circle.circumference()}`);
+//console.log(`Its area is ${circle.area()}`);
+
+const account = {
+    name:"Alex",
+    balance: 0,
+    credit: function(amount){
+        this.balance += amount
     },
-    area(){
-       return (r*r) * (Math.PI)
+    debit: function(amount){
+        this.balance -= amount
+    },
+
+    describe(){
+        return `owner: ${this.name}, balance ${this.balance}`
     }
 }
 
-console.log(`Its circumference is ${circle.circumference()}`);
-console.log(`Its area is ${circle.area()}`);
+console.log(account.describe());
+account.credit(250); // Credit 250
+account.debit(80);   // Debit 80
+
+console.log(account.describe()); // Updated description
