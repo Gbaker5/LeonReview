@@ -520,3 +520,39 @@ function reverseArray(arr) {
       arr[arr.length - 1 - i] = temp;
     }
   }
+
+  // Function to convert an array to a list
+function arrayToList(array) {
+    let list = null;
+    for (let i = array.length - 1; i >= 0; i--) {
+      list = { value: array[i], rest: list };
+    }
+    return list;
+  }
+  
+  // Function to convert a list to an array
+  function listToArray(list) {
+    let array = [];
+    while (list !== null) {
+      array.push(list.value);
+      list = list.rest;
+    }
+    return array;
+  }
+  
+  // Function to add an element to the front of a list
+  function prepend(element, list) {
+    return { value: element, rest: list };
+  }
+  
+  // Function to retrieve the element at a given position in the list
+  function nth(list, position) {
+    if (!list) {
+      return undefined;
+    } else if (position === 0) {
+      return list.value;
+    } else {
+      return nth(list.rest, position - 1);
+    }
+  }
+  
