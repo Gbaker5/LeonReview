@@ -556,3 +556,47 @@ function arrayToList(array) {
     }
   }
   
+
+  let obj = {here: {is: "an"}, object: 2};
+
+  function deepEqual(a, b) {
+    // Check if both values are equal using strict equality (===)
+    if (a === b) {
+      return true;
+    }
+  
+    // Check if both values are objects and not null
+    if (typeof a === 'object' && a !== null && typeof b === 'object' && b !== null) {
+      // Get the keys of both objects
+      let keysA = Object.keys(a);
+      let keysB = Object.keys(b);
+  
+      // Check if the number of properties is the same
+      if (keysA.length !== keysB.length) {
+        return false;
+      }
+  
+      // Iterate over the keys and recursively check the values
+      for (let key of keysA) {
+        if (!keysB.includes(key) || !deepEqual(a[key], b[key])) {
+          return false;
+        }
+      }
+  
+      // If all checks pass, the objects are deep equal
+      return true;
+    }
+  
+    // If the values are not objects, or one of them is null, they are not deep equal
+    return false;
+  }
+  
+
+
+
+console.log(deepEqual(obj, obj));
+// → true
+console.log(deepEqual(obj, {here: 1, object: 2}));
+// → false
+console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
+// → true
