@@ -181,3 +181,6 @@ while( turns <= 10 ){
     console.log(turns++)
 }
 
+for(turns=1;turns<=10;turns++){
+    console.log(turns)
+}
