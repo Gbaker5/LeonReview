@@ -230,3 +230,8 @@ let turns = 1;
   //limit2 = Number(prompt)
 //}
 
+let multiple = Number(prompt("lets create a multiplication table with this number"))
+
+for(table=0;table <= 12;table++){
+    console.log(`${multiple} x ${table}`)
+}
