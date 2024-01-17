@@ -1,0 +1,377 @@
+/* Box Model Hack */
+* {
+     box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+     font-family: 'DM Serif Display', serif;
+     background-color: white;
+
+}
+
+h3{
+     font-size:50px;
+}
+
+.sectops{
+ font-size:30px;
+ color: orange;
+}
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+     background-image: url(../images/background-flower-right.jpg);
+     background-repeat: no-repeat;
+     background-size: cover;
+     height:500px;
+     width:100%;
+     
+}
+
+header>nav>ul{
+     float:left;
+     width:100%;
+     
+     text-align: right;
+     
+}
+header>nav>ul>li{
+     display:inline-block;
+     
+     padding: 0 10px 0 10px;
+     list-style-type: none;
+     color:black;
+}
+
+.headnav>li>a{
+     text-decoration: none;
+     color:orange;
+}
+
+.navsearch{
+     margin-right: 30px;
+    
+}
+
+.phonenav{
+     display:none;
+}
+
+/*Sec1*/
+
+
+.sec1{
+     
+     float:left;
+     width:60%;
+     text-align:left;
+     
+}
+
+.sec1head>li{
+     list-style-type: none;
+}
+
+.sec1head>li>h1{
+     font-size:65px;
+}
+
+@media screen and (max-width:644px) {
+     .sec1head>li>h1{
+          font-size: 50px;
+     }
+}
+#searchsec >li>button{
+     color:white;
+     background-color: orange;
+     border-radius: 25px;
+}
+
+#searchsec>li{
+     display:inline-block;
+     list-style-type: none;
+     padding: px;
+}
+
+.social>li{
+     display:inline-block;
+     list-style-type: none;
+     padding:5px;
+    
+}
+.social>li>i{
+     color:orange;
+}
+
+/**/
+
+.aboutimage{
+     
+     float:left;
+     width:40%;
+     height:500px;
+}
+
+.aboutimage>img{
+     height:500px;
+     width:100%;
+}
+
+.aboutussec{
+     float:left;
+     
+     width:60%;
+     height:500px;
+     background-color: white;
+}
+
+.aboutussec>a{
+     background-color: orange;
+     padding:5px;
+     color:white;
+     text-decoration: none;
+     border-radius: 5px;
+}
+
+
+/**/
+.ordersec{
+     float:left;
+     
+     width:100%;
+     text-align: center;
+     background-color:#ededed;
+}
+
+.mealnav>li{
+     display:inline-block;
+     list-style-type:none;
+}
+
+.menuimg>li{
+     display:inline-block;
+     list-style-type: none;
+     margin:10px;
+}
+
+.menuimg>li>img{
+     height:300px;
+     width:220px;
+}
+
+.menudiv{
+     margin-bottom: 100px;
+}
+/*menu shade*/
+.shade>li{
+     display:inline-block;
+     list-style-type: none;
+     margin: 10px;
+}
+
+.shadebox{
+     height:300px;
+     width:220px;
+     background-color: rgba(0,0,0,0.50);
+}
+.menudiv{
+     display:grid;
+    
+     width:100vw;
+}
+
+.layer1, .layer2, .layer3{
+     grid-column:1;
+     grid-row: 1;
+}
+
+.layer1{
+     z-index: 1;
+}
+.layer2{
+     z-index: 2;
+}
+.layer3{
+     z-index: 3;
+}
+/**/
+
+/*menutext*/
+.menuinfo>li{
+     display:inline-block;
+     list-style-type: none;
+     margin:10px;
+     
+}
+
+.textbox{
+     height:300px;
+     width: 220px;
+     
+     color:white;
+     text-align: center;
+     
+}
+
+.textbox>ul>li{
+     list-style-type: none;
+     margin:40px;
+}
+
+.layer3{
+     align-self: center;
+     justify-self: center;
+}
+
+.textbox button{
+     background-color: orange;
+     padding:5px;
+     color:white;
+     text-decoration: none;
+     border-radius: 5px;
+}
+
+/*Hidden*/
+.hidden{
+     visibility:hidden;
+}
+/**/
+.booktable{
+     float:left;
+     
+     width:100%;
+     text-align:center;
+     background-image: url(../Images/coffeebg.jpg);
+     background-repeat:none;
+     background-size: cover;
+}
+
+.booktable>i{
+     color:orange;
+     font-size: 40px;
+}
+
+.video>img{
+     height:300px;
+     width:80vw;
+     margin-bottom: 100px;;
+}
+
+.phonenumber{
+     color:orange;
+     font-size: 50px;
+}
+.hours, .days{
+     list-style-type: none;
+     display:flex;
+     justify-content: space-around;
+}
+
+.days{
+     font-size: 20px;
+}
+.hours{
+     font-size:30px;
+}
+
+
+/**/
+.test{
+     float:left;
+     
+     width:100%;
+     text-align: center;
+}
+
+.test>img{
+    height:400px;
+    width:380px;
+    border-radius: 50%; 
+}
+
+.stars{
+     display:flex;
+     flex-direction:row;
+     justify-content: center;
+     margin-right:40px;
+}
+.stars>li{
+     list-style-type: none;
+}
+
+.stars>li>i{
+     color:orange;
+}
+
+.italy{
+     font-style: italic;
+     margin: auto 100px;
+     margin-bottom: 50px;
+}
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+
+@media screen and (max-width: 425px) {
+     header{
+          background-image: url(../images/background-flower-right-cropped.jpg);
+     }
+
+     .aboutimage{
+          display:none;
+     }
+     
+     .aboutussec{
+          width:100%;
+     }
+     
+     .headnav{
+          display:flex;
+          justify-content: space-evenly;
+          flex-wrap: wrap;
+     }
+    /*Phone nav */
+     .phonenav{
+          display:inline-block;
+          width:100%;
+          float:left;
+          border: 1px solid teal;
+     }
+
+     .phonenav a{
+          display:flex;
+          justify-content: space-between;
+     }
+
+     .phonenav ul>li{
+       color:orange;  
+       margin:auto 20px; 
+     }
+
+     /*dropdown menu*/
+     /**/
+     .italy{
+          margin: auto 50px;
+     }
+
+}

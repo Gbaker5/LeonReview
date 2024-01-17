@@ -1,0 +1,351 @@
+/* Box Model Hack */
+* {
+     box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+background-color:#8088a4;
+font-family: 'Oswald', sans-serif;
+font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+/******************************************
+
+/* LAYOUT
+/*******************************************/
+
+/*Navigation Menu*/
+header nav{
+     height:100px;
+     margin:none;
+}
+
+header>nav>ul{
+     display:inline-block;
+}
+
+header, .topsection{
+color: white;
+}
+
+header > nav > .navleft, .navmid, .navright{
+     float:left;
+     
+     list-style-type: none;
+     color:white;
+     
+     
+}
+
+.navleft {
+     width:30%;
+     
+}
+
+.navleft>li{
+     display: inline-block;
+     
+     
+}
+.navleft>li+li{
+     margin-left:10px;
+}
+.navleft>li>a{
+     text-decoration: none;
+     color:white;
+}
+
+header>nav>ul>.navleft>li>li{
+     border-left: 50px;
+}
+
+.navmid{
+width: 60%;
+text-align: center;
+}
+
+.navlogo{
+     height: 30px;
+     width: 40px;
+}
+
+
+.navright{
+float:right;
+width:10%;
+color:grey;
+text-align: center;
+}
+
+.navright>li>button{
+    border-radius: 5px;
+     background-color: white;
+     
+}
+/*Navigation Menu*/
+
+/*First section*/
+.topsection{
+     height:500px;
+     width:100%;
+     margin:none;
+     float:left;
+     text-align: center;
+     
+    
+}
+
+h1{
+     font-size:50px;   
+}
+
+.topsection>p{
+margin: 0 15%;
+font-size: 20px;
+}
+
+
+.sec1nav li{
+     list-style-type: none;
+     display: inline-block;
+}
+
+.sec1nav{
+     margin-right: 50px;
+     margin-top: 30px;;
+}
+
+.playbtn{
+     height:30px;
+     weight:30px;
+     margin: 40px 5px 0px 0px;   
+}
+
+sec1nav>li>li>a{
+     margin-bottom: 20px;
+}
+
+.sec1bottomtext{
+     margin-top: 40px;
+     color: black;
+     clear:both;
+     font-style: italic;
+     height: 30px;
+     
+}
+/*Second Section (WHY)*/
+/*cntains elements of sec4*/
+.section2, .section4{
+     color:black;
+     text-align:center;
+     background-color:white;
+     float:left;
+     width:100%;
+     height: 400px;
+}
+
+h2{
+     font-size:50px;
+}
+.section2>p{
+     
+     margin-right: 25%; 
+     margin-left: 25%;    
+}
+
+/*Section 3 contains images*/
+.section3{
+     background-color: #e0e0e0;
+}
+
+.leftcolumn, .rightcolumn{
+     float:left;
+     width: 50%;
+     text-align:center;
+     background-color: #e0e0e0;
+     height: 500px;
+}
+
+.leftcontent3{
+     margin-left: 20%;
+}
+
+.rightcontent3{
+     margin-right:20%;
+}
+
+.leftbox, .rightbox{
+     height:200px;
+     width: 300px;
+     margin-top:75px;
+}
+/*sec4link*/
+.sec3link{
+     padding: 8px 40px;
+     border: 1px solid black;
+     text-decoration: none;
+     color:black;
+}
+/*section4*/
+
+.section4{
+     float:left;
+     width:100%;
+     text-align: center;
+}
+
+.sec4link{
+     padding: 8px 40px;
+     border: 1px solid black;
+     text-decoration: none;
+     color:black;
+}
+
+.section4>p{
+     margin-right: 20%; 
+     margin-left: 20%; 
+     margin-bottom: 50px;;   
+}
+
+
+footer {
+float:left;
+background-color: black;
+color:white;
+height:360px;
+
+width: 100%;
+}
+
+.topfootct{
+     margin:5%;
+     
+     
+}
+
+.footleft{
+     float:left;
+     text-align: left;
+     width:20%;
+     display:inline-block;
+    
+}
+
+.foot-bigct{
+     float:left;
+     width:100%;
+     height:50px;
+     
+}
+
+.footmid{
+     float:left;
+     width:60%;
+     
+}
+
+.footright{
+     float:right;
+     align-items:right;
+     width:20%;
+     height: 278px;
+
+}
+
+.social, .footlinks{
+list-style-type:none;
+display:inline-block; 
+margin:auto 5px;
+}
+.social li{
+    
+}
+.social a{
+     font-size:20px;
+}
+.mid-icon{
+      margin: 0 20px;
+}
+.foot-ct{
+     float:left;
+     padding: 0px;
+     width:100%;
+     margin-left: 0px;
+     color:white;
+}
+
+.foot-ct a{
+     text-decoration: none;
+}
+.foot-ct>li>a, .foot-ct>p{
+     color:white;
+     padding:0px;
+     margin:0px;
+}
+
+.linky{
+     margin-right:px;
+}
+
+.basement{
+     clear:both;
+     width:100%;
+     margin:5%;
+     
+}
+
+.btmleft{
+     float:left;
+     width:89%;
+}
+
+.btmleft>span{
+     align:left;
+     text-align: left;
+     width:89%;
+     
+    
+}
+
+
+
+.btmright{
+     float:left;
+     
+     width:10%;
+}
+
+.btmright>image{
+     
+     width:50px;  
+     
+}
+
+
+
+.bottomfootct{
+     margin: 10%;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/

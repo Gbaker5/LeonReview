@@ -1,0 +1,327 @@
+/* Box Model Hack */
+* {
+     box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+     font-family: 'Oswald', sans-serif;
+font-family: 'Rubik', sans-serif;
+font-family: 'Source Sans Pro', sans-serif;
+font-weight:regular400;
+color: #000059;
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+     background-color: #ededed;
+}
+
+/*Nav Bar*/
+nav{
+     
+     height:70px;
+}
+nav>ul{
+
+     float:left;
+     
+     background-color: #ededed;
+}
+
+nav>ul>li{
+     display: inline-block;
+     list-style-type: none;
+     
+     
+}
+
+nav>ul>li>a{
+     text-decoration: none;
+}
+.menubutton{
+     color: white;
+   background-color: darkblue;
+   padding: 1px 5px;
+}
+
+.searchbutton{
+   color: white;
+   background-color: darkblue;
+     
+}
+
+.burger{
+     display:none;
+}
+
+a:visited{
+     color: darkblue;
+}
+
+.navleft{
+    width:10%;
+    text-align: left;
+}
+
+.navmid{
+     width:80%;
+     
+     text-align: center;
+}
+
+.navmid li{
+     margin: 0 5px;
+}
+
+.navmid a{
+     font-size:13px;
+}
+
+.navright{
+     width:10%;
+}     
+
+/*Main */
+
+main{
+     float:left;
+     width:100%;
+}
+.mainsec{
+     float:left;
+     width:50%;
+    
+     height: 406px;
+     align-content: start;
+     background-color: #ededed;
+}
+
+.mainsec>p h1 li{
+     width:100%;
+     border: 1px yellow solid;
+}
+
+.mainct{
+     margin-right: 80px;
+}
+
+input{
+     background-color: #d3d3d3;
+}
+
+.searchbar{
+     width:100%;
+     
+}
+
+.searchbar>form{
+     float:left;
+     
+}
+
+.searchbar>button{
+     float:left;
+     
+}
+
+.search2{
+     display:none;
+}
+
+main>section img{
+     height:320px;
+     width:400px;
+     margin-left: 150px;
+     margin-bottom: 83px;
+}
+
+.imgsec{
+     width:50%;
+     float:left;
+     background-color: #ededed;
+}
+
+.imgsec>img{
+     margin-right: 100px;
+}
+
+.mainsec>ul>li{
+     list-style-type: none;
+     display:inline-block;
+}
+
+/*Features*/
+.features{
+     
+    
+     float:left;
+     width:100%;
+     
+}
+
+.feat>li>li> p{
+     font-weight: bold 700;
+}
+
+.features>section{
+     
+     width:25%;
+     float:left;
+     background-color: #ededed;
+    
+}
+
+.features>section>ul>li{
+     list-style-type: none;
+     
+}
+
+.feat {
+     
+     height:200px;
+}
+
+.feat>li>a{
+     text-decoration: none;
+     color:black;
+}
+
+/*Section1*/
+
+.sec1{
+     float:left;
+     height:700px;
+     width:100%;
+}
+
+.sec1ct{
+     margin-left: 30px;
+     width:60%     
+}
+
+.sec1ct>p{
+     color:lightslategray;
+}
+
+.sec1bbox{
+     width:90%;
+     margin: 15px 100px 50px 40px;
+     background-color: #ededed;
+     height:300px;
+}
+
+h3{
+     font-size: 40px;  
+     color:black;
+}
+
+@media screen and (max-width: 425px){
+     .navmid, .navright{
+          display:none;
+     }
+     .burger{
+          display:block;
+          float:left;
+          width:20%;
+         
+     }
+     .navleft{
+          float:left;
+          width:80%;
+          text-align: center;
+          
+     }
+
+     .mainsec{
+          width:100%;
+          border-top: 1px solid grey;
+     }
+
+     .imgsec{
+          width:100%;
+     }
+
+    .features>section{
+          display:block;
+          width:100%;
+          float:left;
+     }
+
+     h3{
+          font-size: 30px;
+     }
+     .sec1ct{
+          width:100%;
+          margin-left:0px;
+     }
+
+     .sec1bbox{
+          margin-left: 20px;
+     }
+}
+
+@media screen and (max-width:575px){
+    
+}
+
+@media screen and (max-width:663px){
+     .features>section{
+          width:50%;
+     }
+     
+     .imgsec{
+          display:none;
+     }
+
+     .mainsec{
+          width:100%;
+     }
+
+     .searchbar{
+          display:none;
+     }
+
+     .search2{
+          display:block;
+          width:90%;
+          
+     }
+     
+     .searchbutton2{
+         color: darkblue;
+     }
+}
+
+@media screen and (max-width: 859px){
+     .navleft{
+          width:20%;
+     }
+
+     .navmid{
+          width:70%;
+     }
+}
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/

@@ -1,0 +1,42 @@
+body{
+    background-color: lightskyblue;
+    color:white;
+}
+
+.fancy{
+    font-style: italic ;
+}
+
+.greenborder{
+    border: 5px #1ec71e solid;
+    padding:50px;
+    margin:30px;
+    height:600px;
+}
+
+a{
+   color:#1ec71e;
+    
+}
+
+.secondanchor{
+    border-left: gray solid 2px;
+    padding-left: 4px;
+}
+
+#firstanchor{
+    text-decoration: none;
+    color:white;
+}
+
+img{
+    height: 300px;
+    width:200px;
+    float:right;
+    margin:5px;
+}
+
+.center{
+    text-align: center;
+}
+

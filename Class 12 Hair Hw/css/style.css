@@ -1,0 +1,721 @@
+/* Box Model Hack */
+* {
+     box-sizing: border-box;
+     margin:0;
+     
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+     /*background-image: url(../images/model.jpg);
+     background-repeat: no-repeat;
+     background-size: contain ;*/
+    
+     
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+#container{
+   margin: 0; 
+   border:1px solid blue;
+   width:100%;
+   padding: 0;
+}
+
+header {
+background-color: white;
+
+margin-bottom:0px;
+}
+
+.nav{
+ margin-top: 0;   
+    
+}
+nav>ul{
+     display:flex;
+     justify-content: space-between;
+     
+     width:100%;
+     height: 30px;
+     background-color: white;
+}
+
+nav>ul>li{
+     margin-top: 5px ;
+     display:inline-block;
+}
+
+nav>ul>li>a{
+     text-decoration: none;
+     color:black;
+     
+}
+
+.name{
+     font-style: italic;   
+}
+
+/*SECTION1*/
+
+.bigpic{
+     float:left;
+     height: 520px;
+     width:100%;
+     border: 1px solid black;
+}
+
+.bigpic > img{
+     object-fit: cover;
+     width:100%;
+     
+     height:100%;
+     margin: 0;
+}
+
+.sec1{
+    position:relative;
+    margin-left: 10%;
+    height:710px;
+     border:1px solid purple;
+     float:left;
+     
+}
+
+.h1sec, .hours, .bookbox {
+     color: white;
+     
+}
+
+
+h1{
+     font-size: 100px;
+}
+
+.h1sec{
+     float:left;
+     border: 1px solid green;
+     margin-right:30%;
+     margin-top: 100px;
+}
+.h1sec ul{
+     list-style-type: none;
+}
+
+.h1sec>ul>li>a{
+     text-decoration: none;
+     padding:10px;
+     background-color:black;
+     color:white;
+}
+
+/**/
+.hours{
+position:absolute;
+right:0;
+top:250px;
+
+
+
+
+-webkit-transform: rotate(90deg);
+-moz-transform: rotate(90deg);
+-o-transform: rotate(90deg);
+transform: rotate(90deg);
+}
+
+.rotated90{
+
+}
+
+.hours ul{
+     list-style-type: none;
+     
+     
+}
+
+/**/
+.bookbox{
+     float:left;
+     
+     width:30%;
+     background-color: black;
+     color:white;
+     height: 240px;
+     width:200px;
+     margin-left: 40px;
+     margin-top: 40px;
+}
+
+.bookbox ul{
+     list-style-type: none;
+}
+
+.bookbox>ul>li>a{
+     text-decoration: none;
+     padding:10px;
+     background-color:black;
+     color:white;
+}
+
+#book{
+     padding: 8px;
+     background-color:white;
+     color:black;
+}
+
+.nmbr{
+     font-size: 30px;
+}
+
+
+/*Arrows*/
+.arrows{
+    
+     float:right;
+     width:70%;
+     text-align: right;
+     height:100px;
+     
+}
+.arrows ul{
+     list-style-type: none;
+     margin: 50px 50px 0 0;
+}
+
+.arrows ul>li{
+     display:inline-block;
+     
+}
+.arrows ul>li>a>i{
+     color:white;
+}
+
+/*SECTION2*/
+
+.sec2{
+    margin-left: 20%;
+    float:left;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.sec2 svg{
+     
+    
+}
+
+.icons{
+     font-size: 50px;
+}
+
+.sec2left{
+     float:left;
+     width:25%;
+     text-align: center;
+}
+
+.sec2left>ul{
+     list-style-type: none;
+}
+
+.sec2mid{
+     float:left;
+     width:25%;
+     text-align: center;
+}
+
+.sec2mid>ul{
+     list-style-type: none;
+}
+
+.sec2right{
+     float:left;
+     width:25%;
+     text-align: center;
+}
+
+.sec2right>ul{
+     list-style-type: none;
+}
+
+/*Section3*/
+
+.sec3{
+     background-color:#d9d9d9;
+     
+     float:left;
+     height:400px;
+     width:100%;
+}
+
+.sec3left{
+     float:left;
+     width:400px;
+     margin-left: 300px;
+     margin-top: 50px;
+}
+
+.sec3left ul>li{
+     list-style-type: none;
+     margin-bottom:40px;
+}
+
+.readmore{
+     text-decoration: none;
+     padding:10px 20px;
+     background-color: black;
+     color:white;
+     font-size: 10px;
+     
+}
+
+.readmoreli{
+     
+}
+
+.sec3left h2{
+     font-size: 30px;;
+}
+
+.sec3right{
+     float:left;
+     width:100px;
+     height: 300px;
+     margin-right: 200px;
+     margin-left: 50px;
+     margin-top: 50px;
+}
+
+/*3 profiles */
+.profile3{
+     border: 1px solid black;
+     float:left;
+     width:100%;
+     height: 350px;
+}
+
+.stylistimg{
+     width:200px;
+     height:250px;
+}
+
+.profileleft{
+     margin-top: 30px;
+     margin-left: 300px;
+     float:left;
+     Width:200px;
+     height:250px;
+     border:1px solid black;
+}
+
+.profilemid{
+     margin-top: 30px;
+     margin-left: 20px;
+     float:left;
+     Width:200px;
+     height:250px;
+     border:1px solid black;
+}
+
+.profileright{
+     margin-top: 30px;
+     margin-left: 20px;
+     float:left;
+     Width:200px;
+     height:250px;
+    
+}
+
+.stylistbigbox{
+     position: relative;
+}
+
+.stylistbox{
+     background-color: black;
+     position: absolute;
+     top:220px;
+     left:10px;
+     width:180px;
+     height:50px
+}
+
+.stylistbox p{
+     color: white;
+     text-align: center;
+     font-size: 10px;
+}
+
+.stylistbox >p >p{
+     font-size: 10px;
+}
+
+
+/**/
+
+
+.advert{
+     background-image: url(../images/haircut1.jpg);
+     background-position: center;
+     background-size: 100% 500px;
+     background-repeat: no-repeat;
+     float:left;
+     width:100%;
+     height:500px;
+     border:1px solid black;
+     color: white;
+}
+
+.advert ul{
+     float:right;
+     width: 400px;
+     list-style-type: none;
+}
+
+.larger{
+     font-size: 40px;
+}
+
+.bookit{
+     text-decoration: none;
+     padding:15px 40px;
+     background-color: black;
+     color:white;
+     font-size: 10px;
+}
+
+/*GRID*/
+
+
+.lookbook{
+     float:left;
+     width:100%;
+}
+
+.lookbook p{
+     text-align: center;
+}
+
+.center{
+     margin-top: 50%;
+     text-align: center;
+}
+
+.shadowtext{
+     
+    
+}
+
+.gridimg{
+     height:200px;
+     width:150px;
+}
+
+.picgrid{
+     float:left;
+     margin-left: 200px;
+     justify-content: center;
+     width:100%;
+     display:grid;
+     grid-template-rows: 170px 170px 170px 170px 170px 170px;
+     grid-template-columns: 170px 170px 170px 170px 170px 170px;
+}
+
+.item{ /*each grid item has a margin*/
+     
+     margin:5px;
+}
+
+
+/*////////////*/
+.item-1{ /*this is the box that holds the original grid*/
+     grid-row:1/2;
+     grid-column:1/2 ;
+}
+
+.gridimg-1{ /*this image sits inside the grid*/
+     height:160px;
+     width:160px;
+}
+
+.item-7{ /*this is the invisible shadow layered on top of the grid box and image*/
+     grid-row:1/2;
+     grid-column:1/2 ;
+     z-index:1;
+     background-color: rgba(0,0,0,0.0);
+     position:relative;
+     
+}
+
+.item-7:hover { /*shadow is visible on hover*/
+     grid-row:1/2;
+     grid-column:1/2 ;
+     z-index:1;
+     background-color: rgba(0,0,0,0.7);
+     position:relative;
+     
+}
+
+.shadowtext7{ /*plus sign is invisible by default*/
+     position:absolute;
+     top: 40%;
+     font-size: 30px;
+     color: rgba(0,0,0,0);
+     z-index:1;
+}
+
+.item-7:hover .shadowtext7{ /*plus sign is visible on hover*/
+     position:absolute;
+     top: 40%;
+     font-size: 30px;
+     color: rgb(255,255,255);
+     z-index:1;
+}
+/*//////////////*/
+.item-2{
+     grid-row:1/4;
+     grid-column:2/3 ;
+}
+
+.gridimg-2{
+     height:500px;
+     width:160px;
+}
+
+.item-8{
+     grid-row:1/4;
+     grid-column:2/3 ;
+     z-index:1;
+     background-color: rgba(0,0,0,0.0);
+     position:relative;
+     
+}
+
+.item-8:hover {
+     grid-row:1/4;
+     grid-column:2/3 ;
+     z-index:1;
+     background-color: rgba(0,0,0,0.7);
+     position:relative;
+     
+}
+
+.shadowtext8{
+     position:absolute;
+     top: 40%;
+     font-size: 30px;
+     color: rgba(0,0,0,0);
+     z-index:1;
+}
+
+.item-8:hover .shadowtext8{
+     position:absolute;
+     top: 40%;
+     font-size: 30px;
+     color: rgb(255,255,255);
+     z-index:1;
+}
+/*//////////////*/
+.item-3{
+     grid-row:1/2;
+     grid-column:3/4 ;
+}
+
+.gridimg-3{
+     height:160px;
+     width:160px;
+}
+
+.item-9{
+     grid-row:1/2;
+     grid-column:3/4 ;
+     z-index:1;
+     background-color: rgba(0,0,0,0.0);
+     position:relative;
+     
+}
+
+.item-9:hover {
+     grid-row:1/2;
+     grid-column:3/4 ;
+     z-index:1;
+     background-color: rgba(0,0,0,0.7);
+     position:relative;
+     
+}
+
+.shadowtext9{
+     position:absolute;
+     top: 40%;
+     font-size: 30px;
+     color: rgba(0,0,0,0);
+     z-index:1;
+}
+
+.item-9:hover .shadowtext9{
+     position:absolute;
+     top: 40%;
+     font-size: 30px;
+     color: rgb(255,255,255);
+     z-index:1;
+}
+/*//////////////*/
+.item-4{
+     grid-row:2/5;
+     grid-column:1/2 ;
+}
+
+.gridimg-4{
+     height:500px;
+     width:160px;
+}
+
+.item-10{
+     grid-row:2/5;
+     grid-column:1/2 ;
+     z-index:1;
+     background-color: rgba(0,0,0,0.0);
+     position:relative;
+     
+}
+
+.item-10:hover {
+     grid-row:2/5;
+     grid-column:1/2 ;
+     z-index:1;
+     background-color: rgba(0,0,0,0.7);
+     position:relative;
+     
+}
+
+.shadowtext10{
+     position:absolute;
+     top: 40%;
+     font-size: 30px;
+     color: rgba(0,0,0,0);
+     z-index:1;
+}
+
+.item-10:hover .shadowtext10{
+     position:absolute;
+     top: 40%;
+     font-size: 30px;
+     color: rgb(255,255,255);
+     z-index:1;
+}
+/*//////////////*/
+.item-5{
+     grid-row:4/5;
+     grid-column:2/3 ;
+}
+
+.gridimg-5{
+     height:160px;
+     width:160px;
+}
+
+.item-11{
+     grid-row:4/5;
+     grid-column:2/3 ;
+     z-index:1;
+     background-color: rgba(0,0,0,0.0);
+     position:relative;
+     
+}
+
+.item-11:hover {
+     grid-row:4/5;
+     grid-column:2/3 ;
+     z-index:1;
+     background-color: rgba(0,0,0,0.7);
+     position:relative;
+     
+}
+
+.shadowtext11{
+     position:absolute;
+     top: 40%;
+     font-size: 30px;
+     color: rgba(0,0,0,0);
+     z-index:1;
+}
+
+.item-11:hover .shadowtext11{
+     position:absolute;
+     top: 40%;
+     font-size: 30px;
+     color: rgb(255,255,255);
+     z-index:1;
+}
+/*//////////////*/
+.item-6{
+     grid-row:2/5;
+     grid-column:3/4 ;
+}
+
+.gridimg-6{
+     height:500px;
+     width:160px;
+}
+
+.item-12{
+     grid-row:2/5;
+     grid-column:3/4 ;
+     z-index:1;
+     background-color: rgba(0,0,0,0.0);
+     position:relative;
+     
+}
+
+.item-12:hover {
+     grid-row:2/5;
+     grid-column:3/4 ;
+     z-index:1;
+     background-color: rgba(0,0,0,0.7);
+     position:relative;
+     
+}
+
+.shadowtext12{
+     position:absolute;
+     top: 40%;
+     font-size: 30px;
+     color: rgba(0,0,0,0);
+     z-index:1;
+}
+
+.item-12:hover .shadowtext12{
+     position:absolute;
+     top: 40%;
+     font-size: 30px;
+     color: rgb(255,255,255);
+     z-index:1;
+}
+
+
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/

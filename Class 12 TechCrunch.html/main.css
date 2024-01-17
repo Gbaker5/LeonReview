@@ -1,0 +1,219 @@
+/**/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/**/
+
+body{
+    color:black;
+}
+
+.container{
+    position:relative;
+    float:left;
+    margin: 0 250px;
+   
+}
+
+nav{
+    float:left;
+    
+    height:300px;
+    position:absolute;
+    left: -150px;
+}
+
+nav ul{
+    list-style-type: none;
+}
+
+nav li{
+    margin: 5px 0;
+}
+
+nav a{
+    text-decoration: none;
+    color:gray;
+}
+
+.tc a{
+    color:orange;
+}
+
+.tcnav img{
+    height:20px;
+    width:40px;
+}
+
+.topdiv{
+    float:left;
+    
+    width:100%;
+}
+
+.mainarticle{
+    float:left;
+    
+    height:300px;
+    width:55%;
+}
+
+h1{
+    font-weight: bold;
+    font-size: 20px
+}
+
+.mainarticle p{
+ font-size: 8px;
+}
+
+.mainarticle img{
+    height:240px;
+    width:100%;
+}
+
+.rightside{
+    float:left;
+    
+    height:300px;
+    width:39%;
+    margin-left: 5%;
+}
+
+.rightsidearts{
+    float:left;
+    width:100%;
+    height:70px;
+    border-bottom: 1px solid rgb(162, 161, 161);
+    position:relative;
+}
+
+.rightsidearts img{
+    height:10px;
+    width:20px;
+}
+
+.rightsidearts p{
+    position:absolute;
+    bottom:0;
+}
+.lastright{
+    border: none;
+}
+
+h2{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.rightside p{
+    font-weight:bold;
+    font-size:8px;
+}
+
+.h3ct{
+    float:left;
+    width:100%;
+    height:50px;
+    position:relative;
+   
+}
+
+h3{
+    font-weight:bold;
+    font-size: 15px;
+    position: absolute;
+    bottom: 2px;
+}
+
+.bottomArticles{
+    float:left;
+    width:100%;
+    height:120px;
+    border-bottom: 1px solid rgb(162, 161, 161);
+}
+.bottomArticles h2{
+    font-size:19px;
+}
+
+.bottomarticles span{
+    font-size: 8px;
+}
+
+.names{
+    bottom:absolute;
+    font-size: 8px;
+    font-weight: bold;
+}
+
+.date{
+    
+    bottom: 2px;
+    font-size: 8px;
+    color:gray;
+}
+
+.mainTitle{
+    float:left;
+    
+    height:120px;
+    width:33%;
+    position:relative;
+}
+
+.mainTitle img{
+    height:10px;
+    width:20px;
+}
+
+.midp{
+    font-size:12px;
+    color:gray;
+}
+
+.article{
+    float:left;
+    
+    height:120px;
+    width:33%;
+}
+
+.imageCt{
+    float:left;
+    
+    height:120px;
+    width:33%;
+    position:relative;
+    
+}
+
+.imageCt img{
+    height:100px;
+    width: 90%;
+    position:absolute;
+    top: 10px;
+    right: 5px;
+}
+
+.plus{
+    font-weight: bold;
+    color: orange;
+}
