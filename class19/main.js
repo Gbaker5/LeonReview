@@ -265,3 +265,16 @@ for(let hundo=0;hundo <= 100; hundo++){
         console.log("Fizz ")
 } else console.log(hundo)
 }
+
+//chap 5
+// Say hello to the user
+let firstName = prompt("Whats your first Name")
+let lastName = prompt("Whats your last name?")
+
+function sayHello(firstName, lastName) {
+    const message = `Hello, ${firstName} ${lastName}!`;
+    console.log(message);
+  }
+  sayHello(firstName, lastName)
+  // TODO: ask user for first and last name
+  // TODO: call sayHello() and show its result
