@@ -185,13 +185,21 @@ let turns = 1;
     //console.log(turns)
 //}
 
-userNumStr = prompt("how many turns?");
-let userTurnNum = Number(userNumStr);
+//userNumStr = prompt("how many turns?");
+//let userTurnNum = Number(userNumStr);
 
-while( turns <= userTurnNum ){
-    console.log(turns++)
-}
+//while( turns <= userTurnNum ){
+    //console.log(turns++)
+//}
 
-for(turns=1;turns<=userTurnNum;turns++){
-    console.log(turns)
-}
+//for(turns=1;turns<=userTurnNum;turns++){
+    //console.log(turns)
+//}
+
+
+for (let i = 1; i <= 10; i++) {
+    if (i % 2 !== 0) {
+      console.log(`${i} is odd`);
+    }
+  }
+  
