@@ -268,13 +268,34 @@ for(let hundo=0;hundo <= 100; hundo++){
 
 //chap 5
 // Say hello to the user
-let firstName = prompt("Whats your first Name")
-let lastName = prompt("Whats your last name?")
+//let firstName = prompt("Whats your first Name")
+//let lastName = prompt("Whats your last name?")
 
-function sayHello(firstName, lastName) {
-    const message = `Hello, ${firstName} ${lastName}!`;
-    console.log(message);
-  }
-  sayHello(firstName, lastName)
+//function sayHello(firstName, lastName) {
+    //const message = `Hello, ${firstName} ${lastName}!`;
+    //console.log(message);
+  //}
+  //sayHello(firstName, lastName)
   // TODO: ask user for first and last name
   // TODO: call sayHello() and show its result
+
+
+
+  // Square the given number x
+function square1(x) {
+    let sq = Math.pow(x,2)
+    return sq
+    // TODO: complete the function code
+  }
+  
+  
+  // Square the given number x
+  const square2 = x => Math.pow(x,2)// TODO: complete the function code
+  
+  console.log(square1(0)); // Must show 0
+  console.log(square1(2)); // Must show 4
+  console.log(square1(5)); // Must show 25
+  
+  console.log(square2(0)); // Must show 0
+  console.log(square2(2)); // Must show 4
+  console.log(square2(5)); // Must show 25
