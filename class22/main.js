@@ -25,18 +25,18 @@ console.log(add)
 
 console.log(Math.min(...values))
 
-function sayStop(){
-    wordArr = [];
-    let word = prompt("type any word, I'll stop asking when you say stop")
-    console.log(word)
-    while(word.toLowerCase() !== "stop"){
-        wordArr.push(word);
-        word = prompt("type any word, I'll stop asking when you say stop")
+//function sayStop(){
+   // wordArr = [];
+    //let word = prompt("type any word, I'll stop asking when you say stop")
+    //console.log(word)
+    //while(word.toLowerCase() !== "stop"){
+        //wordArr.push(word);
+        //word = prompt("type any word, I'll stop asking when you say stop")
         
-    } console.log(wordArr)
-}
+    //} console.log(wordArr)
+//}
 
-sayStop()
+//sayStop()
 
 const aurora = {
     health:150,
@@ -62,3 +62,18 @@ aurora.xp += 15;
 
 
 console.log(aurora.describe());
+
+
+// TODO: create the dog object here
+const dog ={
+    name: "Fang",
+    species: "boarhound",
+    size: 75,
+    bark (){
+        return "bark!"
+    }
+}
+
+
+console.log(`${dog.name} is a ${dog.species} dog measuring ${dog.size}`);
+console.log(`Look, a cat! ${dog.name} barks: ${dog.bark()}`);
