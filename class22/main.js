@@ -19,3 +19,9 @@ for(const muskies of musketeer){
 }
 
 
+const values = [3, 11, 7, 2, 9, 10];
+const add = values.reduce((c,acc) => c + acc)
+console.log(add)
+
+console.log(Math.min(...values))
+
