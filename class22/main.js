@@ -25,3 +25,15 @@ console.log(add)
 
 console.log(Math.min(...values))
 
+function sayStop(){
+    wordArr = [];
+    let word = prompt("type any word, I'll stop asking when you say stop")
+    console.log(word)
+    while(word.toLowerCase() !== "stop"){
+        wordArr.push(word);
+        word = prompt("type any word, I'll stop asking when you say stop")
+        
+    } console.log(wordArr)
+}
+
+sayStop()
