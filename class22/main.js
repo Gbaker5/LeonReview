@@ -114,3 +114,23 @@ account.credit(250); // Credit 250
 account.debit(80);   // Debit 80
 
 console.log(account.describe()); // Updated description
+
+//Array Methods
+
+let fruits = ["Apples", "Pear", "Orange"];
+
+// push a new value into the "copy"
+let shoppingCart = fruits;
+shoppingCart.push("Banana");
+
+// what's in fruits?
+//alert( fruits.length ); // 
+
+const styles = ["Jazz", "Blues"];
+styles.push("Rock-n-Roll");
+styles.splice(1,1, "Classics")
+console.log(styles)
+styles.shift()
+console.log(styles)
+styles.unshift("Rap", "Reggae")
+console.log(styles)
