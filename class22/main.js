@@ -214,3 +214,26 @@ function filterRange(arr,a,b){
 }
 
 console.log(filterRange([5, 3, 8, 1],1,4))
+
+
+//remove all values except the ones between 1 and 4
+// removed the numbers except from 1 to 4 
+function filterRangeInPlace(arr, a, b) {
+
+    for (let i = 0; i < arr.length; i++) {
+      let val = arr[i];
+  
+      // remove if outside of the interval
+      if (val < a || val > b) {
+        arr.splice(i, 1);
+        i--;
+      }
+    }
+  
+  }
+  
+  let arr = [5, 3, 8, 1];
+  
+  filterRangeInPlace(arr, 1, 4); // removed the numbers except from 1 to 4
+  
+  console.log( arr ); // [3, 1]
