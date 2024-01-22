@@ -137,10 +137,34 @@ console.log(styles)
 
 //////
 
-let arr = ["a", "b"];
+//let arr = ["a", "b"];
 
-arr.push(function() {
-  alert( this );
-});
+//arr.push(function() {
+  //alert( this );
+//});
 
-arr[2](); // ?
+//arr[2](); // ?
+
+function sumInput() {
+
+    let numbers = [];
+  
+    while (true) {
+  
+      let value = prompt("A number please?", 0);
+  
+      // should we cancel?
+      if (value === "" || value === null || !isFinite(value)) break;
+  
+      numbers.push(+value);
+    }
+  
+    let sum = 0;
+    for (let number of numbers) {
+      sum += number;
+    }
+    return sum;
+  }
+  
+  
+sumInput()
