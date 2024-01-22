@@ -145,26 +145,65 @@ console.log(styles)
 
 //arr[2](); // ?
 
-function sumInput() {
+//function sumInput() {
 
-    let numbers = [];
+    //let numbers = [];
   
-    while (true) {
+    //while (true) {
   
-      let value = prompt("A number please?", 0);
+      //let value = prompt("A number please?", 0);
   
       // should we cancel?
-      if (value === "" || value === null || !isFinite(value)) break;
+      //if (value === "" || value === null || !isFinite(value)) break;
   
-      numbers.push(+value);
+      //numbers.push(+value);
+    //}
+  
+    //let sum = 0;
+    //for (let number of numbers) {
+      //sum += number;
+    //}
+    //return sum;
+  //}
+  
+  
+//sumInput()
+
+function getMaxSubSum(arr) {
+    let maxSum = 0; // if we take no elements, zero will be returned
+  
+    for (let i = 0; i < arr.length; i++) {
+      let sumFixedStart = 0;
+      for (let j = i; j < arr.length; j++) {
+        sumFixedStart += arr[j];
+        maxSum = Math.max(maxSum, sumFixedStart);
+      }
     }
   
-    let sum = 0;
-    for (let number of numbers) {
-      sum += number;
+    return maxSum;
+}
+
+console.log( getMaxSubSum([-1, 2, 3, -9]) )
+
+
+//ARRAY METHODS
+
+function camelize(str){
+    let newArr = []
+
+    let arr = str.split("-")
+    console.log(arr)
+    
+    newArr.push(arr[0].toLowerCase())
+    for(i=1;i <arr.length; i++){
+        
+        newArr.push(arr[i].substring(0,1).toUpperCase() + arr[i].substring(1)) 
+        //console.log(newArr.join(""))
     }
-    return sum;
-  }
-  
-  
-sumInput()
+
+    console.log(newArr.join(""))
+}
+
+//camelize("background-color")
+camelize("-webkit-transition")
+//camelize("list-style-image");
