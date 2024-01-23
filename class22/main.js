@@ -747,6 +747,21 @@ const inventors = [
     }
 
     sortPeople(people)
+
   // 8. Reduce Exercise
   // Sum up the instances of each of these
   const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+
+  function instances(data){
+
+   // Use reduce to accumulate the counts in an object
+  let dataSums = data.reduce((acc, vehicle) => {
+    // If the category doesn't exist in the accumulator, initialize it to 1; otherwise, increment the count
+    acc[vehicle] = (acc[vehicle] || 0) + 1;
+    return acc;
+  }, {});
+
+  console.log(dataSums);
+}
+
+  instances(data)
