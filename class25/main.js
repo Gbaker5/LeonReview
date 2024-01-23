@@ -24,23 +24,23 @@ employee.getWage();
 console.log("hello world")
 
 //object  literal
-const circle = {
-    radius: 1, //property
-    location: { //property
-        x:1,
-        y:1
-    },
-    draw: function(){ //method
-        console.log("draw")
-    }
-};
+//const circle = {
+    //radius: 1, //property
+    //location: { //property
+        //x:1,
+        //y:1
+    //},
+    //draw: function(){ //method
+       // console.log("draw")
+    //}
+//};
 
-circle.draw();
+//circle.draw();
 
 //if it has more than one method we say that it has behaviors
 
-//factory reconstructor function 
-function createCircle(){
+//Factory reconstructor function 
+function createCircle(radius){
    return {
         radius, //property
         
@@ -50,5 +50,17 @@ function createCircle(){
     };
 }
 
-const circle = createCircle();
+const circle = createCircle(1);
 circle.draw();
+
+//constructor Function
+
+function Circle(radius){
+    console.log('this', this)
+    this.radius= radius;
+    this.draw = function(){
+        console.log(draw);
+    }
+}
+
+const another = new Circle(1)
