@@ -619,13 +619,7 @@ const inventors = [
     { first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909 }
   ];
 
-  const people = [
-    'Bernhard, Sandra', 'Bethea, Erin', 'Becker, Carl', 'Bentsen, Lloyd', 'Beckett, Samuel', 'Blake, William', 'Berger, Ric', 'Beddoes, Mick', 'Beethoven, Ludwig',
-    'Belloc, Hilaire', 'Begin, Menachem', 'Bellow, Saul', 'Benchley, Robert', 'Blair, Robert', 'Benenson, Peter', 'Benjamin, Walter', 'Berlin, Irving',
-    'Benn, Tony', 'Benson, Leana', 'Bent, Silas', 'Berle, Milton', 'Berry, Halle', 'Biko, Steve', 'Beck, Glenn', 'Bergman, Ingmar', 'Black, Elk', 'Berio, Luciano',
-    'Berne, Eric', 'Berra, Yogi', 'Berry, Wendell', 'Bevan, Aneurin', 'Ben-Gurion, David', 'Bevel, Ken', 'Biden, Joseph', 'Bennington, Chester', 'Bierce, Ambrose',
-    'Billings, Josh', 'Birrell, Augustine', 'Blair, Tony', 'Beecher, Henry', 'Biondo, Frank'
-  ];
+  
   
   // Array.prototype.filter()
   // 1. Filter the list of inventors for those who were born in the 1500's
@@ -659,15 +653,100 @@ const inventors = [
     yearsSum()
   // 5. Sort the inventors by years lived
 
-  
+    function yearsLivedSort(){
+        inventors.forEach((inventor) => {
+        let lived = [inventor.year, inventor.passed]
+        //console.log(lived)
+        let age = lived[1] - lived[0]
+        //console.log(age)
+        inventor.age = (age)
+        //hhiwlikcbjjbconsole.log(inventors)
+
+        
+    })
+
+    inventors.sort((a,b) => a.age - b.age)
+        console.log(inventors)
+    }
+
+    yearsLivedSort()
 
   // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
   // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
+  let boulevards = 
+  ["Boulevards of Paris",
+    "City walls of Paris",
+    "Thiers wall",
+    "Wall of Charles V",
+    "Wall of Philip II Augustus",
+  "City gates of Paris",
+    "Haussmann's renovation of Paris",
+    "Boulevards of the Marshals",
+  "Boulevard Auguste-Blanqui",
+  "Boulevard Barbès",
+    "Boulevard Beaumarchais",
+    "Boulevard de l'Amiral-Bruix",
+    "Boulevard Mortier",
+    "Boulevard Poniatowski",
+    "Boulevard Soult",
+  "Boulevard des Capucines",
+    "Boulevard de la Chapelle",
+    "Boulevard de Clichy",
+    "Boulevard du Crime",
+  "Boulevard du Général-d'Armée-Jean-Simon",
+  "Boulevard Haussmann",
+    "Boulevard de l'Hôpital",
+  "Boulevard des Italiens",
+  "Boulevard Lefebvre",
+  "Boulevard de la Madeleine",
+    "Boulevard de Magenta",
+    "Boulevard Malesherbes",
+    "Boulevard Marguerite-de-Rochechouart",
+    "Boulevard Montmartre",
+    "Boulevard du Montparnasse",
+  "Boulevard Raspail",
+    "Boulevard Richard-Lenoir",
+  "Boulevard Saint-Germain",
+    "Boulevard Saint-Michel",
+    "Boulevard de Sébastopol",
+    "Boulevard de Strasbourg",
+  "Boulevard du Temple",
+  "Boulevard Voltaire",
+  "Boulevard de la Zone",]
 
+  function findDe(){
+    let de = boulevards.filter( boulevard => boulevard.includes("de"))
+    console.log(de)
+  }
+
+  findDe()
+
+  const people = [
+    'Bernhard, Sandra', 'Bethea, Erin', 'Becker, Carl', 'Bentsen, Lloyd', 'Beckett, Samuel', 'Blake, William', 'Berger, Ric', 'Beddoes, Mick', 'Beethoven, Ludwig',
+    'Belloc, Hilaire', 'Begin, Menachem', 'Bellow, Saul', 'Benchley, Robert', 'Blair, Robert', 'Benenson, Peter', 'Benjamin, Walter', 'Berlin, Irving',
+    'Benn, Tony', 'Benson, Leana', 'Bent, Silas', 'Berle, Milton', 'Berry, Halle', 'Biko, Steve', 'Beck, Glenn', 'Bergman, Ingmar', 'Black, Elk', 'Berio, Luciano',
+    'Berne, Eric', 'Berra, Yogi', 'Berry, Wendell', 'Bevan, Aneurin', 'Ben-Gurion, David', 'Bevel, Ken', 'Biden, Joseph', 'Bennington, Chester', 'Bierce, Ambrose',
+    'Billings, Josh', 'Birrell, Augustine', 'Blair, Tony', 'Beecher, Henry', 'Biondo, Frank'
+  ];
   // 7. sort Exercise
   // Sort the people alphabetically by last name
+    function sortPeople(people){
+        //console.log(people)
 
+        let peopleArray =[];
+        for(i=0;i<people.length;i++){
+            peopleArray.push(people[i].split(", "))
+            
+        }
+        //console.log(peopleArray)
+
+        
+        peopleArray.sort((a,b) => a[0].localeCompare(b[0]))
+        console.log(peopleArray)
+    }
+
+    sortPeople(people)
   // 8. Reduce Exercise
   // Sum up the instances of each of these
   const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
