@@ -15,22 +15,7 @@ fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a')
       document.querySelector('img').src = data.drinks[0].strDrinkThumb
       document.querySelector('h3').innerText = data.drinks[0].strInstructions
 
-      //ingredients list
-      let ingList = [];
-      const keys = Object.keys(data.drinks[0]) //keys of drink object
-      //console.log(keys)
-      const ingredientKeys = keys.filter( property => property.includes("strIngredient")) //ingredients keys
-      //console.log(ingredientKeys) 
-    
-      ingredientKeys.forEach(ingredientKey => {
-        const ingredientValue = data.drinks[0][ingredientKey];
-        if (ingredientValue) {
-          ingList.push(ingredientValue);
-        }
-      });
-  
-      console.log(ingList);
-
+      
       //li element
       const newLi = document.createElement('li'); //create li element
       newLi.classList.add("slide"); //add class
@@ -38,6 +23,9 @@ fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a')
       document.getElementById('data-slides').appendChild(newLi) //append li to ul
 
       //name
+      const newDrinkName = document.createElement('h2');
+      newDrinkName.innerText = data.drinks[0].strDrink
+      document.getElementById('slide1').appendChild(newDrinkName)
 
       //image
       const newImg = document.createElement('img'); //create image element
@@ -45,14 +33,36 @@ fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a')
       document.getElementById('slide1').appendChild(newImg) //append to li (inside)
 
       //ingredients
-      const newIng = document.createElement('p');
-      //newIng.innerText = data.drinks[0].
+            //ingredients list
+            let ingredientList = [];
+            const keys = Object.keys(data.drinks[0]) //keys of drink object
+            //console.log(keys)
+            const ingredientKeys = keys.filter( property => property.includes("strIngredient")) //ingredients keys
+            //console.log(ingredientKeys) 
+    
+            ingredientKeys.forEach(ingredientKey => {
+                const ingredientValue = data.drinks[0][ingredientKey];
+                if (ingredientValue) {
+                ingredientList.push(ingredientValue);
+                }
+            });
+  
+            console.log(ingredientList);
+
+            const ingredientsString = ingredientList.join(", ")
+            console.log(ingredientsString)
+      
+
+      const newIngredients = document.createElement('p'); //create p element
+      newIngredients.innerText = `Ingredients: ${ingredientsString}`;// insert text
+      document.getElementById('slide1').appendChild(newIngredients)// add to Li
+      
 
 
         //instructions
-     const newInstruct = document.createElement('p');
-     newInstruct.innerText = data.drinks[0].strInstructions;
-     document.getElementById('slide1').appendChild(newInstruct)
+     const newInstruct = document.createElement('p'); //create p element
+     newInstruct.innerText = 'Instructions: ' + data.drinks[0].strInstructions;// insert text
+     document.getElementById('slide1').appendChild(newInstruct)// add to Li
 
 
 
