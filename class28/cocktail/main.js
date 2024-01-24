@@ -15,17 +15,19 @@ fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a')
       document.querySelector('img').src = data.drinks[0].strDrinkThumb
       document.querySelector('h3').innerText = data.drinks[0].strInstructions
 
+      for(i=0;i<data.drinks.length;i++){
+
       
       //li element
       const newLi = document.createElement('li'); //create li element
       newLi.classList.add("slide"); //add class
-      newLi.id = "slide1"; //add class
+      newLi.id = "slide" + [i]; //add class
       document.getElementById('data-slides').appendChild(newLi) //append li to ul
 
       //name
       const newDrinkName = document.createElement('h2');
-      newDrinkName.innerText = data.drinks[0].strDrink
-      document.getElementById('slide1').appendChild(newDrinkName)
+      newDrinkName.innerText = data.drinks[i].strDrink
+      document.getElementById('slide' + [i]).appendChild(newDrinkName)
 
       //image
       const newImg = document.createElement('img'); //create image element
@@ -68,6 +70,7 @@ fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a')
 
       //const allDrinks = data.drinks
       //console.log(allDrinks)
+    }
 
     })
     .catch(err => {
