@@ -1,14 +1,66 @@
 //The user will enter a cocktail. Get a cocktail name, photo, and instructions and place them in the DOM
-let isFetchedCalled = false;
 
+/////////SLIDES BUTTONS AND BEHAVIORS
+// Select all elements with the attribute [data-carousel-button] and store them in the 'buttons' constant
+const buttons = document.querySelectorAll('[data-carousel-button]')
+
+// Iterate over each button using forEach
+buttons.forEach(button => {
+    // Add a click event listener to each button
+    button.addEventListener('click', () => {
+        // Determine the offset based on the value of the 'data-carouselButton' attribute
+        const offset = button.dataset.carouselButton === "next" ? 1 : -1;
+
+        // Find the closest ancestor with the attribute [data-carousel]
+        const slides = button
+            .closest("[data-carousel]")
+            .querySelector('[data-slides]');
+            //console.log(slides)
+
+        // Find the currently active slide within the 'slides'
+        const activeSlide = slides.querySelector('[data-active]');
+
+        // Calculate the index of the new slide using the offset
+        let newIndex = [...slides.children].indexOf(activeSlide) + offset;
+        let newIndex2 = [...slides.children]
+        console.log(newIndex)
+
+        // Ensure the index stays within the bounds of the slides array
+        if (newIndex < 0) newIndex = slides.children.length - 1;
+        if (newIndex >= slides.children.length) newIndex = 0;
+
+        // Set the 'data-active' attribute on the new slide and remove it from the active slide
+        slides.children[newIndex].dataset.active = true;
+        delete activeSlide.dataset.active;
+    });
+});
+
+
+
+/////////FETCH
+let isFetchedCalled = false;
+let inputArray = [];
 document.querySelector('button').addEventListener('click', getDrink)
+
 
 function getDrink(){
 
-if(isFetchedCalled){
-    console.log("Cannot Fetch Again!")
-}else 
+const cocktailInput = document.querySelector('input').value.toLowerCase()
+console.log(cocktailInput)
 
+
+inputArray.push(cocktailInput)
+console.log(inputArray)
+
+//check input against array of collected inputs and check to see if current input matches the last
+//if it matches the last [c,c] then dont execute
+
+
+//if(isFetchedCalled){
+    //console.log("Cannot Fetch Again!")
+//}else 
+
+//fetch should be object literal and replace letter with input value
 fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=y')
     .then(res => res.json()) // parse response as JSON
     .then(data => {
@@ -85,37 +137,3 @@ fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=y')
 
 }
 
-
-// Select all elements with the attribute [data-carousel-button] and store them in the 'buttons' constant
-const buttons = document.querySelectorAll('[data-carousel-button]')
-
-// Iterate over each button using forEach
-buttons.forEach(button => {
-    // Add a click event listener to each button
-    button.addEventListener('click', () => {
-        // Determine the offset based on the value of the 'data-carouselButton' attribute
-        const offset = button.dataset.carouselButton === "next" ? 1 : -1;
-
-        // Find the closest ancestor with the attribute [data-carousel]
-        const slides = button
-            .closest("[data-carousel]")
-            .querySelector('[data-slides]');
-            //console.log(slides)
-
-        // Find the currently active slide within the 'slides'
-        const activeSlide = slides.querySelector('[data-active]');
-
-        // Calculate the index of the new slide using the offset
-        let newIndex = [...slides.children].indexOf(activeSlide) + offset;
-        let newIndex2 = [...slides.children]
-        console.log(newIndex)
-
-        // Ensure the index stays within the bounds of the slides array
-        if (newIndex < 0) newIndex = slides.children.length - 1;
-        if (newIndex >= slides.children.length) newIndex = 0;
-
-        // Set the 'data-active' attribute on the new slide and remove it from the active slide
-        slides.children[newIndex].dataset.active = true;
-        delete activeSlide.dataset.active;
-    });
-});
