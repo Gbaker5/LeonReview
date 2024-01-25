@@ -61,11 +61,11 @@ console.log(inputArray)
 //}else 
 
 //fetch should be object literal and replace letter with input value
-fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=y')
+fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a')
     .then(res => res.json()) // parse response as JSON
     .then(data => {
         //console.log(data)
-      //console.log(data.drinks[0])
+      console.log(data.drinks)
       //console.log(data.drinks.length)
       //document.querySelector('h2').innerText = data.drinks[0].strDrink
       //document.querySelector('img').src = data.drinks[0].strDrinkThumb
@@ -91,6 +91,7 @@ fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=y')
       document.getElementById('slide' + [i]).appendChild(newImg) //append to li (inside)
 
       //ingredients
+      
             //ingredients list
             let ingredientList = [];
             const keys = Object.keys(data.drinks[i]) //keys of drink object
@@ -99,7 +100,7 @@ fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=y')
             //console.log(ingredientKeys) 
     
             ingredientKeys.forEach(ingredientKey => {
-                const ingredientValue = data.drinks[0][ingredientKey];
+                const ingredientValue = data.drinks[i][ingredientKey];
                 if (ingredientValue) {
                 ingredientList.push(ingredientValue);
                 }
