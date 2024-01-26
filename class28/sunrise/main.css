@@ -1,5 +1,5 @@
 .circle-ct{
-    border:1px solid black;
+    /*border:1px solid black;*/
     height:500px;
     width:100vw;
     position: relative;
@@ -36,28 +36,31 @@
 }
 
 #risepic{
-    animation: sunriseAni 5s linear;
+    
     position: absolute;
     left: 150px;
 
 }
 
 #setpic{
-    animation: sunriseAni 5s linear;
+   
     position:absolute;
     bottom: 0px;
     left:150px
 }
 
+.sunAnimation{
+    animation: sunAni 5s linear;
+}
 
 
-@keyframes sunriseAni{
+@keyframes sunAni{
     0%{
-        transform: rotate(0deg)translate(1px)rotate(0deg)
+        transform: rotate(0deg)translate(5px)rotate(0deg)
 
     }
     100%{
-        transform: rotate(318deg)translate(1px)rotate(180deg)
+        transform: rotate(318deg)translate(5px)rotate(180deg)
     }
 }
 

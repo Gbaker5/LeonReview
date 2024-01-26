@@ -31,6 +31,20 @@ fetch('https://api.sunrise-sunset.org/json?lat=21.276154&lng=-157.827140&tzid=Am
     console.log(sunrise)
     console.log(sunset)
 
+    document.querySelector('#risepic').classList.add("sunAnimation");
+    document.querySelector('#setpic').classList.add("sunAnimation");
+
+    
+    setTimeout(()=> {
+        document.querySelector('#risepic').classList.remove("sunAnimation");
+        document.querySelector('#setpic').classList.remove("sunAnimation");
+      
+    }, 5000)
+
+    
+    
+
+
 
 })
 .catch(err => {
