@@ -45,31 +45,48 @@ document.querySelector('button').addEventListener('click', getDrink)
 
 function getDrink(){
 
-const cocktailInput = document.querySelector('input').value.toLowerCase()
+const cocktailInput = document.querySelector('input').value.toLowerCase() //input value should be a single letter
 console.log(cocktailInput)
 
 
-inputArray.push(cocktailInput)
+inputArray.push(cocktailInput) //push all inputs into array that adds every time the function is called
 console.log(inputArray)
+
+inputLength = inputArray.length; 
+console.log(inputLength)
+
+let lastEntry = inputArray[inputLength -1];
+let previousEntry = inputArray[inputLength -2];
+
+console.log(lastEntry)
+console.log(previousEntry)
 
 //check input against array of collected inputs and check to see if current input matches the last
 //if it matches the last [c,c] then dont execute
 
 
-//if(isFetchedCalled){
-    //console.log("Cannot Fetch Again!")
-//}else 
+if(lastEntry === previousEntry){
+    console.log("Cannot Fetch Again!")
+}else 
+
 
 //fetch should be object literal and replace letter with input value
-fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a')
+fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${lastEntry}`)
     .then(res => res.json()) // parse response as JSON
     .then(data => {
         //console.log(data)
-      console.log(data.drinks)
+      //console.log(data.drinks)
       //console.log(data.drinks.length)
       //document.querySelector('h2').innerText = data.drinks[0].strDrink
       //document.querySelector('img').src = data.drinks[0].strDrinkThumb
       //document.querySelector('h3').innerText = data.drinks[0].strInstructions
+
+      const slidesContainer = document.getElementById('data-slides');
+      
+      // Remove existing slides
+      while (slidesContainer.firstChild) {
+        slidesContainer.removeChild(slidesContainer.firstChild);
+      }
 
       for(i=0;i<data.drinks.length;i++){
 
@@ -106,10 +123,10 @@ fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a')
                 }
             });
   
-            console.log(ingredientList);
+            //console.log(ingredientList);
 
             const ingredientsString = ingredientList.join(", ")
-            console.log(ingredientsString)
+            //console.log(ingredientsString)
       
 
       const newIngredients = document.createElement('p'); //create p element
