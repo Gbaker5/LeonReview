@@ -31,6 +31,8 @@ fetch('https://api.sunrise-sunset.org/json?lat=21.276154&lng=-157.827140&tzid=Am
     console.log(sunrise)
     console.log(sunset)
 
+    document.querySelector('#sunrise').innerText = "";
+    document.querySelector('#sunset').innerText = "";
     document.querySelector('#risepic').classList.add("sunAnimation");
     document.querySelector('#setpic').classList.add("sunAnimation");
 
@@ -38,6 +40,8 @@ fetch('https://api.sunrise-sunset.org/json?lat=21.276154&lng=-157.827140&tzid=Am
     setTimeout(()=> {
         document.querySelector('#risepic').classList.remove("sunAnimation");
         document.querySelector('#setpic').classList.remove("sunAnimation");
+        document.querySelector('#sunrise').innerText = sunrise;
+        document.querySelector('#sunset').innerText = sunset;
       
     }, 5000)
 
