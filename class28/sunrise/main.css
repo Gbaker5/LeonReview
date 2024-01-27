@@ -33,7 +33,7 @@
 .time2{
     position:absolute;
     left:100px;
-    top:220px;
+    top:240px;
     color:white;
     font-size:20px;
 }
@@ -78,5 +78,23 @@ img{
 }
 
 footer{
-    
+    background-color: black;
+    color: white;
+    height:30px
 }
+
+.green{
+    color:green;
+}
+
+.underline{
+    text-decoration: underline;
+    color:#e75480;
+}
+
+.blue{
+    color: blue
+}
+ .orange{
+    color:orange;
+ }
