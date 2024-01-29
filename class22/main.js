@@ -365,3 +365,24 @@ console.log(shuffle(shArr));
 //shuffle(shArr);
 // arr = [3, 1, 2]
 // ...
+
+
+let Avjohn = { name: "John", age: 25 };
+let Avpete = { name: "Pete", age: 30 };
+let Avmary = { name: "Mary", age: 29 };
+
+let Avarr = [ Avjohn, Avpete, Avmary ];
+
+function getAverageAge(){
+    nums =[];
+    for(i=0;i<Avarr.length;i++){
+        nums.push(Avarr[i].age)
+    }
+    console.log(nums)
+    let sum = nums.reduce((acc,c) => acc + c)
+    console.log(sum)
+    let average = sum / nums.length
+    return average
+}
+
+console.log(getAverageAge(Avarr)) ; // (25 + 30 + 29) / 3 = 28
