@@ -282,14 +282,55 @@ function filterRangeInPlace(arr, a, b) {
   }
 
 
+//let john = { name: "John", age: 25 };
+//let pete = { name: "Pete", age: 30 };
+//let mary = { name: "Mary", age: 28 };
+//
+//let users = [ john, pete, mary ];
+
+//let names = users.map( user => user.name)
+        
+    
+
+//console.log( names ); // John, Pete, Mary
+
+
+//let john = { name: "John", surname: "Smith", id: 1 };
+//let pete = { name: "Pete", surname: "Hunt", id: 2 };
+//let mary = { name: "Mary", surname: "Key", id: 3 };
+
+//let users = [ john, pete, mary ];
+
+//let usersMapped = /* ... your code ... */
+//users.map( user => ({
+    //fullName: `${user.name} ${user.surname}`, 
+    //id: user.id}))
+
+/*
+usersMapped = [
+  { fullName: "John Smith", id: 1 },
+  { fullName: "Pete Hunt", id: 2 },
+  { fullName: "Mary Key", id: 3 }
+]
+*/
+
+//console.log( usersMapped[0].id ) // 1
+//console.log( usersMapped[0].fullName ) // John Smith
+
+
 let john = { name: "John", age: 25 };
 let pete = { name: "Pete", age: 30 };
 let mary = { name: "Mary", age: 28 };
 
-let users = [ john, pete, mary ];
+let nmArr = [ pete, john, mary ];
 
-let names = users.map( user => user.name)
-        
-    
+function sortByAge(){
+    return nmArr.sort((a,b) => a.age - b.age)
+};
 
-console.log( names ); // John, Pete, Mary
+sortByAge(nmArr);
+
+// now: [john, mary, pete]
+console.log(nmArr[0].name); // John
+console.log(nmArr[1].name); // Mary
+console.log(nmArr[2].name); // Pete
