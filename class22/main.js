@@ -334,3 +334,34 @@ sortByAge(nmArr);
 console.log(nmArr[0].name); // John
 console.log(nmArr[1].name); // Mary
 console.log(nmArr[2].name); // Pete
+
+
+
+let shArr = [1, 2, 3];
+
+function shuffle(shArr){
+    //console.log(Math.floor(Math.random() * shArr.length))
+    
+    for (let i = shArr.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
+        //console.log(j)
+        // swap elements array[i] and array[j]
+        // we use "destructuring assignment" syntax to achieve that
+        // you'll find more details about that syntax in later chapters
+        // same can be written as:
+        // let t = array[i]; array[i] = array[j]; array[j] = t
+        [shArr[i], shArr[j]] = [shArr[j], shArr[i]];
+        return shArr
+      }
+    
+}
+
+console.log(shuffle(shArr));
+// arr = [3, 2, 1]
+
+//shuffle(shArr);
+// arr = [2, 1, 3]
+
+//shuffle(shArr);
+// arr = [3, 1, 2]
+// ...
