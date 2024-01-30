@@ -460,3 +460,42 @@ function groupById(array) {
   console.log(stuffArr)
   deleteEntry()
   console.log(stuffArr)
+////////////////
+
+  function range(start,end){
+    let numArr=[];
+
+    for(i=start;i<end+1;i++){
+        numArr.push(i)
+    }
+    return numArr
+  }
+
+    console.log(range(1,10))
+
+  
+    function sum(array){
+        return array.reduce((acc,c) => acc + c)
+  }
+
+  console.log(sum(range(1,10)))
+
+
+  function range2(start,end,step){
+    let numArr=[];
+
+    //console.log(step)
+
+    if(step === undefined){
+        for(i=start;i<end+1;i++){
+            numArr.push(i)
+        }
+    }else
+    for(i=start;i<end+1;i= i + step){
+        numArr.push(i)
+    }
+    return numArr
+  }
+
+
+   console.log(range2(1,10,2))
