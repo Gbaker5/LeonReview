@@ -480,7 +480,7 @@ function groupById(array) {
 
   console.log(sum(range(1,10)))
 
-
+//////////
   function range2(start,end,step){
     let numArr=[];
 
@@ -499,3 +499,24 @@ function groupById(array) {
 
 
    console.log(range2(1,10,2))
+
+   ///////////
+
+   // Function to reverse an array and return a new array
+function reverseArray(arr) {
+    let reversedArray = [];
+    for (let i = arr.length - 1; i >= 0; i--) {
+      reversedArray.push(arr[i]);
+    }
+    return reversedArray;
+  }
+  
+  // Function to reverse an array in place
+  function reverseArrayInPlace(arr) {
+    for (let i = 0; i < Math.floor(arr.length / 2); i++) {
+      // Swap elements from the beginning and end of the array
+      let temp = arr[i];
+      arr[i] = arr[arr.length - 1 - i];
+      arr[arr.length - 1 - i] = temp;
+    }
+  }
