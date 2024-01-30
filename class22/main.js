@@ -386,3 +386,18 @@ function getAverageAge(){
 }
 
 console.log(getAverageAge(Avarr)) ; // (25 + 30 + 29) / 3 = 28
+
+
+let strings = ["Hare", "Krishna", "Hare", "Krishna",
+    "Krishna", "Krishna", "Hare", "Hare", ":-O"
+  ];
+
+function unique(arr) {
+    /* your code */
+    let unique = strings.filter((item, index) => strings.indexOf(item) == index)
+    return unique
+  }
+  
+  
+  
+  console.log( unique(strings) ); // Hare, Krishna, :-O
