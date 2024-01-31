@@ -50,8 +50,8 @@ function createCircle(radius){
     };
 }
 
-const circle = createCircle(1);
-circle.draw();
+
+//circle.draw();
 
 //constructor Function
 
@@ -62,6 +62,22 @@ function Circle(radius){
         console.log(draw);  
     }
 }
+
+
+const circle = new Circle(10);
+
+circle.location = { x: 1 }; //adding a property
+
+const propertyName = 'location';
+
+
+circle['location'] = { x: 1}; //same thing just bracket notation
+
+delete circle.location;
+delete circle['location']
+
+
+
 
 //const Circle1 = new Function( 'radius', 
     //this.radius = radius,
