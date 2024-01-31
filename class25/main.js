@@ -59,8 +59,37 @@ function Circle(radius){
     console.log('this', this)
     this.radius= radius;
     this.draw = function(){
-        console.log(draw);
+        console.log(draw);  
     }
 }
 
+//const Circle1 = new Function( 'radius', 
+    //this.radius = radius,
+    //this.draw = function() {
+        //console.log('draw');
+    //}
+//) 
+
+Circle.call({}, 1);
+Circle.apply({}, [1,2,3])
+
 const another = new Circle(1)
+
+//functions are objects in js
+
+//value types/Primatives = Number, String, Boolean, Symbol, undefined, null
+//Reference types = Object, Function, Array
+
+//primatives
+let x=10;
+let y=x;
+
+x=20;
+//reference
+let a = {value: 10};
+let b = a;
+
+a.value = 20;
+
+//primatives are copied by their value. 
+//objects are copied by their references
