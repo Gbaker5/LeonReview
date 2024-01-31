@@ -93,3 +93,24 @@ a.value = 20;
 
 //primatives are copied by their value. 
 //objects are copied by their references
+
+let number = 10;
+
+function increase(number){
+    number++;
+}
+
+increase(number);
+console.log(number)
+
+//reference
+
+let obj = {value: 10};
+
+function increase(obj){
+    obj.value++;
+}
+
+increase(obj);
+increase(obj)
+console.log(obj)
