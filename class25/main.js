@@ -182,6 +182,14 @@ const circle = new Circle(10);
 circle.defaultLocation = 1
 
 
+
+
+
+/////////
+
+
+
+
 function StopWatch(){
 
     let startTime, endTime, running, duration = 0; 
@@ -191,8 +199,9 @@ function StopWatch(){
         throw new Error('Stopwatch is already running')
 
         running = true;
-        
+        console.log(running)
         startTime = new Date();
+        console.log(startTime)
     };
 
     this.stop = function(){
@@ -205,6 +214,7 @@ function StopWatch(){
         
         const seconds = (endTime.getTime() - startTime.getTime()) /1000;
         duration += seconds
+
     };
 
     this.reset = function(){
@@ -220,4 +230,9 @@ function StopWatch(){
     });
 }
 
-StopWatch.start()
+//const sw = new StopWatch()
+
+//document.querySelector('#Duration').innerText = sw.duration
+document.querySelector('#start').addEventListener('click', new StopWatch())
+document.querySelector('#stop').addEventListener('click', sw.stop())
+document.querySelector('#reset').addEventListener('click', sw.reset())
