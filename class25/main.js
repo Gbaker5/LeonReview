@@ -201,7 +201,7 @@ function StopWatch(){
         running = true;
         console.log(running)
         startTime = new Date();
-        console.log(startTime)
+        //console.log(startTime)
     };
 
     this.stop = function(){
@@ -215,6 +215,7 @@ function StopWatch(){
         const seconds = (endTime.getTime() - startTime.getTime()) /1000;
         duration += seconds
 
+        document.querySelector('#Duration').innerText = sw.duration;
     };
 
     this.reset = function(){
@@ -223,6 +224,7 @@ function StopWatch(){
         running = false;
         duration = 0;
 
+        document.querySelector('#Duration').innerText = sw.duration
     };
 
     Object.defineProperty(this, 'duration',{
@@ -230,9 +232,15 @@ function StopWatch(){
     });
 }
 
-//const sw = new StopWatch()
+const sw = new StopWatch()
 
-//document.querySelector('#Duration').innerText = sw.duration
-document.querySelector('#start').addEventListener('click', new StopWatch())
-document.querySelector('#stop').addEventListener('click', sw.stop())
-document.querySelector('#reset').addEventListener('click', sw.reset())
+
+document.querySelector('#start').addEventListener('click', function() {
+    sw.start()
+})
+document.querySelector('#stop').addEventListener('click', function() {
+    sw.stop()
+})
+document.querySelector('#reset').addEventListener('click', function() {
+    sw.reset()
+})
