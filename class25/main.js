@@ -69,7 +69,7 @@ function createCircle(radius){
 //FOR IN LOOP - TO ITERATE THROUGH OBJECT
 //for(let key in circle){
    // if(typeof circle[key] !== 'function')// only properties not methods - this excludes functions
-   // console.log(key, circle[key]) //key = peoperties , circle[key] = values of keys
+   // console.log(key, circle[key]) //key = properties , circle[key] = values of keys
 //}
 
 //const keys = Object.keys(circle)
