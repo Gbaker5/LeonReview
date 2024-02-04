@@ -1,11 +1,11 @@
 
 
-//document.querySelector('').addEventListener('click', getSun)
+document.querySelector('#getTime').addEventListener('click', getSun)
 
 
 function getSun(){
 
-}
+
 
 fetch('https://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400')
 .then(res => res.json()) // parse response as JSON
@@ -21,3 +21,5 @@ fetch('https://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400')
 .catch(err => {
     console.log(`error ${err}`)
 });
+
+}
