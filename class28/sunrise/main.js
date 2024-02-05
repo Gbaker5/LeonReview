@@ -22,6 +22,7 @@ console.log(lastLatEntry)
 console.log(lastLongEntry)
 
 fetch('https://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400')
+//fetch(`https://api.sunrise-sunset.org/json?lat=${lastLatEntry}&lng=${lastLongEntry}`)
 .then(res => res.json()) // parse response as JSON
 .then(data => {
   console.log(data)  
