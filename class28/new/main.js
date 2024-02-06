@@ -5,6 +5,7 @@
 let categoryInput= document.querySelector('#category').value
 let pageInput= document.querySelector('#page').value
 
+//if categoryinput == "vfsv" {this fetch} else if(categoryInput == "dfvsf"){do this fetch}
 
 fetch('https://rickandmortyapi.com/api/character')
   .then(response => {

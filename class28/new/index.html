@@ -9,16 +9,31 @@
     <title>Rick n Morty</title>
 </head>
 <body>
-    <div>
+    <div class="center">
         <h1>Rick and Morty Database Info</h1>
 
+        <p>All of each category</p>
         <select name="category" id="category">
             <option value="character">character</option>
             <option value="location">location</option>
             <option value="episode">episode</option>
         </select>
-        
         <input type="text" placeholder="page" id="page">
+        <button id="allButton">wubu lubu DUb DUb </button>
+
+
+        <p>Single or Multiple Characters Search (by Number)</p>
+        <input type="text" id="specific character" placeholder="Ex: 1 or 1,2,3">
+        <button id="specificButton">The Citadel</button>
+        
+
+        <p>Filter Character Results</p>
+        <input type="text" placeholder="name" id="name">
+        <input type="text" placeholder="status (alive or dead)" id="status">
+        <input type="text" placeholder="species" id="species">
+        <input type="text" placeholder="type" id="type">
+        <input type="text" placeholder="gender (female,male,genderless,unknown)" id="gender">
+        <button id="filterButton">Portal Gun</button>
     </div>
     
 
