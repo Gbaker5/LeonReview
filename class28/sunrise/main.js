@@ -21,7 +21,7 @@ let lastLongEntry = longitudeInputArr[longitudeInputArr.length - 1]
 console.log(lastLatEntry)
 console.log(lastLongEntry)
 
-fetch('https://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400')
+fetch('https://api.sunrise-sunset.org/json?lat=21.276154&lng=-157.827140&tzid=America/Denver') //if i wanrt optimize i can do a drop down to select tzid from a list in html
 //fetch(`https://api.sunrise-sunset.org/json?lat=${lastLatEntry}&lng=${lastLongEntry}`)
 .then(res => res.json()) // parse response as JSON
 .then(data => {
