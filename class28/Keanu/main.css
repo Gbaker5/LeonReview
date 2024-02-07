@@ -1,0 +1,39 @@
+
+.container{
+    text-align: center;
+}
+
+ul{
+    list-style-type: none;
+}
+
+#holder > li{
+    /*display:inline-block;*/
+}
+
+.topHalf{
+    height:250px;
+    color:white;
+    font-size: 20px;
+}
+
+.bottomHalf{
+    margin-top: 5px;
+}
+
+.inputs{
+    background-color: black;
+    padding:8px;
+}
+
+button:hover{
+    cursor:pointer;
+}
+
+#type:hover{
+    cursor:pointer;
+}
+
+body{
+    background-image: linear-gradient(to right, rgb(0,0,255), rgb(0,255,0) );
+}
