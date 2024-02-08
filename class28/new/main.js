@@ -132,13 +132,38 @@ function getAll(){
     console.log(data.info)
     console.log(data.results)
     
-    console.log(data.results[0].id) //id 
-    console.log(data.results[0].image)//image 
-    console.log(data.results[0].location.name)//name - "Rick Sanchez"
-    console.log(data.results[0].gender)//gender = "Male"
-    console.log(data.results[0].status)//status = "Alive"
-    console.log(data.results[0].type)//type = ""
-    console.log(data.results[0].origin.name)//origin - "Earth"
+   let theId = data.results[0].id //id - 1
+   let image = data.results[0].image//image 
+   let name = data.results[0].name //name - "Rick Sanchez"
+   let location = data.results[0].location.name //location - "Rick Citadel"
+   let gender = data.results[0].gender//gender = "Male"
+   let status = data.results[0].status//status = "Alive"
+   let species = data.results[0].species//species = "human"
+   let type = data.results[0].type//type = ""
+   let origin = data.results[0].origin.name//origin - "Earth"
+
+
+    //id
+    //name
+
+
+
+    let newLiId = document.createElement('li');
+    newLi.innerText = data.results[0].id ;
+    newLi.classList.add();
+
+
+    
+    let newLiImage = document.createElement('li');
+    newLi.classList.add('');
+    let newImage = document.createElement('img')
+    newImage.src = data.results[0].image
+    
+
+
+    
+
+
 
 
   })
