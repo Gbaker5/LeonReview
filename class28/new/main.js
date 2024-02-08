@@ -37,31 +37,32 @@ fetch(`https://rickandmortyapi.com/api/character?page=${i}`)
     
     }
   
-    //console.log(nameArray)
-    //let allNames = nameArray.join(" ").split(" ")
-    //console.log(allNames)
-    //let uniqueNameArray = allNames.filter((item, index) => allNames.indexOf(item) == index)
-    //console.log(uniqueNameArray)
-    //let nameOrdered = uniqueNameArray.sort()
-    //console.log(nameOrdered)
-    
-    
     //console.log(statusArray)
-    
     //let uniqueStatusArray = statusArray.filter((item, index) => statusArray.indexOf(item) == index)
     //console.log(uniqueStatusArray)
-//
+
     //console.log(genderArray)
     //let uniqueGenderArray = genderArray.filter((item, index) => genderArray.indexOf(item) == index)
     //console.log(uniqueGenderArray)
-//
+
     //console.log(speciesArray)
     //let uniqueSpecieseArray = speciesArray.filter((item, index) => speciesArray.indexOf(item) == index)
     //console.log(uniqueSpecieseArray)
-//
-    console.log(typeArray)
+
+    
+     //console.log(nameArray)
+     let allNames = nameArray.join(" ").split(" ")
+     //console.log(allNames)
+     let uniqueNameArray = allNames.filter((item, index) => allNames.indexOf(item) == index)
+     //console.log(uniqueNameArray)
+     let nameOrdered = uniqueNameArray.sort()
+     console.log(nameOrdered)
+
+    //console.log(typeArray)
     let uniqueTypeArray = nameArray.filter((item, index) => nameArray.indexOf(item) == index)
-    console.log(uniqueTypeArray)
+    //console.log(uniqueTypeArray)
+    let typeOrdered = uniqueTypeArray.sort()
+    console.log(typeOrdered)
     
 
   })
