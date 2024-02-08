@@ -49,7 +49,8 @@ fetch(`https://rickandmortyapi.com/api/character?page=${i}`)
     //let uniqueSpecieseArray = speciesArray.filter((item, index) => speciesArray.indexOf(item) == index)
     //console.log(uniqueSpecieseArray)
 
-    
+    //Filter character Results for options
+
      //console.log(nameArray)
      let allNames = nameArray.join(" ").split(" ")
      //console.log(allNames)
@@ -58,11 +59,16 @@ fetch(`https://rickandmortyapi.com/api/character?page=${i}`)
      let nameOrdered = uniqueNameArray.sort()
      console.log(nameOrdered)
 
+    
     //console.log(typeArray)
     let uniqueTypeArray = nameArray.filter((item, index) => nameArray.indexOf(item) == index)
     //console.log(uniqueTypeArray)
     let typeOrdered = uniqueTypeArray.sort()
     console.log(typeOrdered)
+
+    /////////
+    populateDropdown('#filterName', nameOrdered, "--name--");
+    populateDropdown('#type', typeOrdered, "--type--");
     
 
   })
@@ -71,12 +77,29 @@ fetch(`https://rickandmortyapi.com/api/character?page=${i}`)
   });
 
 }
-
-
-
 }
 
-pageLoad()
+function populateDropdown(selector, dataArray, placeholder) {
+    const dropdown = document.querySelector(selector);
+    dropdown.innerHTML = ''; // Clear previous options
+    const firstOption = document.createElement('option');
+    firstOption.innerText = placeholder;
+    dropdown.appendChild(firstOption);
+    dataArray.forEach(item => {
+        const option = document.createElement('option');
+        option.innerText = item;
+        option.value = item.toLowerCase();
+        dropdown.appendChild(option);
+    });
+}
+
+// Call pageLoad when the DOM is ready
+document.addEventListener("DOMContentLoaded", function() {
+    pageLoad();
+});
+
+
+
 
 
 let categoryInput= document.querySelector('#category').value
