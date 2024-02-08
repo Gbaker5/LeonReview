@@ -145,19 +145,38 @@ function getAll(){
 
     //id
     //name
+    //gender
+    //species
+    //type
+    //origin
+    //location
+    //status
+
+    let newDiv = document.createElement('div')
+    newDiv.classList.add('resultbox')
+    newDiv.classList.add('resultbox' + theId)
+    document.querySelector('#allResults').appendChild(newDiv)
+
+    let imageLi = document.createElement('li'); //create li
+    imageLi.classList.add('resultImage'); //add result image class
+    imageLi.classList.add('resultImage' + theId)
+    document.querySelector('.resultbox' + theId).appendChild(imageLi) //add li to resultbox 1
+    
+    let newImage = document.createElement('img') //create img tag
+    newImage.src = image; //change source
+    document.querySelector('.resultImage' + theId).appendChild(newImage) //add to li
 
 
 
-    let newLiId = document.createElement('li');
-    newLi.innerText = data.results[0].id ;
-    newLi.classList.add();
+
+
+    let idLi = document.createElement('li');
+    idLi.innerText = data.results[0].id ;
+    idLi.classList.add();
 
 
     
-    let newLiImage = document.createElement('li');
-    newLi.classList.add('');
-    let newImage = document.createElement('img')
-    newImage.src = data.results[0].image
+   
     
 
 
