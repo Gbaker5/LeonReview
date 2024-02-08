@@ -31,15 +31,41 @@
 
 
         <p>Filter Character Results</p>
-        <input type="text" placeholder="name" id="name">
+        <select name="filterName" id="filterName">
+            <option value=""></option>
+            <!--Filled by API-->
+        </select>
+
         <select name="status" id="status">
             <option value="alive">Alive</option>
             <option value="dead">Dead</option>
             <option value="unknown">Unknown</option>
         </select>
-        <input type="text" placeholder="species" id="species">
-        <input type="text" placeholder="type" id="type">
-        <input type="text" placeholder="gender (female,male,genderless,unknown)" id="gender">
+
+        <select name="" id="">
+            <option value="human">Human</option>
+            <option value="humanoid">Humanoid</option>
+            <option value="animal">Animal</option>
+            <option value="robot">Robot</option>
+            <option value="alien">Alien</option>
+            <option value="mythologicalcreature">Mythological Creature</option>
+            <option value="cronenburg">Cronenburg</option>
+            <option value="poopybutthole">PoopyButthole</option>
+            <option value="unknown">Unknown</option>
+            <option value="disease">Disease</option>
+        </select>
+
+        <select name="" id="">
+            <option value=""></option>
+            <!--Filled by API-->
+        </select>
+        
+        <select name="" id="">
+            <option value="">Male</option>
+            <option value="">Female</option>
+            <option value="">Unknown</option>
+            <option value="">Genderless</option>
+        </select>
         <button id="filterButton">Portal Gun</button>
     </div>
     </div>

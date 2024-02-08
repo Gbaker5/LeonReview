@@ -2,15 +2,16 @@
 
 
 
-let categoryInput= document.querySelector('#category').value
-let pageInput= document.querySelector('#page').value
 
     let nameArray =[];
     let statusArray = [];
     let genderArray = [];
     let speciesArray = [];
     let typeArray = [];
-//if categoryinput == "vfsv" {this fetch} else if(categoryInput == "dfvsf"){do this fetch}
+
+function pageLoad(){
+
+
 for(i=1;i<42;i++){
 fetch(`https://rickandmortyapi.com/api/character?page=${i}`)
   .then(response => {
@@ -45,22 +46,22 @@ fetch(`https://rickandmortyapi.com/api/character?page=${i}`)
     //console.log(nameOrdered)
     
     
-    console.log(statusArray)
+    //console.log(statusArray)
     
-    let uniqueStatusArray = statusArray.filter((item, index) => statusArray.indexOf(item) == index)
-    console.log(uniqueStatusArray)
+    //let uniqueStatusArray = statusArray.filter((item, index) => statusArray.indexOf(item) == index)
+    //console.log(uniqueStatusArray)
 //
     //console.log(genderArray)
-    //let uniqueGenderArray = nameArray.filter((item, index) => nameArray.indexOf(item) == index)
+    //let uniqueGenderArray = genderArray.filter((item, index) => genderArray.indexOf(item) == index)
     //console.log(uniqueGenderArray)
 //
     //console.log(speciesArray)
-    //let uniqueSpecieseArray = nameArray.filter((item, index) => nameArray.indexOf(item) == index)
+    //let uniqueSpecieseArray = speciesArray.filter((item, index) => speciesArray.indexOf(item) == index)
     //console.log(uniqueSpecieseArray)
 //
-    //console.log(typeArray)
-    //let uniqueTypeArray = nameArray.filter((item, index) => nameArray.indexOf(item) == index)
-    //console.log(uniqueTypeArray)
+    console.log(typeArray)
+    let uniqueTypeArray = nameArray.filter((item, index) => nameArray.indexOf(item) == index)
+    console.log(uniqueTypeArray)
     
 
   })
@@ -72,7 +73,14 @@ fetch(`https://rickandmortyapi.com/api/character?page=${i}`)
 
 
 
+}
 
+pageLoad()
+
+
+let categoryInput= document.querySelector('#category').value
+let pageInput= document.querySelector('#page').value
+//if categoryinput == "vfsv" {this fetch} else if(categoryInput == "dfvsf"){do this fetch}
 
   /////////////////////////
 
