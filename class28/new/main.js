@@ -57,14 +57,14 @@ fetch(`https://rickandmortyapi.com/api/character?page=${i}`)
      let uniqueNameArray = allNames.filter((item, index) => allNames.indexOf(item) == index)
      //console.log(uniqueNameArray)
      let nameOrdered = uniqueNameArray.sort()
-     console.log(nameOrdered)
+     //console.log(nameOrdered)
 
     
     //console.log(typeArray)
     let uniqueTypeArray = nameArray.filter((item, index) => nameArray.indexOf(item) == index)
     //console.log(uniqueTypeArray)
     let typeOrdered = uniqueTypeArray.sort()
-    console.log(typeOrdered)
+    //console.log(typeOrdered)
 
     /////////
     populateDropdown('#filterName', nameOrdered, "--name--");
@@ -100,10 +100,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+//////////////////////THIS IS WHERE THE INPUTS AND BUTTONS START
 
 
-let categoryInput= document.querySelector('#category').value
-let pageInput= document.querySelector('#page').value
 //if categoryinput == "vfsv" {this fetch} else if(categoryInput == "dfvsf"){do this fetch}
 
   /////////////////////////
@@ -111,7 +110,17 @@ let pageInput= document.querySelector('#page').value
 document.querySelector('#allButton').addEventListener('click', getAll)
 
 function getAll(){
-    fetch('https://rickandmortyapi.com/api/character?name=sanchez')
+    let categoryInput = document.querySelector('#category').value
+    let pageInput = document.querySelector('#page').value
+    console.log(pageInput)
+
+    if(pageInput == ""){
+        url = `https://rickandmortyapi.com/api/${categoryInput}`
+    }else url = `https://rickandmortyapi.com/api/${categoryInput}/?page=${pageInput}`
+
+
+
+    fetch(url)
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
@@ -120,8 +129,17 @@ function getAll(){
   })
   .then(data => {
     console.log(data); // Do something with the data
-
+    console.log(data.info)
+    console.log(data.results)
     
+    console.log(data.results[0].id) //id 
+    console.log(data.results[0].image)//image 
+    console.log(data.results[0].location.name)//name - "Rick Sanchez"
+    console.log(data.results[0].gender)//gender = "Male"
+    console.log(data.results[0].status)//status = "Alive"
+    console.log(data.results[0].type)//type = ""
+    console.log(data.results[0].origin.name)//origin - "Earth"
+
 
   })
   .catch(error => {
@@ -131,7 +149,7 @@ function getAll(){
 
 
 ///////////////////
-document.querySelector('#allButton').addEventListener('click', getSpecificCharacters)
+document.querySelector('#specificButton').addEventListener('click', getSpecificCharacters)
 
 function getSpecificCharacters(){
     fetch('https://rickandmortyapi.com/api/character?name=sanchez')
@@ -155,7 +173,7 @@ function getSpecificCharacters(){
 
 
 ////////////////////////
-document.querySelector('#allButton').addEventListener('click', getFilterCharacters)
+document.querySelector('#filterButton').addEventListener('click', getFilterCharacters)
 
 function getFilterCharacters(){
     fetch('https://rickandmortyapi.com/api/character?name=sanchez')
