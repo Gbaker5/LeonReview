@@ -131,16 +131,19 @@ function getAll(){
     console.log(data); // Do something with the data
     console.log(data.info)
     console.log(data.results)
+    document.querySelector('#allResults').innerHTML = ""
+
+    for(i=0;i<data.results.length;i++){
     
-   let theId = data.results[0].id //id - 1
-   let image = data.results[0].image//image 
-   let name = data.results[0].name //name - "Rick Sanchez"
-   let location = data.results[0].location.name //location - "Rick Citadel"
-   let gender = data.results[0].gender//gender = "Male"
-   let status = data.results[0].status//status = "Alive"
-   let species = data.results[0].species//species = "human"
-   let type = data.results[0].type//type = ""
-   let origin = data.results[0].origin.name//origin - "Earth"
+   let theId = data.results[i].id //id - 1
+   let image = data.results[i].image//image 
+   let name = data.results[i].name //name - "Rick Sanchez"
+   let location = data.results[i].location.name //location - "Rick Citadel"
+   let gender = data.results[i].gender//gender = "Male"
+   let status = data.results[i].status//status = "Alive"
+   let species = data.results[i].species//species = "human"
+   let type = data.results[i].type//type = ""
+   let origin = data.results[i].origin.name//origin - "Earth"
 
 
     //id
@@ -152,33 +155,78 @@ function getAll(){
     //location
     //status
 
-    let newDiv = document.createElement('div')
-    newDiv.classList.add('resultbox')
-    newDiv.classList.add('resultbox' + theId)
-    document.querySelector('#allResults').appendChild(newDiv)
+    let newDiv = document.createElement('div') //create div
+    newDiv.classList.add('resultbox') //add resultbox class
+    newDiv.classList.add('resultbox' + theId) //add resultbox + id for js reference appending
+    document.querySelector('#allResults').appendChild(newDiv) //add div to ul
 
-    let imageLi = document.createElement('li'); //create li
-    imageLi.classList.add('resultImage'); //add result image class
-    imageLi.classList.add('resultImage' + theId)
+    
+
+    let imageLi = document.createElement('li'); //create li for image
+    imageLi.classList.add('resultImage'); //add "resultImage" class
+    imageLi.classList.add('resultImage' + theId) //add '.resultImage1'
     document.querySelector('.resultbox' + theId).appendChild(imageLi) //add li to resultbox 1
     
     let newImage = document.createElement('img') //create img tag
     newImage.src = image; //change source
     document.querySelector('.resultImage' + theId).appendChild(newImage) //add to li
 
-
+    
 
 
 
     let idLi = document.createElement('li');
-    idLi.innerText = data.results[0].id ;
-    idLi.classList.add();
+    idLi.innerText = "id: " + theId;
+    idLi.classList.add('idNum');
+    idLi.classList.add('idNum' + theId)
+    document.querySelector('.resultbox' + theId).appendChild(idLi)
 
 
-    
+    let nameLi = document.createElement('li');
+    nameLi.innerText = "Name: " + name;
+    nameLi.classList.add("resultName");
+    nameLi.classList.add("resultName" + theId);
+    document.querySelector('.resultbox' + theId).appendChild(nameLi)
+
+    let genderLi = document.createElement('li');
+    genderLi.innerText = "Gender: " + gender;
+    genderLi.classList.add("resultGender");
+    genderLi.classList.add("resultGender" + theId);
+    document.querySelector('.resultbox' + theId).appendChild(genderLi)
+
+    let speciesLi = document.createElement('li');
+    speciesLi.innerText = "Species: " + species;
+    speciesLi.classList.add("resultSpecies");
+    speciesLi.classList.add("resultSpecies" + theId);
+    document.querySelector('.resultbox' + theId).appendChild(speciesLi)
+
+
+    let typeLi = document.createElement('li');
+    typeLi.innerText = "Type: " + type;
+    typeLi.classList.add("resultType");
+    typeLi.classList.add("resultType" + theId);
+    document.querySelector('.resultbox' + theId).appendChild(typeLi)
+
+    let originLi = document.createElement('li');
+    originLi.innerText = "Origin: " + origin;
+    originLi.classList.add("resultOrigin");
+    originLi.classList.add("resultOrigin" + theId);
+    document.querySelector('.resultbox' + theId).appendChild(originLi)
+
+    let locationLi = document.createElement('li');
+    locationLi.innerText = "Location: " + location;
+    locationLi.classList.add("resultLocation");
+    locationLi.classList.add("resultLocation" + theId);
+    document.querySelector('.resultbox' + theId).appendChild(locationLi)
+
+    let statusLi = document.createElement('li');
+    statusLi.innerText = "Status: " + status;
+    statusLi.classList.add("resultStatus");
+    statusLi.classList.add("resultStatus" + theId);
+    document.querySelector('.resultbox' + theId).appendChild(statusLi)
    
     
-
+    }
 
     
 
