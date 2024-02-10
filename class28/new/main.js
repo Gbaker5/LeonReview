@@ -114,9 +114,9 @@ function getAll(){
     let pageInput = document.querySelector('#page').value
     console.log(pageInput)
 
-    if(pageInput == ""){
+    if( pageInput == ""){
         url = `https://rickandmortyapi.com/api/${categoryInput}`
-    }else url = `https://rickandmortyapi.com/api/${categoryInput}/?page=${pageInput}`
+    }else if(categoryInput == "character"){url = `https://rickandmortyapi.com/api/${categoryInput}/?page=${pageInput}`
 
 
 
@@ -248,14 +248,50 @@ function getAll(){
   .catch(error => {
     console.error('There was a problem with the fetch operation:', error);
   });
+}else if(categoryInput == "location"){url = `https://rickandmortyapi.com/api/${categoryInput}/?page=${pageInput}`
+
+
+fetch(url)
+.then(response => {
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+  return response.json();
+})
+.then(data => {
+
+
+})
+.catch(error => {
+  console.error('There was a problem with the fetch operation:', error);
+});
+
+}else if(categoryInput == "episode"){url = `https://rickandmortyapi.com/api/${categoryInput}/?page=${pageInput}`
+
+
+
+fetch(url)
+.then(response => {
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+  return response.json();
+})
+.then(data => {
+
+})
+.catch(error => {
+  console.error('There was a problem with the fetch operation:', error);
+});
+}
 }
 
 //////////////////////
 function nextFetch(){
 
-    window.onbeforeunload = function () {
-        window.scrollTo(0,0);
-    };
+    //window.onbeforeunload = function () {
+        //window.scrollTo(0,0);
+    //};
     const nextButton = document.querySelector('#next')
     //console.log(nextButton)
     let nextUrl = nextButton.dataset.nextFetchUrl
