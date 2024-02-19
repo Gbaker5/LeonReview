@@ -114,9 +114,142 @@ function getAll(){
     let pageInput = document.querySelector('#page').value
     console.log(pageInput)
 
-    if( pageInput == ""){
-        url = `https://rickandmortyapi.com/api/${categoryInput}`
-    }else if(categoryInput == "character"){url = `https://rickandmortyapi.com/api/${categoryInput}/?page=${pageInput}`
+    if( categoryInput == "character" && pageInput == ""){
+
+    url = `https://rickandmortyapi.com/api/${categoryInput}`
+
+
+    fetch(url)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      //console.log(data); // Do something with the data
+      //console.log(data.info)
+      //console.log(data.info.next)
+      //console.log(data.results)
+      document.querySelector('#allResults').innerHTML = ""
+  
+      let nextPage = data.info.next 
+      for(i=0;i<data.results.length;i++){
+  
+  
+     
+     let theId = data.results[i].id //id - 1
+     let image = data.results[i].image//image 
+     let name = data.results[i].name //name - "Rick Sanchez"
+     let location = data.results[i].location.name //location - "Rick Citadel"
+     let gender = data.results[i].gender//gender = "Male"
+     let status = data.results[i].status//status = "Alive"
+     let species = data.results[i].species//species = "human"
+     let type = data.results[i].type//type = ""
+     let origin = data.results[i].origin.name//origin - "Earth"
+  
+  
+      //id
+      //name
+      //gender
+      //species
+      //type
+      //origin
+      //location
+      //status
+  
+      let newDiv = document.createElement('div') //create div
+      newDiv.classList.add('resultbox') //add resultbox class
+      newDiv.classList.add('resultbox' + theId) //add resultbox + id for js reference appending
+      document.querySelector('#allResults').appendChild(newDiv) //add div to ul
+  
+      
+  
+      let imageLi = document.createElement('li'); //create li for image
+      imageLi.classList.add('resultImage'); //add "resultImage" class
+      imageLi.classList.add('resultImage' + theId) //add '.resultImage1'
+      document.querySelector('.resultbox' + theId).appendChild(imageLi) //add li to resultbox 1
+      
+      let newImage = document.createElement('img') //create img tag
+      newImage.src = image; //change source
+      document.querySelector('.resultImage' + theId).appendChild(newImage) //add to li
+  
+      
+  
+  
+  
+      let idLi = document.createElement('li');
+      idLi.innerText = "id: " + theId;
+      idLi.classList.add('idNum');
+      idLi.classList.add('idNum' + theId)
+      document.querySelector('.resultbox' + theId).appendChild(idLi)
+  
+  
+      let nameLi = document.createElement('li');
+      nameLi.innerText = "Name: " + name;
+      nameLi.classList.add("resultName");
+      nameLi.classList.add("resultName" + theId);
+      document.querySelector('.resultbox' + theId).appendChild(nameLi)
+  
+      let genderLi = document.createElement('li');
+      genderLi.innerText = "Gender: " + gender;
+      genderLi.classList.add("resultGender");
+      genderLi.classList.add("resultGender" + theId);
+      document.querySelector('.resultbox' + theId).appendChild(genderLi)
+  
+      let speciesLi = document.createElement('li');
+      speciesLi.innerText = "Species: " + species;
+      speciesLi.classList.add("resultSpecies");
+      speciesLi.classList.add("resultSpecies" + theId);
+      document.querySelector('.resultbox' + theId).appendChild(speciesLi)
+  
+  
+      let typeLi = document.createElement('li');
+      typeLi.innerText = "Type: " + type;
+      typeLi.classList.add("resultType");
+      typeLi.classList.add("resultType" + theId);
+      document.querySelector('.resultbox' + theId).appendChild(typeLi)
+  
+      let originLi = document.createElement('li');
+      originLi.innerText = "Origin: " + origin;
+      originLi.classList.add("resultOrigin");
+      originLi.classList.add("resultOrigin" + theId);
+      document.querySelector('.resultbox' + theId).appendChild(originLi)
+  
+      let locationLi = document.createElement('li');
+      locationLi.innerText = "Location: " + location;
+      locationLi.classList.add("resultLocation");
+      locationLi.classList.add("resultLocation" + theId);
+      document.querySelector('.resultbox' + theId).appendChild(locationLi)
+  
+      let statusLi = document.createElement('li');
+      statusLi.innerText = "Status: " + status;
+      statusLi.classList.add("resultStatus");
+      statusLi.classList.add("resultStatus" + theId);
+      document.querySelector('.resultbox' + theId).appendChild(statusLi)
+     
+     
+      
+      }
+  
+      let nextButton = document.createElement('button');//create button
+      nextButton.innerText = "Next"; //button text next
+      nextButton.id = "next"; //id = "next"
+      nextButton.setAttribute('data-next-fetch-url', nextPage) //add data attribute to hold url for next page
+      document.querySelector('#allResults').appendChild(nextButton) //add to dom
+  
+      document.querySelector('#next').addEventListener('click', nextFetch ) //add event list to button
+  
+  
+  
+  
+    })
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+    });
+    }else if(categoryInput == "character" && pageInput !== ""){
+        
+    url = `https://rickandmortyapi.com/api/${categoryInput}/?page=${pageInput}`
 
 
 
@@ -248,7 +381,233 @@ function getAll(){
   .catch(error => {
     console.error('There was a problem with the fetch operation:', error);
   });
-}else if(categoryInput == "location"){url = `https://rickandmortyapi.com/api/${categoryInput}/?page=${pageInput}`
+}else if(categoryInput == "location" && pageInput == ""){ 
+    //////LOCATION SEARCH NO PAGE INPUT/////////////////////////////
+    
+url = `https://rickandmortyapi.com/api/${categoryInput}`
+
+
+let residentsArr = []; // Define residentsArr outside of the fetch block
+
+fetch(url)  //first fetch to api that holds all names conected to the current location
+.then(response => {
+if (!response.ok) {
+throw new Error('Network response was not ok');
+    }
+return response.json();
+})
+.then(data => {
+    let allResidentsUrl = data.results[0].residents;
+
+    let fetchPromises = []; // Array to store promises of individual fetch requests
+
+    allResidentsUrl.forEach((url) => {
+        let fetchPromise = fetch(url)
+        .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+        })
+        .then(data => {
+            residentsArr.push(data.name);
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+
+            fetchPromises.push(fetchPromise); // Store each fetch promise in the array
+        });
+
+        // Wait for all fetch requests to complete
+        Promise.all(fetchPromises)
+            .then(() => {
+                // Now residentsArr has been populated with all resident names
+                // You can use residentsArr here or perform any other operation you need
+                console.log(residentsArr);
+
+
+
+
+        let theId = data.results[0].id;
+        let name = data.results[0].name;
+        let type = data.results[0].type;
+        let theDimension = data.results[0].dimension;
+        //let allResidentsUrl = data.results[0].residents
+
+
+
+    let newDiv = document.createElement('div') //create div
+    newDiv.classList.add('locationBox') //add resultbox class
+    newDiv.classList.add('locationBox' + theId) //add resultbox + id for js reference appending
+    document.querySelector('#allResults').appendChild(newDiv) //add div to ul
+
+
+    let idLi = document.createElement('li');
+    idLi.innerText = "id: " + theId;
+    idLi.classList.add('locationId');
+    idLi.classList.add('locationId' + theId)
+    document.querySelector('.locationBox' + theId).appendChild(idLi)
+
+
+    let nameLi = document.createElement('li');
+    nameLi.innerText = "Name: " + name;
+    nameLi.classList.add("locationName");
+    nameLi.classList.add("locationName" + theId);
+    document.querySelector('.locationBox' + theId).appendChild(nameLi)
+
+    let typeLi = document.createElement('li');
+    typeLi.innerText = "Type: " + type;
+    typeLi.classList.add("locationType");
+    typeLi.classList.add("locationType" + theId);
+    document.querySelector('.locationBox' + theId).appendChild(typeLi)
+
+    let dimensionLi = document.createElement('li');
+    dimensionLi.innerText = "Dimension: " + theDimension;
+    dimensionLi.classList.add("locationDimension");
+    dimensionLi.classList.add("locationDimension" + theId);
+    document.querySelector('.locationBox' + theId).appendChild(dimensionLi)
+
+    let newUl = document.createElement('ul');
+    //newUl.innerText = "Residents:"
+    newUl.classList.add("locationResidents");
+    newUl.classList.add("locationResidents" + theId);
+    document.querySelector('.locationBox' + theId).appendChild(newUl)
+
+    let resTitle = document.createElement('li');
+    resTitle.innerText = "Residents:";
+    resTitle.classList.add("residentTitle");
+    resTitle.classList.add("residentTitle" + theId);
+    document.querySelector('.locationBox' + theId).appendChild(resTitle)
+
+
+    let count = 0;
+    residentsArr.forEach((name) => {
+        count++
+        let residentLi = document.createElement('li');
+        residentLi.innerText = name;
+        residentLi.classList.add("locationResident");
+        residentLi.classList.add("locationResident" + count);
+        document.querySelector('.locationResidents' + theId).appendChild(residentLi)
+    })
+
+
+
+
+
+
+
+
+
+
+                // Your remaining code goes here...
+            })
+            .catch(error => {
+                console.error('There was a problem with one of the fetch operations:', error);
+            });
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//fetch(url)
+//.then(response => {
+//  if (!response.ok) {
+//    throw new Error('Network response was not ok');
+//  }
+//  return response.json();
+//})
+//.then(data => {
+//console.log(data)
+//console.log(data.results[0].residents)
+//
+//let theId = data.results[0].id;
+//let name = data.results[0].name;
+//let type = data.results[0].type;
+//let theDimension = data.results[0].dimension;
+//let allResidentsUrl = data.results[0].residents
+//
+//let residentsArr = []; 
+//
+//allResidentsUrl.forEach((url) => {
+//    fetch(url)
+//.then(response => {
+//  if (!response.ok) {
+//    throw new Error('Network response was not ok');
+//  }
+//  return response.json();
+//})
+//.then(data => {
+//console.log(data)
+//
+//residentsArr.push(data.name)
+//console.log(residentsArr)
+//
+//
+//})
+//.catch(error => {
+//  console.error('There was a problem with the fetch operation:', error);
+//});
+//
+//})
+////////////
+//
+//let newDiv = document.createElement('div') //create div
+//    newDiv.classList.add('resultbox') //add resultbox class
+//    newDiv.classList.add('resultbox' + theId) //add resultbox + id for js reference appending
+//    document.querySelector('#allResults').appendChild(newDiv) //add div to ul
+//
+//
+//    let idLi = document.createElement('li');
+//    idLi.innerText = "id: " + theId;
+//    idLi.classList.add('idNum');
+//    idLi.classList.add('idNum' + theId)
+//    document.querySelector('.resultbox' + theId).appendChild(idLi)
+//
+//
+//    let nameLi = document.createElement('li');
+//    nameLi.innerText = "Name: " + name;
+//    nameLi.classList.add("resultName");
+//    nameLi.classList.add("resultName" + theId);
+//    document.querySelector('.resultbox' + theId).appendChild(nameLi)
+//
+//    let typeLi = document.createElement('li');
+//    typeLi.innerText = "Type: " + type;
+//    typeLi.classList.add("resultType");
+//    typeLi.classList.add("resultType" + theId);
+//    document.querySelector('.resultbox' + theId).appendChild(typeLi)
+//
+//    let dimensionLi = document.createElement('li');
+//    dimensionLi.innerText = "Dimension: " + theDimension;
+//    dimensionLi.classList.add("resultDimension");
+//    dimensionLi.classList.add("resultDimension" + theId);
+//    document.querySelector('.resultbox' + theId).appendChild(dimensionLi)
+//
+//})
+//.catch(error => {
+//  console.error('There was a problem with the fetch operation:', error);
+//});
+
+}else if(categoryInput == "location" && pageInput !== ""){
+    
+url = `https://rickandmortyapi.com/api/${categoryInput}/?page=${pageInput}`
+
 
 
 fetch(url)
@@ -259,6 +618,9 @@ fetch(url)
   return response.json();
 })
 .then(data => {
+console.log(data)
+
+
 
 
 })
@@ -266,11 +628,34 @@ fetch(url)
   console.error('There was a problem with the fetch operation:', error);
 });
 
-}else if(categoryInput == "episode"){url = `https://rickandmortyapi.com/api/${categoryInput}/?page=${pageInput}`
+}else if(categoryInput == "episode" && pageInput == ""){
+    
+    url = `https://rickandmortyapi.com/api/${categoryInput}`
+
+    fetch(url)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+    console.log(data)
+    
+    
+    
+    
+    })
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+    });
 
 
+}else if(categoryInput == "location" && pageInput !== ""){
+    
+    url = `https://rickandmortyapi.com/api/${categoryInput}/?page=${pageInput}`
 
-fetch(url)
+    fetch(url)
 .then(response => {
   if (!response.ok) {
     throw new Error('Network response was not ok');
@@ -278,14 +663,19 @@ fetch(url)
   return response.json();
 })
 .then(data => {
+console.log(data)
+
+
+
 
 })
 .catch(error => {
   console.error('There was a problem with the fetch operation:', error);
 });
-}
-}
 
+
+}
+}
 //////////////////////
 function nextFetch(){
 

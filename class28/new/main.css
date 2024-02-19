@@ -117,6 +117,78 @@
     width:50%;
 }
 
+.locationBox{
+    float:left;
+    width:50%;
+    height:250px;
+    border:1px solid black;
+    border-radius: 15px;
+    position:relative;
+    font-size: 20px;
+    margin-top: 5px;
+    box-shadow: 10px 10px greenyellow;
+}
+
+.locationBox > li{
+    list-style-type: none;
+}
+
+.locationId{
+    position:absolute;
+    color:cyan;
+    font-weight: bold;
+    top: 10px;
+    left:10%;
+    border-radius:30%;
+    border: 1px solid black;
+   
+    background-image: url(images/ricknmorty.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.locationName{
+    position: absolute;
+    left: 10%;
+    top: 50px;
+}
+
+.locationType{
+    position: absolute;
+    left: 10%;
+    top: 80px;
+}
+
+.locationDimension{
+    position: absolute;
+    left: 10%;
+    top: 110px;
+}
+
+.residentTitle{
+   margin-left: 70%;
+   margin-top: 2%;
+   width:10%;
+   border-bottom: 1px solid black;
+}
+
+.locationResidents{
+    position:absolute;
+    left:50%;
+    width:40%;
+    height:180px;
+    overflow:auto;
+    margin-top: 8%;
+    border: 5px solid cyan;
+    list-style-type: none;
+    background-image: url(images/galaxy1.jpg);
+    background-position: center;
+    background-size:  100%;
+    background-repeat: no-repeat;
+    color:white;
+}
+
 
 
 #next{
