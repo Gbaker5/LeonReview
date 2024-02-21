@@ -646,7 +646,7 @@ url = `https://rickandmortyapi.com/api/${categoryInput}/?page=${pageInput}`
            console.error('There was a problem with the fetch operation:', error);
        });
    
-
+///////////////EPISODE SEARCH NO PAGE INPUT
 }else if(categoryInput == "episode" && pageInput == ""){
     
     url = `https://rickandmortyapi.com/api/${categoryInput}`
@@ -1195,6 +1195,142 @@ fetch(nextUrl) // First fetch to API that holds all names connected to the curre
 
 
 
+
+}
+
+function nextFetchEPISODE(){
+
+  const nextButton = document.querySelector('#next')
+  //console.log(nextButton)
+  let nextUrl = nextButton.dataset.nextFetchUrl
+  //console.log(nextUrl) 
+
+
+  document.querySelector('#allResults').innerHTML = "";
+  document.querySelector('#footer').innerHTML = "";
+  
+
+  let characterArr = []; // Define residentsArr to store resident names
+
+  fetch(nextUrl) // First fetch to API that holds all names connected to the current location
+      .then(response => {
+          if (!response.ok) {
+              throw new Error('Network response was not ok');
+          }
+          return response.json();
+      })
+      .then(data => {
+        console.log(data.results)
+          let fetchPromises = []; // Array to store promises of individual fetch requests
+  
+          data.results.forEach(episode => {
+              let allCharactersUrl = episode.characters;
+  
+              allCharactersUrl.forEach((characterUrl) => {
+                  let fetchPromise = fetch(characterUrl)
+                      .then(response => {
+                          if (!response.ok) {
+                              throw new Error('Network response was not ok');
+                          }
+                          return response.json();
+                      })
+                      .then(data => {
+                          characterArr.push({ name: data.name, episodeId: episode.id });
+                      })
+                      .catch(error => {
+                          console.error('There was a problem with the fetch operation:', error);
+                      });
+  
+                  fetchPromises.push(fetchPromise); // Store each fetch promise in the array
+              });
+          });
+  
+          // Wait for all fetch requests to complete
+          Promise.all(fetchPromises)
+              .then(() => {
+                  // Now residentsArr has been populated with all resident names
+                  // You can use residentsArr here or perform any other operation you need
+                  console.log(characterArr);
+                  let nextPage = data.info.next 
+                  console.log(nextPage)
+  
+                  // Iterate through locations and display information
+                  data.results.forEach(episode => {
+                      let theId = episode.id;
+                      let name = episode.name;
+                      let epi = episode.episode;
+                      let date = episode.air_date;
+                      
+  
+                      let newDiv = document.createElement('div');
+                      newDiv.classList.add('episodeBox');
+                      newDiv.classList.add('episodeBox' + theId);
+                      document.querySelector('#allResults').appendChild(newDiv);
+  
+                      let idLi = document.createElement('li');
+                      idLi.innerText = "id: " + theId;
+                      idLi.classList.add('episodeId');
+                      idLi.classList.add('episodeId' + theId);
+                      document.querySelector('.episodeBox' + theId).appendChild(idLi);
+  
+                      let nameLi = document.createElement('li');
+                      nameLi.innerText = "Name: " + name;
+                      nameLi.classList.add("episodeName");
+                      nameLi.classList.add("episodeName" + theId);
+                      document.querySelector('.episodeBox' + theId).appendChild(nameLi);
+                    
+                      let episodeLi = document.createElement('li');
+                      episodeLi.innerText = "Episode: " + epi;
+                      episodeLi.classList.add("episodeEpi");
+                      episodeLi.classList.add("episodeEpi" + theId);
+                      document.querySelector('.episodeBox' + theId).appendChild(episodeLi);
+
+                      let dateLi = document.createElement('li');
+                      dateLi.innerText = "Date: " + date;
+                      dateLi.classList.add("episodeDate");
+                      dateLi.classList.add("episodeDate" + theId);
+                      document.querySelector('.episodeBox' + theId).appendChild(dateLi);
+  
+              
+                      let newUl = document.createElement('ul');
+                      newUl.classList.add("episodeCharacters");
+                      newUl.classList.add("episodeCharacters" + theId);
+                      document.querySelector('.episodeBox' + theId).appendChild(newUl);
+  
+                      let charTitle = document.createElement('li');
+                      charTitle.innerText = "Characters:";
+                      charTitle.classList.add("characterTitle");
+                      charTitle.classList.add("characterTitle" + theId);
+                      document.querySelector('.episodeBox' + theId).appendChild(charTitle);
+  
+                      characterArr
+                          .filter(character => character.episodeId === theId)
+                          .forEach((character, index) => {
+                              let characterLi = document.createElement('li');
+                              characterLi.innerText = character.name;
+                              characterLi.classList.add("episodeCharacter");
+                              characterLi.classList.add("episodeCharacter" + index);
+                              document.querySelector('.episodeCharacters' + theId).appendChild(characterLi);
+                          });
+  
+   
+                  });
+      let nextButton = document.createElement('button');//create button
+     nextButton.innerText = "Next"; //button text next
+     nextButton.id = "next"; //id = "next"
+     nextButton.setAttribute('data-next-fetch-url', nextPage) //add data attribute to hold url for next page
+     document.querySelector('#footer').appendChild(nextButton) //add to dom
+  
+     document.querySelector('#next').addEventListener('click', nextFetchEPISODE) //add event list to button
+  
+              })
+              .catch(error => {
+                  console.error('There was a problem with one of the fetch operations:', error);
+              });
+      })
+      .catch(error => {
+          console.error('There was a problem with the fetch operation:', error);
+      });
 
 }
 
