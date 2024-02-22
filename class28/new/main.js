@@ -655,7 +655,7 @@ url = `https://rickandmortyapi.com/api/${categoryInput}/?page=${pageInput}`
     document.querySelector('#footer').innerHTML = "";
     
 
-    let residentsArr = []; // Define residentsArr to store resident names
+    let characterArr = []; // Define residentsArr to store resident names
 
     fetch(url) // First fetch to API that holds all names connected to the current location
         .then(response => {
@@ -668,11 +668,11 @@ url = `https://rickandmortyapi.com/api/${categoryInput}/?page=${pageInput}`
           console.log(data.results)
             let fetchPromises = []; // Array to store promises of individual fetch requests
     
-            data.results.forEach(location => {
-                let allResidentsUrl = location.residents;
+            data.results.forEach(episode => {
+                let allCharactersUrl = episode.characters;
     
-                allResidentsUrl.forEach((residentUrl) => {
-                    let fetchPromise = fetch(residentUrl)
+                allCharactersUrl.forEach((characterUrl) => {
+                    let fetchPromise = fetch(characterUrl)
                         .then(response => {
                             if (!response.ok) {
                                 throw new Error('Network response was not ok');
@@ -680,7 +680,7 @@ url = `https://rickandmortyapi.com/api/${categoryInput}/?page=${pageInput}`
                             return response.json();
                         })
                         .then(data => {
-                            residentsArr.push({ name: data.name, locationId: location.id });
+                            characterArr.push({ name: data.name, episodeId: episode.id });
                         })
                         .catch(error => {
                             console.error('There was a problem with the fetch operation:', error);
@@ -695,64 +695,67 @@ url = `https://rickandmortyapi.com/api/${categoryInput}/?page=${pageInput}`
                 .then(() => {
                     // Now residentsArr has been populated with all resident names
                     // You can use residentsArr here or perform any other operation you need
-                    console.log(residentsArr);
+                    console.log(characterArr);
                     let nextPage = data.info.next 
+                    console.log(nextPage)
     
                     // Iterate through locations and display information
-                    data.results.forEach(location => {
-                        let theId = location.id;
-                        let name = location.name;
-                        let type = location.type;
-                        let theDimension = location.dimension;
+                    data.results.forEach(episode => {
+                        let theId = episode.id;
+                        let name = episode.name;
+                        let epi = episode.episode;
+                        let date = episode.air_date;
+                        
     
                         let newDiv = document.createElement('div');
-                        newDiv.classList.add('locationBox');
-                        newDiv.classList.add('locationBox' + theId);
+                        newDiv.classList.add('episodeBox');
+                        newDiv.classList.add('episodeBox' + theId);
                         document.querySelector('#allResults').appendChild(newDiv);
     
                         let idLi = document.createElement('li');
                         idLi.innerText = "id: " + theId;
-                        idLi.classList.add('locationId');
-                        idLi.classList.add('locationId' + theId);
-                        document.querySelector('.locationBox' + theId).appendChild(idLi);
+                        idLi.classList.add('episodeId');
+                        idLi.classList.add('episodeId' + theId);
+                        document.querySelector('.episodeBox' + theId).appendChild(idLi);
     
                         let nameLi = document.createElement('li');
                         nameLi.innerText = "Name: " + name;
-                        nameLi.classList.add("locationName");
-                        nameLi.classList.add("locationName" + theId);
-                        document.querySelector('.locationBox' + theId).appendChild(nameLi);
+                        nameLi.classList.add("episodeName");
+                        nameLi.classList.add("episodeName" + theId);
+                        document.querySelector('.episodeBox' + theId).appendChild(nameLi);
+                      
+                        let episodeLi = document.createElement('li');
+                        episodeLi.innerText = "Episode: " + epi;
+                        episodeLi.classList.add("episodeEpi");
+                        episodeLi.classList.add("episodeEpi" + theId);
+                        document.querySelector('.episodeBox' + theId).appendChild(episodeLi);
+
+                        let dateLi = document.createElement('li');
+                        dateLi.innerText = "Date: " + date;
+                        dateLi.classList.add("episodeDate");
+                        dateLi.classList.add("episodeDate" + theId);
+                        document.querySelector('.episodeBox' + theId).appendChild(dateLi);
     
-                        let typeLi = document.createElement('li');
-                        typeLi.innerText = "Type: " + type;
-                        typeLi.classList.add("locationType");
-                        typeLi.classList.add("locationType" + theId);
-                        document.querySelector('.locationBox' + theId).appendChild(typeLi);
-    
-                        let dimensionLi = document.createElement('li');
-                        dimensionLi.innerText = "Dimension: " + theDimension;
-                        dimensionLi.classList.add("locationDimension");
-                        dimensionLi.classList.add("locationDimension" + theId);
-                        document.querySelector('.locationBox' + theId).appendChild(dimensionLi);
-    
+                
                         let newUl = document.createElement('ul');
-                        newUl.classList.add("locationResidents");
-                        newUl.classList.add("locationResidents" + theId);
-                        document.querySelector('.locationBox' + theId).appendChild(newUl);
+                        newUl.classList.add("episodeCharacters");
+                        newUl.classList.add("episodeCharacters" + theId);
+                        document.querySelector('.episodeBox' + theId).appendChild(newUl);
     
-                        let resTitle = document.createElement('li');
-                        resTitle.innerText = "Residents:";
-                        resTitle.classList.add("residentTitle");
-                        resTitle.classList.add("residentTitle" + theId);
-                        document.querySelector('.locationBox' + theId).appendChild(resTitle);
+                        let charTitle = document.createElement('li');
+                        charTitle.innerText = "Characters:";
+                        charTitle.classList.add("characterTitle");
+                        charTitle.classList.add("characterTitle" + theId);
+                        document.querySelector('.episodeBox' + theId).appendChild(charTitle);
     
-                        residentsArr
-                            .filter(resident => resident.locationId === theId)
-                            .forEach((resident, index) => {
-                                let residentLi = document.createElement('li');
-                                residentLi.innerText = resident.name;
-                                residentLi.classList.add("locationResident");
-                                residentLi.classList.add("locationResident" + index);
-                                document.querySelector('.locationResidents' + theId).appendChild(residentLi);
+                        characterArr
+                            .filter(character => character.episodeId === theId)
+                            .forEach((character, index) => {
+                                let characterLi = document.createElement('li');
+                                characterLi.innerText = character.name;
+                                characterLi.classList.add("episodeCharacter");
+                                characterLi.classList.add("episodeCharacter" + index);
+                                document.querySelector('.episodeCharacters' + theId).appendChild(characterLi);
                             });
     
      
@@ -763,7 +766,7 @@ url = `https://rickandmortyapi.com/api/${categoryInput}/?page=${pageInput}`
        nextButton.setAttribute('data-next-fetch-url', nextPage) //add data attribute to hold url for next page
        document.querySelector('#footer').appendChild(nextButton) //add to dom
     
-       document.querySelector('#next').addEventListener('click', nextFetchLOCATION ) //add event list to button
+       document.querySelector('#next').addEventListener('click', nextFetchEPISODE) //add event list to button
     
                 })
                 .catch(error => {
