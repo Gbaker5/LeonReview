@@ -30,20 +30,33 @@
     
 }
 
-.results-ct{
+.result-ct{
     float:left;
     width:100%;
-    height:auto;
+    height:100%;
     position:relative;
+    background-image: url(images/galaxy1.jpg);
+    background-position: center;
+    background-repeat: repeat-y;
+    background-size: contain;
+}
+
+.allResults{
+    position: relative
 }
 
 .resultbox{
     float:left;
-    width:100%;
+    width:65%;
     height:250px;
-    border:1px solid black;
+    border:3px solid cyan;
+    border-radius: 15px;
     position:relative;
     font-size: 20px;
+    margin-bottom: 25px;
+    margin-left:20%;
+    box-shadow: 10px 6px rgb(2, 176, 2);
+    background-color: white;
 }
 
 .idNum{
@@ -51,7 +64,7 @@
     color:cyan;
     font-weight: bold;
     top: 10px;
-    left:51%;
+    left:470px;
     border-radius:30%;
     border: 1px solid black;
    
@@ -61,45 +74,54 @@
     background-size: cover;
 }
 
+.resultImage{
+    width:900px;
+}
+
+.resultImage> img{
+    border-radius: 15px;
+    width:100px;
+}
+
 .resultName{
     position:absolute;
-    left:51%; 
+    left:470px; 
     top: 40px;  
 }
 
 .resultGender{
     position:absolute;
-    left:51%;
+    left:470px;
     top:70px;
 }
 
 .resultSpecies{
     position:absolute;
-    left:51%;
+    left:470px;
     top:100px;
 }
 
 .resultType{
     position:absolute;
-    left:51%;
+    left:470px;
     top:130px;
 }
 
 .resultOrigin{
     position:absolute;
-    left:51%;
+    left:470px;
     top:160px;
 }
 
 .resultLocation{
     position:absolute;
-    left:51%;
+    left:470px;
     top:190px;
 }
 
 .resultStatus{
     position:absolute;
-    left:51%;
+    left:470px;
     top:220px;
 }
 
@@ -189,9 +211,31 @@
     color:white;
 }
 
+.locationResidents::-webkit-scrollbar{
+    width: 10px;
+}
+
+.locationResidents::-webkit-scrollbar-track{
+    background: repeating-linear-gradient(
+        45deg,
+        yellow,
+        yellow 10px,
+        brown 10px,
+        brown 20px
+      );
+}
+
+.locationResidents::-webkit-scrollbar-thumb{
+    background: lime;
+    border-radius: 50px;
+}
+
 
 
 #next{
-   
+    margin-top: 5px;
+    position: absolute;
+    bottom: 0;
+    
     left:50%;
 }

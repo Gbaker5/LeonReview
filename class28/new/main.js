@@ -386,6 +386,7 @@ function getAll(){
     
 url = `https://rickandmortyapi.com/api/${categoryInput}`
 
+document.querySelector('#allResults').innerHTML = "";
 
 let residentsArr = []; // Define residentsArr outside of the fetch block
 
@@ -396,7 +397,7 @@ throw new Error('Network response was not ok');
     }
 return response.json();
 })
-.then(data => {
+.then(data => { 
     let allResidentsUrl = data.results[0].residents;
 
     let fetchPromises = []; // Array to store promises of individual fetch requests
@@ -697,6 +698,8 @@ function nextFetch(){
     return response.json();
   })
   .then(data => {
+
+
     //console.log(data); // Do something with the data
     //console.log(data.info)
     console.log(data.info.next)
