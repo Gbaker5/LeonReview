@@ -60,12 +60,15 @@
 }
 
 .idNum{
+    width:30%;
     position:absolute;
-    color:cyan;
+    color:red;
     font-weight: bold;
+    font-size: 22px;
+    font-family: "Orbitron", sans-serif;
     top: 10px;
-    left:470px;
-    border-radius:30%;
+    left:370px;
+    border-radius:20px;
     border: 1px solid black;
    
     background-image: url(images/ricknmorty.jpeg);
@@ -75,7 +78,7 @@
 }
 
 .resultImage{
-    width:900px;
+    width:700px;
 }
 
 .resultImage> img{
@@ -85,43 +88,43 @@
 
 .resultName{
     position:absolute;
-    left:470px; 
+    left:380px; 
     top: 40px;  
 }
 
 .resultGender{
     position:absolute;
-    left:470px;
+    left:380px;
     top:70px;
 }
 
 .resultSpecies{
     position:absolute;
-    left:470px;
+    left:380px;
     top:100px;
 }
 
 .resultType{
     position:absolute;
-    left:470px;
+    left:380px;
     top:130px;
 }
 
 .resultOrigin{
     position:absolute;
-    left:470px;
+    left:380px;
     top:160px;
 }
 
 .resultLocation{
     position:absolute;
-    left:470px;
+    left:380px;
     top:190px;
 }
 
 .resultStatus{
     position:absolute;
-    left:470px;
+    left:380px;
     top:220px;
 }
 
@@ -141,14 +144,17 @@
 
 .locationBox{
     float:left;
-    width:50%;
+    width:70%;
     height:250px;
-    border:1px solid black;
+    border:3px solid cyan;
     border-radius: 15px;
     position:relative;
     font-size: 20px;
     margin-top: 5px;
-    box-shadow: 10px 10px greenyellow;
+    box-shadow: 8px 6px greenyellow;
+    background-color: white;
+    margin-top: 20px;
+    margin-left: 20%;
 }
 
 .locationBox > li{
@@ -156,14 +162,15 @@
 }
 
 .locationId{
+    width:40%;
     position:absolute;
-    color:cyan;
+    color:black;
     font-weight: bold;
     top: 10px;
-    left:10%;
-    border-radius:30%;
-    border: 1px solid black;
-   
+    left:8%;
+    border-radius:20px;
+    border: 3px solid cyan;
+    
     background-image: url(images/ricknmorty.jpeg);
     background-position: center;
     background-repeat: no-repeat;
@@ -172,20 +179,23 @@
 
 .locationName{
     position: absolute;
-    left: 10%;
+    
     top: 50px;
+    width:50%;
 }
 
 .locationType{
     position: absolute;
-    left: 10%;
+    
     top: 80px;
+    width:50%;
 }
 
 .locationDimension{
     position: absolute;
-    left: 10%;
+    
     top: 110px;
+    width:50%;
 }
 
 .residentTitle{
@@ -201,7 +211,7 @@
     width:40%;
     height:180px;
     overflow:auto;
-    margin-top: 8%;
+    margin-top: 50px;
     border: 5px solid cyan;
     list-style-type: none;
     background-image: url(images/galaxy1.jpg);
@@ -216,18 +226,17 @@
 }
 
 .locationResidents::-webkit-scrollbar-track{
-    background: repeating-linear-gradient(
-        45deg,
-        yellow,
-        yellow 10px,
-        brown 10px,
-        brown 20px
-      );
+    background: yellow
 }
 
 .locationResidents::-webkit-scrollbar-thumb{
-    background: lime;
+    background: brown;
     border-radius: 50px;
+}
+
+.locationResident{
+    font-weight: bold;
+    margin-top: 5px;
 }
 
 
