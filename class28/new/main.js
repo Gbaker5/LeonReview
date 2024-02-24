@@ -651,26 +651,131 @@ url = `https://rickandmortyapi.com/api/${categoryInput}/?page=${pageInput}`
     
     url = `https://rickandmortyapi.com/api/${categoryInput}`
 
-    fetch(url)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then(data => {
-    console.log(data)
+    document.querySelector('#allResults').innerHTML = "";
+    document.querySelector('#footer').innerHTML = "";
     
+
+    let residentsArr = []; // Define residentsArr to store resident names
+
+    fetch(url) // First fetch to API that holds all names connected to the current location
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+          console.log(data.results)
+            let fetchPromises = []; // Array to store promises of individual fetch requests
     
+            data.results.forEach(location => {
+                let allResidentsUrl = location.residents;
     
+                allResidentsUrl.forEach((residentUrl) => {
+                    let fetchPromise = fetch(residentUrl)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            residentsArr.push({ name: data.name, locationId: location.id });
+                        })
+                        .catch(error => {
+                            console.error('There was a problem with the fetch operation:', error);
+                        });
     
-    })
-    .catch(error => {
-      console.error('There was a problem with the fetch operation:', error);
-    });
+                    fetchPromises.push(fetchPromise); // Store each fetch promise in the array
+                });
+            });
+    
+            // Wait for all fetch requests to complete
+            Promise.all(fetchPromises)
+                .then(() => {
+                    // Now residentsArr has been populated with all resident names
+                    // You can use residentsArr here or perform any other operation you need
+                    console.log(residentsArr);
+                    let nextPage = data.info.next 
+    
+                    // Iterate through locations and display information
+                    data.results.forEach(location => {
+                        let theId = location.id;
+                        let name = location.name;
+                        let type = location.type;
+                        let theDimension = location.dimension;
+    
+                        let newDiv = document.createElement('div');
+                        newDiv.classList.add('locationBox');
+                        newDiv.classList.add('locationBox' + theId);
+                        document.querySelector('#allResults').appendChild(newDiv);
+    
+                        let idLi = document.createElement('li');
+                        idLi.innerText = "id: " + theId;
+                        idLi.classList.add('locationId');
+                        idLi.classList.add('locationId' + theId);
+                        document.querySelector('.locationBox' + theId).appendChild(idLi);
+    
+                        let nameLi = document.createElement('li');
+                        nameLi.innerText = "Name: " + name;
+                        nameLi.classList.add("locationName");
+                        nameLi.classList.add("locationName" + theId);
+                        document.querySelector('.locationBox' + theId).appendChild(nameLi);
+    
+                        let typeLi = document.createElement('li');
+                        typeLi.innerText = "Type: " + type;
+                        typeLi.classList.add("locationType");
+                        typeLi.classList.add("locationType" + theId);
+                        document.querySelector('.locationBox' + theId).appendChild(typeLi);
+    
+                        let dimensionLi = document.createElement('li');
+                        dimensionLi.innerText = "Dimension: " + theDimension;
+                        dimensionLi.classList.add("locationDimension");
+                        dimensionLi.classList.add("locationDimension" + theId);
+                        document.querySelector('.locationBox' + theId).appendChild(dimensionLi);
+    
+                        let newUl = document.createElement('ul');
+                        newUl.classList.add("locationResidents");
+                        newUl.classList.add("locationResidents" + theId);
+                        document.querySelector('.locationBox' + theId).appendChild(newUl);
+    
+                        let resTitle = document.createElement('li');
+                        resTitle.innerText = "Residents:";
+                        resTitle.classList.add("residentTitle");
+                        resTitle.classList.add("residentTitle" + theId);
+                        document.querySelector('.locationBox' + theId).appendChild(resTitle);
+    
+                        residentsArr
+                            .filter(resident => resident.locationId === theId)
+                            .forEach((resident, index) => {
+                                let residentLi = document.createElement('li');
+                                residentLi.innerText = resident.name;
+                                residentLi.classList.add("locationResident");
+                                residentLi.classList.add("locationResident" + index);
+                                document.querySelector('.locationResidents' + theId).appendChild(residentLi);
+                            });
+    
+     
+                    });
+        let nextButton = document.createElement('button');//create button
+       nextButton.innerText = "Next"; //button text next
+       nextButton.id = "next"; //id = "next"
+       nextButton.setAttribute('data-next-fetch-url', nextPage) //add data attribute to hold url for next page
+       document.querySelector('#footer').appendChild(nextButton) //add to dom
+    
+       document.querySelector('#next').addEventListener('click', nextFetchLOCATION ) //add event list to button
+    
+                })
+                .catch(error => {
+                    console.error('There was a problem with one of the fetch operations:', error);
+                });
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
 
 
-}else if(categoryInput == "location" && pageInput !== ""){
+}else if(categoryInput == "episode" && pageInput !== ""){
     
     url = `https://rickandmortyapi.com/api/${categoryInput}/?page=${pageInput}`
 
@@ -695,7 +800,7 @@ console.log(data)
 
 }
 }
-//////////////////////
+//////////////////////NEXT BUTTON FOR CHARACTER
 function nextFetchCHARACTER(){
 
     //window.onbeforeunload = function () {

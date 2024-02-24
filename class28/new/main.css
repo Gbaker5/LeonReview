@@ -45,6 +45,8 @@
     position: relative
 }
 
+/*CHARACTER*/
+
 .resultbox{
     float:left;
     width:65%;
@@ -141,6 +143,8 @@
     height:250px;
     width:50%;
 }
+
+/*LOCATION*/
 
 .locationBox{
     float:left;
@@ -239,6 +243,7 @@
     margin-top: 5px;
 }
 
+/* Next*/
 
 footer{
     float:left;
