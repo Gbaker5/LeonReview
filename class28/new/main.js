@@ -132,6 +132,7 @@ function getAll(){
       //console.log(data.info.next)
       //console.log(data.results)
       document.querySelector('#allResults').innerHTML = ""
+      document.querySelector('#footer').innerHTML = ""
   
       let nextPage = data.info.next 
       for(i=0;i<data.results.length;i++){
@@ -236,7 +237,7 @@ function getAll(){
       nextButton.innerText = "Next"; //button text next
       nextButton.id = "next"; //id = "next"
       nextButton.setAttribute('data-next-fetch-url', nextPage) //add data attribute to hold url for next page
-      document.querySelector('#allResults').appendChild(nextButton) //add to dom
+      document.querySelector('#footer').appendChild(nextButton) //add to dom
   
       document.querySelector('#next').addEventListener('click', nextFetchCHARACTER ) //add event list to button
   
@@ -267,6 +268,7 @@ function getAll(){
     //console.log(data.info.next)
     //console.log(data.results)
     document.querySelector('#allResults').innerHTML = ""
+    document.querySelector('#footer').innerHTML = ""
 
     let nextPage = data.info.next 
     console.log(nextPage)
@@ -372,7 +374,7 @@ function getAll(){
     nextButton.innerText = "Next"; //button text next
     nextButton.id = "next"; //id = "next"
     nextButton.setAttribute('data-next-fetch-url', nextPage) //add data attribute to hold url for next page
-    document.querySelector('#allResults').appendChild(nextButton) //add to dom
+    document.querySelector('#footer').appendChild(nextButton) //add to dom
 
     document.querySelector('#next').addEventListener('click', nextFetchCHARACTER ) //add event list to button
 
@@ -389,6 +391,7 @@ function getAll(){
 url = `https://rickandmortyapi.com/api/${categoryInput}`
 
 document.querySelector('#allResults').innerHTML = "";
+document.querySelector('#footer').innerHTML = ""
 
 
   let residentsArr = []; // Define residentsArr to store resident names
@@ -497,7 +500,7 @@ fetch(url) // First fetch to API that holds all names connected to the current l
    nextButton.innerText = "Next"; //button text next
    nextButton.id = "next"; //id = "next"
    nextButton.setAttribute('data-next-fetch-url', nextPage) //add data attribute to hold url for next page
-   document.querySelector('#allResults').appendChild(nextButton) //add to dom
+   document.querySelector('#footer').appendChild(nextButton) //add to dom
 
    document.querySelector('#next').addEventListener('click', nextFetchLOCATION ) //add event list to button
 
@@ -510,236 +513,139 @@ fetch(url) // First fetch to API that holds all names connected to the current l
         console.error('There was a problem with the fetch operation:', error);
     });
 
-//  let allResidentsUrl = data.results[0].residents;
-//
-//  let fetchPromises = []; // Array to store promises of individual fetch requests
-//
-//  allResidentsUrl.forEach((url) => {
-//      let fetchPromise = fetch(url)
-//      .then(response => {
-//      if (!response.ok) {
-//          throw new Error('Network response was not ok');
-//      }
-//      return response.json();
-//      })
-//      .then(data => {
-//          residentsArr.push(data.name);
-//      })
-//      .catch(error => {
-//          console.error('There was a problem with the fetch operation:', error);
-//      });
-//
-//          fetchPromises.push(fetchPromise); // Store each fetch promise in the array
-//      });
-//
-//      // Wait for all fetch requests to complete
-//      Promise.all(fetchPromises)
-//          .then(() => {
-//              // Now residentsArr has been populated with all resident names
-//              // You can use residentsArr here or perform any other operation you need
-//              console.log(residentsArr);
-//
-//
-//
-//
-//      let theId = data.results[0].id;
-//      let name = data.results[0].name;
-//      let type = data.results[0].type;
-//      let theDimension = data.results[0].dimension;
-//      //let allResidentsUrl = data.results[0].residents
-//
-//
-//
-//  let newDiv = document.createElement('div') //create div
-//  newDiv.classList.add('locationBox') //add resultbox class
-//  newDiv.classList.add('locationBox' + theId) //add resultbox + id for js reference appending
-//  document.querySelector('#allResults').appendChild(newDiv) //add div to ul
-//
-//
-//  let idLi = document.createElement('li');
-//  idLi.innerText = "id: " + theId;
-//  idLi.classList.add('locationId');
-//  idLi.classList.add('locationId' + theId)
-//  document.querySelector('.locationBox' + theId).appendChild(idLi)
-//
-//
-//  let nameLi = document.createElement('li');
-//  nameLi.innerText = "Name: " + name;
-//  nameLi.classList.add("locationName");
-//  nameLi.classList.add("locationName" + theId);
-//  document.querySelector('.locationBox' + theId).appendChild(nameLi)
-//
-//  let typeLi = document.createElement('li');
-//  typeLi.innerText = "Type: " + type;
-//  typeLi.classList.add("locationType");
-//  typeLi.classList.add("locationType" + theId);
-//  document.querySelector('.locationBox' + theId).appendChild(typeLi)
-//
-//  let dimensionLi = document.createElement('li');
-//  dimensionLi.innerText = "Dimension: " + theDimension;
-//  dimensionLi.classList.add("locationDimension");
-//  dimensionLi.classList.add("locationDimension" + theId);
-//  document.querySelector('.locationBox' + theId).appendChild(dimensionLi)
-//
-//  let newUl = document.createElement('ul');
-//  //newUl.innerText = "Residents:"
-//  newUl.classList.add("locationResidents");
-//  newUl.classList.add("locationResidents" + theId);
-//  document.querySelector('.locationBox' + theId).appendChild(newUl)
-//
-//  let resTitle = document.createElement('li');
-//  resTitle.innerText = "Residents:";
-//  resTitle.classList.add("residentTitle");
-//  resTitle.classList.add("residentTitle" + theId);
-//  document.querySelector('.locationBox' + theId).appendChild(resTitle)
-//
-//
-//  let count = 0;
-//  residentsArr.forEach((name) => {
-//      count++
-//      let residentLi = document.createElement('li');
-//      residentLi.innerText = name;
-//      residentLi.classList.add("locationResident");
-//      residentLi.classList.add("locationResident" + count);
-//      document.querySelector('.locationResidents' + theId).appendChild(residentLi)
-//  })
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//              // Your remaining code goes here...
-//          })
-//          .catch(error => {
-//              console.error('There was a problem with one of the fetch operations:', error);
-//          });
-//  })
-//  .catch(error => {
-//      console.error('There was a problem with the fetch operation:', error);
-//  });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//fetch(url)
-//.then(response => {
-//  if (!response.ok) {
-//    throw new Error('Network response was not ok');
-//  }
-//  return response.json();
-//})
-//.then(data => {
-//console.log(data)
-//console.log(data.results[0].residents)
-//
-//let theId = data.results[0].id;
-//let name = data.results[0].name;
-//let type = data.results[0].type;
-//let theDimension = data.results[0].dimension;
-//let allResidentsUrl = data.results[0].residents
-//
-//let residentsArr = []; 
-//
-//allResidentsUrl.forEach((url) => {
-//    fetch(url)
-//.then(response => {
-//  if (!response.ok) {
-//    throw new Error('Network response was not ok');
-//  }
-//  return response.json();
-//})
-//.then(data => {
-//console.log(data)
-//
-//residentsArr.push(data.name)
-//console.log(residentsArr)
-//
-//
-//})
-//.catch(error => {
-//  console.error('There was a problem with the fetch operation:', error);
-//});
-//
-//})
-////////////
-//
-//let newDiv = document.createElement('div') //create div
-//    newDiv.classList.add('resultbox') //add resultbox class
-//    newDiv.classList.add('resultbox' + theId) //add resultbox + id for js reference appending
-//    document.querySelector('#allResults').appendChild(newDiv) //add div to ul
-//
-//
-//    let idLi = document.createElement('li');
-//    idLi.innerText = "id: " + theId;
-//    idLi.classList.add('idNum');
-//    idLi.classList.add('idNum' + theId)
-//    document.querySelector('.resultbox' + theId).appendChild(idLi)
-//
-//
-//    let nameLi = document.createElement('li');
-//    nameLi.innerText = "Name: " + name;
-//    nameLi.classList.add("resultName");
-//    nameLi.classList.add("resultName" + theId);
-//    document.querySelector('.resultbox' + theId).appendChild(nameLi)
-//
-//    let typeLi = document.createElement('li');
-//    typeLi.innerText = "Type: " + type;
-//    typeLi.classList.add("resultType");
-//    typeLi.classList.add("resultType" + theId);
-//    document.querySelector('.resultbox' + theId).appendChild(typeLi)
-//
-//    let dimensionLi = document.createElement('li');
-//    dimensionLi.innerText = "Dimension: " + theDimension;
-//    dimensionLi.classList.add("resultDimension");
-//    dimensionLi.classList.add("resultDimension" + theId);
-//    document.querySelector('.resultbox' + theId).appendChild(dimensionLi)
-//
-//})
-//.catch(error => {
-//  console.error('There was a problem with the fetch operation:', error);
-//});
 
 }else if(categoryInput == "location" && pageInput !== ""){
     
 url = `https://rickandmortyapi.com/api/${categoryInput}/?page=${pageInput}`
 
 
+   //////LOCATION SEARCH WITH PAGE INPUT/////////////////////////////
+    
+   
 
-fetch(url)
-.then(response => {
-  if (!response.ok) {
-    throw new Error('Network response was not ok');
-  }
-  return response.json();
-})
-.then(data => {
-console.log(data)
-
-
-
-
-})
-.catch(error => {
-  console.error('There was a problem with the fetch operation:', error);
-});
+   document.querySelector('#allResults').innerHTML = "";
+   document.querySelector('#footer').innerHTML = ""
+   
+   
+     let residentsArr = []; // Define residentsArr to store resident names
+   
+   fetch(url) // First fetch to API that holds all names connected to the current location
+       .then(response => {
+           if (!response.ok) {
+               throw new Error('Network response was not ok');
+           }
+           return response.json();
+       })
+       .then(data => {
+         console.log(data.results)
+           let fetchPromises = []; // Array to store promises of individual fetch requests
+   
+           data.results.forEach(location => {
+               let allResidentsUrl = location.residents;
+   
+               allResidentsUrl.forEach((residentUrl) => {
+                   let fetchPromise = fetch(residentUrl)
+                       .then(response => {
+                           if (!response.ok) {
+                               throw new Error('Network response was not ok');
+                           }
+                           return response.json();
+                       })
+                       .then(data => {
+                           residentsArr.push({ name: data.name, locationId: location.id });
+                       })
+                       .catch(error => {
+                           console.error('There was a problem with the fetch operation:', error);
+                       });
+   
+                   fetchPromises.push(fetchPromise); // Store each fetch promise in the array
+               });
+           });
+   
+           // Wait for all fetch requests to complete
+           Promise.all(fetchPromises)
+               .then(() => {
+                   // Now residentsArr has been populated with all resident names
+                   // You can use residentsArr here or perform any other operation you need
+                   console.log(residentsArr);
+                   let nextPage = data.info.next 
+   
+                   // Iterate through locations and display information
+                   data.results.forEach(location => {
+                       let theId = location.id;
+                       let name = location.name;
+                       let type = location.type;
+                       let theDimension = location.dimension;
+   
+                       let newDiv = document.createElement('div');
+                       newDiv.classList.add('locationBox');
+                       newDiv.classList.add('locationBox' + theId);
+                       document.querySelector('#allResults').appendChild(newDiv);
+   
+                       let idLi = document.createElement('li');
+                       idLi.innerText = "id: " + theId;
+                       idLi.classList.add('locationId');
+                       idLi.classList.add('locationId' + theId);
+                       document.querySelector('.locationBox' + theId).appendChild(idLi);
+   
+                       let nameLi = document.createElement('li');
+                       nameLi.innerText = "Name: " + name;
+                       nameLi.classList.add("locationName");
+                       nameLi.classList.add("locationName" + theId);
+                       document.querySelector('.locationBox' + theId).appendChild(nameLi);
+   
+                       let typeLi = document.createElement('li');
+                       typeLi.innerText = "Type: " + type;
+                       typeLi.classList.add("locationType");
+                       typeLi.classList.add("locationType" + theId);
+                       document.querySelector('.locationBox' + theId).appendChild(typeLi);
+   
+                       let dimensionLi = document.createElement('li');
+                       dimensionLi.innerText = "Dimension: " + theDimension;
+                       dimensionLi.classList.add("locationDimension");
+                       dimensionLi.classList.add("locationDimension" + theId);
+                       document.querySelector('.locationBox' + theId).appendChild(dimensionLi);
+   
+                       let newUl = document.createElement('ul');
+                       newUl.classList.add("locationResidents");
+                       newUl.classList.add("locationResidents" + theId);
+                       document.querySelector('.locationBox' + theId).appendChild(newUl);
+   
+                       let resTitle = document.createElement('li');
+                       resTitle.innerText = "Residents:";
+                       resTitle.classList.add("residentTitle");
+                       resTitle.classList.add("residentTitle" + theId);
+                       document.querySelector('.locationBox' + theId).appendChild(resTitle);
+   
+                       residentsArr
+                           .filter(resident => resident.locationId === theId)
+                           .forEach((resident, index) => {
+                               let residentLi = document.createElement('li');
+                               residentLi.innerText = resident.name;
+                               residentLi.classList.add("locationResident");
+                               residentLi.classList.add("locationResident" + index);
+                               document.querySelector('.locationResidents' + theId).appendChild(residentLi);
+                           });
+   
+    
+                   });
+       let nextButton = document.createElement('button');//create button
+      nextButton.innerText = "Next"; //button text next
+      nextButton.id = "next"; //id = "next"
+      nextButton.setAttribute('data-next-fetch-url', nextPage) //add data attribute to hold url for next page
+      document.querySelector('#footer').appendChild(nextButton) //add to dom
+   
+      document.querySelector('#next').addEventListener('click', nextFetchLOCATION ) //add event list to button
+   
+               })
+               .catch(error => {
+                   console.error('There was a problem with one of the fetch operations:', error);
+               });
+       })
+       .catch(error => {
+           console.error('There was a problem with the fetch operation:', error);
+       });
+   
 
 }else if(categoryInput == "episode" && pageInput == ""){
     
@@ -817,6 +723,7 @@ function nextFetchCHARACTER(){
     console.log(data.info.next)
     //console.log(data.results)
     document.querySelector('#allResults').innerHTML = ""
+    document.querySelector('#footer').innerHTML = ""
     let nextPage = data.info.next 
 
     for(i=0;i<data.results.length;i++){
@@ -919,7 +826,7 @@ function nextFetchCHARACTER(){
     nextButton.innerText = "Next"; //button text next
     nextButton.id = "next"; //id = "next"
     nextButton.setAttribute('data-next-fetch-url', nextPage) //add data attribute to hold url for next page
-    document.querySelector('#allResults').appendChild(nextButton) //add to dom
+    document.querySelector('#footer').appendChild(nextButton) //add to dom
 
     document.querySelector('#next').addEventListener('click', nextFetchCHARACTER ) //add event list to button
 
@@ -947,6 +854,7 @@ function nextFetchLOCATION(){
 
 
   document.querySelector('#allResults').innerHTML = "";
+  document.querySelector('#footer').innerHTML = ""
 
 
   let residentsArr = []; // Define residentsArr to store resident names
@@ -1055,7 +963,7 @@ fetch(nextUrl) // First fetch to API that holds all names connected to the curre
    nextButton.innerText = "Next"; //button text next
    nextButton.id = "next"; //id = "next"
    nextButton.setAttribute('data-next-fetch-url', nextPage) //add data attribute to hold url for next page
-   document.querySelector('#allResults').appendChild(nextButton) //add to dom
+   document.querySelector('#footer').appendChild(nextButton) //add to dom
 
    document.querySelector('#next').addEventListener('click', nextFetchLOCATION ) //add event list to button
 
