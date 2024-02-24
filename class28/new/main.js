@@ -52,10 +52,10 @@ fetch(`https://rickandmortyapi.com/api/character?page=${i}`)
     //Filter character Results for options
 
      //console.log(nameArray)
-     let allNames = nameArray.join(" ").split(" ")
+     //let allNames = nameArray.join(" ").split(" ")
      //console.log(allNames)
-     let uniqueNameArray = allNames.filter((item, index) => allNames.indexOf(item) == index)
-     //console.log(uniqueNameArray)
+     let uniqueNameArray = nameArray.filter((item, index) => nameArray.indexOf(item) == index)
+     console.log(uniqueNameArray)
      let nameOrdered = uniqueNameArray.sort()
      //console.log(nameOrdered)
 
@@ -1604,16 +1604,16 @@ function getFilterCharacters(){
   let urlArr =  [];
   console.log(urlArr)
 
-  if(name !== "--name--"){
-    urlArr.push(name)
+  if(name !== "--name--" ){
+    urlArr.push("name=" + name)
   }if(status !== ""){
-    urlArr.push(status)
+    urlArr.push("status=" + status)
   }if( species !== ""){
-    urlArr.push(species)
+    urlArr.push("species" + species)
   }if(type !== "--type--"){
-    urlArr.push(type)
+    urlArr.push("type=" + type)
   }if(gender !== ""){
-    urlArr.push(gender)
+    urlArr.push("gender=" + gender)
   }
 
   console.log(urlArr)
