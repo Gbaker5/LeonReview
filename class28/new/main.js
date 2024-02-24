@@ -1594,7 +1594,31 @@ function getSpecificCharacters(){
 document.querySelector('#filterButton').addEventListener('click', getFilterCharacters)
 
 function getFilterCharacters(){
-    fetch('https://rickandmortyapi.com/api/character?name=sanchez')
+
+  let name = document.querySelector('#filterName').value;
+  let status = document.querySelector('#status').value;
+  let species = document.querySelector('#species').value;
+  let type = document.querySelector('#type').value;
+  let gender = document.querySelector('#gender').value;
+
+  let urlArr =  [];
+  console.log(urlArr)
+
+  if(name !== "--name--"){
+    urlArr.push(name)
+  }if(status !== ""){
+    urlArr.push(status)
+  }if( species !== ""){
+    urlArr.push(species)
+  }if(type !== "--type--"){
+    urlArr.push(type)
+  }if(gender !== ""){
+    urlArr.push(gender)
+  }
+
+  console.log(urlArr)
+
+    fetch('https://rickandmortyapi.com/api/character?name=&')
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
@@ -1604,14 +1628,13 @@ function getFilterCharacters(){
   .then(data => {
     console.log(data); // Do something with the data
 
-    let name = document.querySelector('#filterName').value;
-    let status = document.querySelector('#status').value;
-    let species = document.querySelector('#species').value;
-    let type = document.querySelector('#type').value;
-    let gender = document.querySelector('#gender').value;
+    
+
+
 
     
-    inputAll.value = ""
+    //inputAll.value = ""
+   let urlArr = []
 
   })
   .catch(error => {
