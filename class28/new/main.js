@@ -134,6 +134,7 @@ function getAll(){
       document.querySelector('#allResults').innerHTML = ""
       document.querySelector('#footer').innerHTML = ""
   
+      document.querySelector('.result-ct').classList.add("galaxyBack")
       let nextPage = data.info.next 
       for(i=0;i<data.results.length;i++){
   
@@ -476,6 +477,7 @@ fetch(url) // First fetch to API that holds all names connected to the current l
                     let newUl = document.createElement('ul');
                     newUl.classList.add("locationResidents");
                     newUl.classList.add("locationResidents" + theId);
+                    newUl.classList.add("galaxyBack")
                     document.querySelector('.locationBox' + theId).appendChild(newUl);
 
                     let resTitle = document.createElement('li');
@@ -609,6 +611,7 @@ url = `https://rickandmortyapi.com/api/${categoryInput}/?page=${pageInput}`
                        let newUl = document.createElement('ul');
                        newUl.classList.add("locationResidents");
                        newUl.classList.add("locationResidents" + theId);
+                       newUl.classList.add("galaxyBack")
                        document.querySelector('.locationBox' + theId).appendChild(newUl);
    
                        let resTitle = document.createElement('li');
@@ -740,6 +743,7 @@ url = `https://rickandmortyapi.com/api/${categoryInput}/?page=${pageInput}`
                         let newUl = document.createElement('ul');
                         newUl.classList.add("episodeCharacters");
                         newUl.classList.add("episodeCharacters" + theId);
+                        newUl.classList.add("galaxyBack")
                         document.querySelector('.episodeBox' + theId).appendChild(newUl);
     
                         let charTitle = document.createElement('li');
@@ -871,6 +875,7 @@ url = `https://rickandmortyapi.com/api/${categoryInput}/?page=${pageInput}`
                         let newUl = document.createElement('ul');
                         newUl.classList.add("episodeCharacters");
                         newUl.classList.add("episodeCharacters" + theId);
+                        newUl.classList.add("galaxyBack")
                         document.querySelector('.episodeBox' + theId).appendChild(newUl);
     
                         let charTitle = document.createElement('li');
@@ -1155,6 +1160,7 @@ fetch(nextUrl) // First fetch to API that holds all names connected to the curre
                     let newUl = document.createElement('ul');
                     newUl.classList.add("locationResidents");
                     newUl.classList.add("locationResidents" + theId);
+                    newUl.classList.add("galaxyBack")
                     document.querySelector('.locationBox' + theId).appendChild(newUl);
 
                     let resTitle = document.createElement('li');
@@ -1261,7 +1267,9 @@ function nextFetchEPISODE(){
                       let epi = episode.episode;
                       let date = episode.air_date;
                       
-  
+                      
+
+
                       let newDiv = document.createElement('div');
                       newDiv.classList.add('episodeBox');
                       newDiv.classList.add('episodeBox' + theId);
@@ -1295,6 +1303,7 @@ function nextFetchEPISODE(){
                       let newUl = document.createElement('ul');
                       newUl.classList.add("episodeCharacters");
                       newUl.classList.add("episodeCharacters" + theId);
+                      newUl.classList.add("galaxyBack")
                       document.querySelector('.episodeBox' + theId).appendChild(newUl);
   
                       let charTitle = document.createElement('li');
