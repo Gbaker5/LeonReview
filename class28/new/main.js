@@ -135,6 +135,7 @@ function getAll(){
       document.querySelector('#footer').innerHTML = ""
   
       document.querySelector('.result-ct').classList.add("galaxyBack")
+
       let nextPage = data.info.next 
       for(i=0;i<data.results.length;i++){
   
@@ -270,6 +271,8 @@ function getAll(){
     //console.log(data.results)
     document.querySelector('#allResults').innerHTML = ""
     document.querySelector('#footer').innerHTML = ""
+
+    document.querySelector('.result-ct').classList.add("galaxyBack")
 
     let nextPage = data.info.next 
     console.log(nextPage)
@@ -438,6 +441,8 @@ fetch(url) // First fetch to API that holds all names connected to the current l
                 console.log(residentsArr);
                 let nextPage = data.info.next 
 
+                document.querySelector('.result-ct').classList.add("galaxyBack")
+
                 // Iterate through locations and display information
                 data.results.forEach(location => {
                     let theId = location.id;
@@ -527,7 +532,7 @@ url = `https://rickandmortyapi.com/api/${categoryInput}/?page=${pageInput}`
 
    document.querySelector('#allResults').innerHTML = "";
    document.querySelector('#footer').innerHTML = ""
-   
+   document.querySelector('.result-ct').classList.add("galaxyBack")
    
      let residentsArr = []; // Define residentsArr to store resident names
    
@@ -656,6 +661,8 @@ url = `https://rickandmortyapi.com/api/${categoryInput}/?page=${pageInput}`
 
     document.querySelector('#allResults').innerHTML = "";
     document.querySelector('#footer').innerHTML = "";
+
+    document.querySelector('.result-ct').classList.add("galaxyBack")
     
 
     let characterArr = []; // Define residentsArr to store resident names
@@ -789,6 +796,7 @@ url = `https://rickandmortyapi.com/api/${categoryInput}/?page=${pageInput}`
     document.querySelector('#allResults').innerHTML = "";
     document.querySelector('#footer').innerHTML = "";
     
+    document.querySelector('.result-ct').classList.add("galaxyBack")
 
     let characterArr = []; // Define residentsArr to store resident names
 
@@ -916,6 +924,9 @@ url = `https://rickandmortyapi.com/api/${categoryInput}/?page=${pageInput}`
 
 }
 }
+
+////////NEXT BUTTONS
+
 //////////////////////NEXT BUTTON FOR CHARACTER
 function nextFetchCHARACTER(){
 
