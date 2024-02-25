@@ -1604,7 +1604,14 @@ function getFilterCharacters(){
   .then(data => {
     console.log(data); // Do something with the data
 
+    let name = document.querySelector('#filterName').value;
+    let status = document.querySelector('#status').value;
+    let species = document.querySelector('#species').value;
+    let type = document.querySelector('#type').value;
+    let gender = document.querySelector('#gender').value;
+
     
+    inputAll.value = ""
 
   })
   .catch(error => {
