@@ -1632,13 +1632,19 @@ function getFilterCharacters(){
   })
   .then(data => {
     console.log(data); // Do something with the data
-
     
+    let count = data.results.length
+    console.log(count)
+    if(count == 1){
+      document.querySelector('.result-ct').classList.add("galaxyBackSingle")
+    }else{
+      document.querySelector('.result-ct').classList.add("galaxyBack")
+    }
     
     document.querySelector('#allResults').innerHTML = ""
       document.querySelector('#footer').innerHTML = ""
   
-      document.querySelector('.result-ct').classList.add("galaxyBack")
+      
 
       let nextPage = data.info.next 
       for(i=0;i<data.results.length;i++){
