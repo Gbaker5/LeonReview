@@ -52,17 +52,19 @@ fetch(`https://rickandmortyapi.com/api/character?page=${i}`)
     //Filter character Results for options
 
      //console.log(nameArray)
-     //let allNames = nameArray.join(" ").split(" ")
+     let allNames = nameArray.join(" ").split(" ")
      //console.log(allNames)
-     let uniqueNameArray = nameArray.filter((item, index) => nameArray.indexOf(item) == index)
-     console.log(uniqueNameArray)
+     let uniqueNameArray = allNames.filter((item, index) => allNames.indexOf(item) == index)
+     //console.log(uniqueNameArray)
      let nameOrdered = uniqueNameArray.sort()
      //console.log(nameOrdered)
 
     
     //console.log(typeArray)
-    let uniqueTypeArray = nameArray.filter((item, index) => nameArray.indexOf(item) == index)
-    //console.log(uniqueTypeArray)
+    let allTypes = typeArray.join(" ").split(" ")
+    //console.log(allTypes)
+    let uniqueTypeArray = allTypes.filter((item, index) => allTypes.indexOf(item) == index)
+    console.log(uniqueTypeArray)
     let typeOrdered = uniqueTypeArray.sort()
     //console.log(typeOrdered)
 
@@ -1609,7 +1611,7 @@ function getFilterCharacters(){
   }if(status !== ""){
     urlArr.push("status=" + status)
   }if( species !== ""){
-    urlArr.push("species" + species)
+    urlArr.push("species=" + species)
   }if(type !== "--type--"){
     urlArr.push("type=" + type)
   }if(gender !== ""){
@@ -1618,7 +1620,10 @@ function getFilterCharacters(){
 
   console.log(urlArr)
 
-    fetch('https://rickandmortyapi.com/api/character?name=&')
+  let inputValue = urlArr.join("&")
+  console.log(inputValue)
+
+    fetch(`https://rickandmortyapi.com/api/character?${inputValue}`)
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
@@ -1629,7 +1634,7 @@ function getFilterCharacters(){
     console.log(data); // Do something with the data
 
     
-
+    
 
 
     
