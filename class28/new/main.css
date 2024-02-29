@@ -829,3 +829,139 @@ footer{
 
 
 }
+
+@media (min-width:769px) and (max-width: 1940px) {
+
+    .topsearch, .allSearch, .characterSearches{
+        float:left;
+        width:100%;
+        margin:0;
+    }
+
+    .character1{
+        float:left;
+        height:200px;
+        margin-top: 0px;
+        border-right: 3px solid black;
+    }
+
+    .character2 > select{
+        float:left;
+        border-left: 1px solid black;
+    }
+
+    .character2 > button{
+        float:left;
+        color:green;
+        width: 100%;
+    }
+
+    .resultbox, .locationBox, .episodeBox{
+        float:left;
+        width:90%;
+        height:250px;
+        border:3px solid cyan;
+        border-radius: 15px;
+        position:relative;
+        font-size: 15px;
+        margin-bottom: 25px;
+        margin-left:0%;
+        box-shadow: 10px 6px rgb(2, 176, 2);
+        background-color: white;
+        
+    }
+
+    .resultImage{
+        float:left;
+       position:absolute;
+       top:15px;
+       left:0%;
+        width:100%;
+        height:250px;
+        
+        
+    }
+    
+    .resultImage> img{
+        position: absolute;
+        top:15px;
+        left:0%;
+        float:left;
+        border-radius: 15px;
+        width:50%;
+        max-width: 900px;
+        height:220px;
+        
+    }
+
+
+.idNum{
+    width:100%;
+    position:absolute;
+    color:red;
+    font-weight: bold;
+    font-size: 22px;
+    font-family: "Orbitron", sans-serif;
+    top: 0px;
+    left:0px;
+    border-radius:20px;
+    border: 1px solid cyan;
+   
+    background-image: url(images/ricknmorty.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.resultName, .resultGender, .resultStatus, .resultSpecies, .resultType, .resultOrigin, .resultLocation{
+    font-size: 1.2em;
+}
+
+
+.resultName{
+    position:absolute;
+    left: 51%; 
+    top: 40px;  
+}
+
+.resultStatus{
+    position:absolute;
+    left:51%;
+    top:60px;
+}
+
+.resultGender{
+    position:absolute;
+    left:51%;
+    top:80px;
+}
+
+.resultSpecies{
+    position:absolute;
+    left:81%;
+    top:60px;
+}
+
+.resultType{
+    position:absolute;
+    left:81%;
+    top:120px;
+}
+
+.resultOrigin{
+    font-size: 13px;
+    position:absolute;
+    left:51%;
+    top:120px;
+}
+
+.resultLocation{
+    position:absolute;
+    left:51%;
+    top:190px;
+    font-size: 13px;
+}
+
+
+
+}
