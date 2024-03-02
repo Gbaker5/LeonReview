@@ -15,11 +15,13 @@
     <title>Rick n Morty</title>
 </head>
 <body>
+    
     <div class="center">
+        <div class="topsearch">
         <h1>Rick and Morty Database Info</h1>
 
     <div class="allSearch">
-        <p>All of each category</p>
+        <p>Search by Category</p>
         <select name="category" id="category">
             <option value="character">character</option>
             <option value="location">location</option>
@@ -32,7 +34,7 @@
 
     <div class="characterSearches">
     <div class="character1">
-        <p>Single or Multiple Characters Search (by Number)</p>
+        <p>Single or Multiple Characters Search (by ID Number)</p>
         <input type="text" id="specificCharacter" placeholder="Ex: 1 or 1,2,3">
         <button id="specificButton">The Citadel</button>
     </div>
@@ -80,6 +82,7 @@
         <button id="filterButton">Portal Gun</button>
     </div>
     </div>
+</div>
 
     <div class="result-ct">
         <ul id="allResults">

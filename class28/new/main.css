@@ -1,6 +1,27 @@
 
+
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    
+}
+
 .center{
     text-align:center
+}
+
+.topsearch{
+    float:left;
+   /* background-image: url(images/rnm.png) ;
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;*/
+    margin: 0;
+    padding: 0;
+    color: black;
 }
 
 .allSearch{
@@ -394,4 +415,90 @@ footer{
     background-color: white;
     margin-bottom: 25px;
     margin-left: 20%;
+}
+
+/*media queries ////////////////////////*/
+
+@media screen and (max-width: 425px) {
+
+    .character2 > select{
+        float:left;
+    }
+
+    .character2 > button{
+        float:left;
+        color:green;
+        width: 100%;
+    }
+
+    .resultbox{
+        float:left;
+        width:90%;
+        height:250px;
+        border:3px solid cyan;
+        border-radius: 15px;
+        position:relative;
+        font-size: 15px;
+        margin-bottom: 25px;
+        margin-left:0%;
+        box-shadow: 10px 6px rgb(2, 176, 2);
+        background-color: white;
+        
+    }
+
+    .resultImage{
+        width:400px;
+        
+    }
+    
+    .resultImage> img{
+        border-radius: 15px;
+        width:0px;
+        
+    }
+
+    .resultName{
+        position:absolute;
+        left:200px; 
+        top: 20px;  
+    }
+    
+    .resultGender{
+        position:absolute;
+        left:200px;
+        top:50px;
+    }
+    
+    .resultSpecies{
+        position:absolute;
+        left:200px;
+        top:80px;
+    }
+    
+    .resultType{
+        position:absolute;
+        left:200px;
+        top:110px;
+    }
+    
+    .resultOrigin{
+        font-size: 13px;
+        position:absolute;
+        left:200px;
+        top:140px;
+    }
+    
+    .resultLocation{
+        position:absolute;
+        left:200px;
+        top:170px;
+        font-size: 13px;
+    }
+    
+    .resultStatus{
+        position:absolute;
+        left:200px;
+        top:220px;
+    }
+    
 }
