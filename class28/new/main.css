@@ -422,15 +422,43 @@ footer{
 
 @media screen and (max-width: 320px){
     
+    .topsearch{
+        float:left;
+        width:320px;
+    }
+
+    .allSearch{
+        float:left;
+        width:320px;
+    }
+
+    .characterSearches{
+        float:left;
+        width:320px;
+    }
 
     .character1{
-        width:100%;
+        float:left;
+        width:320px;
         border-bottom: 1px solid black;
         border-right: none;
     }
 
     .character2{
-        width:100%;
+        float:left;
+        width:320px;
+    }
+
+    .character2 >select{
+        float:left;
+        width:60%;
+        margin-left: 50px;
+    }
+
+    .character2 >button{
+        float:left;
+        width:60%;
+        margin-left: 50px;
     }
 
     .resultbox{
@@ -456,19 +484,24 @@ footer{
     .idNum{
         width:30%;
         position:absolute;
+        margin-left: 5px;
         color:red;
         font-weight: bold;
         font-size: 22px;
         font-family: "Orbitron", sans-serif;
         top: 50px;
         left:-70px;
-        border-radius:20px;
-        border: 1px solid black;
-       
+        border-radius:10px;
+        border: 1px solid cyan;
+        height: 100px;
         background-image: url(images/ricknmorty.jpeg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+
+        display: flex;
+    flex-direction: row;
+    align-items: center;
     }
 
     .resultName{
