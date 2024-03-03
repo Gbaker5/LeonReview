@@ -549,6 +549,8 @@ footer{
     
 }
 
+
+/*  /////////////// ////////// ////////// ////////////*/
 @media (min-width:321px) and (max-width: 425px) {
 
     .topsearch, .allSearch, .characterSearches{
@@ -723,4 +725,107 @@ footer{
 }
 
     
+}
+
+
+/* //////// //////////// /////////// ////////*/
+@media (min-width:426px) and (max-width: 768px){
+    .resultbox, .locationBox, .episodeBox{
+        float:left;
+        width:90%;
+        height:250px;
+        border:3px solid cyan;
+        border-radius: 15px;
+        position:relative;
+        font-size: 15px;
+        margin-bottom: 25px;
+        margin-left:0%;
+        box-shadow: 10px 6px rgb(2, 176, 2);
+        background-color: white;
+        
+    }
+
+    .idNum{
+        width:50%;
+        position:absolute;
+        color:red;
+        font-weight: bold;
+        font-size: 22px;
+        font-family: "Orbitron", sans-serif;
+        top: 200px;
+        left:0px;
+        border-radius:20px;
+        border: 1px solid cyan;
+        height:50px;
+       
+        background-image: url(images/ricknmorty.jpeg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+
+    .resultImage{
+        float:left;
+        width:100%;
+        height:200px;
+    }
+    
+    .resultImage> img{
+        float:left;
+        border-radius: 15px;
+        width:50%;
+        height: 200px;
+    }
+
+    .resultName, .resultGender, .resultStatus, .resultSpecies, .resultType, .resultOrigin, .resultLocation{
+        font-size: 1.2em;
+    }
+
+    .resultName{
+        position:absolute;
+        left:52%; 
+        top: 5px;  
+        
+    }
+    
+    .resultGender{
+        position:absolute;
+        left:52%;
+        top:30px;
+    }
+
+    .resultStatus{
+        position:absolute;
+        left:52%;
+        top:45px;
+    }
+    
+    .resultSpecies{
+        position:absolute;
+        left:52%;
+        top: 60px;
+    }
+    
+    .resultType{
+        position:absolute;
+        left:52%;
+        top: 100px;
+    }
+    
+    .resultOrigin{
+        position:absolute;
+        left:52%;
+        top:160px;
+    }
+    
+    .resultLocation{
+        position:absolute;
+        left:52%;
+        top:210px;
+    }
+    
+   
+
+
 }
