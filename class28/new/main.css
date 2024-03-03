@@ -160,9 +160,9 @@ html,body
 }
 
 .resultbox> li> img{
-    float:left;
+   /* float:left;
     height:250px;
-    width:50%;
+    width:50%;*/
 }
 
 .galaxyBack{
@@ -420,7 +420,103 @@ footer{
 
 /*media queries ////////////////////////*/
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 320px){
+    
+
+    .character1{
+        width:100%;
+        border-bottom: 1px solid black;
+        border-right: none;
+    }
+
+    .character2{
+        width:100%;
+    }
+
+    .resultbox{
+        font-size: 10px;
+        height:260px;
+        margin-left:10%;
+    }
+
+    .resultImage{
+        
+        width:100%;
+        height:50%;
+        /*border:1px solid black;*/
+    }
+    
+
+    .resultImage > img{
+        float:left;
+        width:100%;
+        height:120px;
+    }
+
+    .idNum{
+        width:30%;
+        position:absolute;
+        color:red;
+        font-weight: bold;
+        font-size: 22px;
+        font-family: "Orbitron", sans-serif;
+        top: 50px;
+        left:-70px;
+        border-radius:20px;
+        border: 1px solid black;
+       
+        background-image: url(images/ricknmorty.jpeg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .resultName{
+        position:absolute;
+        left:8px; 
+        top: 125px;  
+        
+    }
+    
+    .resultGender{
+        position:absolute;
+        left:8px;
+        top:145px;
+    }
+    
+    .resultSpecies{
+        position:absolute;
+        left:8px;
+        top:165px;
+    }
+    
+    .resultType{
+        position:absolute;
+        left:8px;
+        top:185px;
+    }
+    
+    .resultOrigin{
+        position:absolute;
+        left:8px;
+        top:205px;
+    }
+    
+    .resultLocation{
+        position:absolute;
+        left:8px;
+        top:225px;
+    }
+    
+    .resultStatus{
+        position:absolute;
+        left:8px;
+        top:245px;
+    }
+    
+}
+
+@media (min-width:321px) and (max-width: 425px) {
 
     .character2 > select{
         float:left;
@@ -450,11 +546,12 @@ footer{
     .resultImage{
         width:400px;
         
+        
     }
     
     .resultImage> img{
         border-radius: 15px;
-        width:0px;
+        /*width:0px;*/
         
     }
 
@@ -533,7 +630,7 @@ footer{
 }
 
 
-.locationResidents{
+.locationResidents, .episodeCharacters{
     position:absolute;
     left:50%;
     width:35%;
@@ -542,7 +639,7 @@ footer{
     margin-top: 50px;
     border: 5px solid cyan;
     list-style-type: none;
-    
+    margin-right: 10px;
     background-position: center;
     background-size:  100% 100vh;
     background-repeat: no-repeat;
