@@ -551,8 +551,22 @@ footer{
 
 @media (min-width:321px) and (max-width: 425px) {
 
+    .topsearch, .allSearch, .characterSearches{
+        float:left;
+        width:100%;
+        margin:0;
+    }
+
+    .character1{
+        float:left;
+        height:200px;
+        margin-top: 0px;
+        border-right: 3px solid black;
+    }
+
     .character2 > select{
         float:left;
+        border-left: 1px solid black;
     }
 
     .character2 > button{
