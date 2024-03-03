@@ -591,16 +591,39 @@ footer{
     }
 
     .resultImage{
-        width:400px;
+        float:left;
+        width:100%;
+        height:250px;
         
         
     }
     
     .resultImage> img{
+        float:left;
         border-radius: 15px;
-        /*width:0px;*/
+        width:50%;
+        height:50%;
         
     }
+
+
+.idNum{
+    width:30%;
+    position:absolute;
+    color:red;
+    font-weight: bold;
+    font-size: 22px;
+    font-family: "Orbitron", sans-serif;
+    top: 10px;
+    left:370px;
+    border-radius:20px;
+    border: 1px solid black;
+   
+    background-image: url(images/ricknmorty.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
     .resultName{
         position:absolute;
